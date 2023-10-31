@@ -1,3 +1,45 @@
 ﻿@page "/"
-
+<!-- @bind-DateRange="_dateRange" -->
 <h1>Hello, world!</h1>
+
+<MudDateRangePicker @ref="_picker" Label="With action buttons"
+@bind-DateRange="_dateRange"
+AutoClose="@_autoClose"
+IsDateDisabledFunc="@((DateTime dt)=>(dt < DateTime.Now.Date))"
+MinDate="@gameRelease"
+MaxDate="@DateTime.Now.AddDays(183)"
+PickerVariant="PickerVariant.Static">
+        <PickerActions>
+            <MudButton Class="mr-auto align-self-start" OnClick="@(() => _picker.Clear())">Clear</MudButton>
+            <MudButton OnClick="@(() => _picker.Close(false))">Cancel</MudButton>
+            <MudButton Color="Color.Primary" OnClick="@(() => _picker.Close())">Ok</MudButton>
+        </PickerActions>
+</MudDateRangePicker>
+
+<MudDatePicker 
+PickerVariant="PickerVariant.Static"
+IsDateDisabledFunc="@((DateTime dt)=>(dt < DateTime.Now.Date))"
+@bind-Date="date"
+MinDate="@gameRelease"
+MaxDate="@DateTime.Now.AddDays(183)"
+DisplayMonths="2"
+AdditionalDateClassesFunc="@((DateTime dt)=>(
+     (dt > DateTime.Today && dt < date)  ? "mud-range mud-range-between" : ""
+     ))"
+ />
+
+@code { 
+    private MudDateRangePicker _picker;
+    private DateRange _dateRange = new DateRange(DateTime.Now.Date, DateTime.Now.AddDays(7).Date);
+    private bool _autoClose = false;
+
+    @* private DateRange hren = new DateRange(DateTime.Now.Date, DateTime.Now.AddDays(7).Date) *@
+
+    private DateTime gameRelease = new DateTime(2023, 4, 26);
+    private DateTime? date = DateTime.Today.AddDays(7);
+
+    @* private void hren(DateRange dateRange){
+        date.
+        
+    }  *@
+}
