@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\lrFHscQ3.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker-assets.js",
+      "PackagePath": "staticwebassets\\service-worker-assets.js"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\service-worker.published.js",
+      "PackagePath": "staticwebassets\\service-worker.js"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\icon-512.png",
+      "PackagePath": "staticwebassets\\icon-512.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\manifest.json",
+      "PackagePath": "staticwebassets\\manifest.json"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.StellarJadeManager.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.StellarJadeManager.Client.props",
+      "PackagePath": "build\\StellarJadeManager.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.StellarJadeManager.Client.props",
+      "PackagePath": "buildMultiTargeting\\StellarJadeManager.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.StellarJadeManager.Client.props",
+      "PackagePath": "buildTransitive\\StellarJadeManager.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

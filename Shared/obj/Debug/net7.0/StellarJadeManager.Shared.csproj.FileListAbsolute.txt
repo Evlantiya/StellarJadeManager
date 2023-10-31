@@ -1,0 +1,12 @@
+D:\StellarJadeManager\StellarJadeManager\Shared\bin\Debug\net7.0\StellarJadeManager.Shared.deps.json
+D:\StellarJadeManager\StellarJadeManager\Shared\bin\Debug\net7.0\StellarJadeManager.Shared.dll
+D:\StellarJadeManager\StellarJadeManager\Shared\bin\Debug\net7.0\StellarJadeManager.Shared.pdb
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\StellarJadeManager.Shared.csproj.AssemblyReference.cache
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\StellarJadeManager.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\StellarJadeManager.Shared.AssemblyInfoInputs.cache
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\StellarJadeManager.Shared.AssemblyInfo.cs
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\StellarJadeManager.Shared.csproj.CoreCompileInputs.cache
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\StellarJadeManager.Shared.dll
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\refint\StellarJadeManager.Shared.dll
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\StellarJadeManager.Shared.pdb
+D:\StellarJadeManager\StellarJadeManager\Shared\obj\Debug\net7.0\ref\StellarJadeManager.Shared.dll
