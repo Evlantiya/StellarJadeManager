@@ -17,19 +17,19 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-NFh6IBi88fjYMkbq\/IMrfqfn7JXFa8CwRo31QNrEQ+w=",
+      "hash": "sha256-\/EkWRHMHBhfvvlx5hLVtXGPm8+Gyp4WkPiKKiiJIrqQ=",
       "url": "_framework\/Microsoft.AspNetCore.Authorization.dll"
     },
     {
-      "hash": "sha256-9VddC0kXU8yC0LxsoSLOvzSAzJZxM+P1hCgrsV6GGBw=",
+      "hash": "sha256-SvjxqyTqc68zPsYivPRkvjKRhUg5zYufzqwGNS83bwg=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
-      "hash": "sha256-11bIX\/fyH9chfWgC1L1jFvAt2Ppq+6bcXl1eH6OmxMA=",
+      "hash": "sha256-eoQ2CgfBGkvbK4QUMBgFDPIBqJem+g8247Fb3ZmnmCI=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
-      "hash": "sha256-LZ9\/rytjyZiFmFLJJ3eNXTIAlcm8dbKj\/vT3N6vPXqg=",
+      "hash": "sha256-p3BQFPwUbOgu5j9V+1HlUGwDcVzB7iYNO4dIsDCOAgA=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Web.dll"
     },
     {
@@ -37,7 +37,7 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.WebAssembly.dll"
     },
     {
-      "hash": "sha256-mFDOnLuhJraetVG1skdrXwUnBj7sNxv2HNiaJHjPGCw=",
+      "hash": "sha256-eIu14RWCV9bKCAARda4hnWGsOKJfmnGfQpkmeRnSibQ=",
       "url": "_framework\/Microsoft.AspNetCore.Metadata.dll"
     },
     {
@@ -85,6 +85,14 @@
       "url": "_framework\/Microsoft.Extensions.Http.dll"
     },
     {
+      "hash": "sha256-rnkeVtcxS4PihFm2ubtCGhgvkzoRObZTdIu6lRsJu2A=",
+      "url": "_framework\/Microsoft.Extensions.Localization.dll"
+    },
+    {
+      "hash": "sha256-KsL2v55KESYdrXazOUeB2eInnbai5SwYXKclQiCvGS0=",
+      "url": "_framework\/Microsoft.Extensions.Localization.Abstractions.dll"
+    },
+    {
       "hash": "sha256-WMsuY8rhtg+vvssGFSR7ZLKhqYPAzOi538IXMoiJ6bI=",
       "url": "_framework\/Microsoft.Extensions.Logging.dll"
     },
@@ -93,7 +101,7 @@
       "url": "_framework\/Microsoft.Extensions.Logging.Abstractions.dll"
     },
     {
-      "hash": "sha256-rYT8laJlOlF0qyGuqjSmgDWb3Mk5aO1P2d9ojmaAuL0=",
+      "hash": "sha256-gcHJrSv1wTqvF9SyWTEKcbiShn4mkgfnm9+tRQr4OqY=",
       "url": "_framework\/Microsoft.Extensions.Options.dll"
     },
     {
@@ -101,12 +109,16 @@
       "url": "_framework\/Microsoft.Extensions.Primitives.dll"
     },
     {
-      "hash": "sha256-q17WovokqNgFuXZO8JzEh+dShJEutXJL12V9hSr+Q6s=",
+      "hash": "sha256-OBt2YgODs1L5bJWrDjUFgcgGMUjDfmFTHCt9t69RxgU=",
       "url": "_framework\/Microsoft.JSInterop.dll"
     },
     {
       "hash": "sha256-LS1TECEw0D6FskWRcaDt51suj930x2zRQySVGe2mJ3o=",
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
+    },
+    {
+      "hash": "sha256-fZeXRwimdnkNYIcH1nxZtKemTPxYlfxqYtGXFluJYpY=",
+      "url": "_framework\/MudBlazor.dll"
     },
     {
       "hash": "sha256-P\/MqD0fCBd5bgTM16JC1QC\/Zz7s+CwViyzmDFkBG4\/c=",
@@ -821,11 +833,11 @@
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-c4YhHkSSuWUFdWI6GqNqBzv4qspyedVCCoUXesNSfVI=",
+      "hash": "sha256-ahNB4ptzcSOy5NmI9Xfo2wnh1wvfjHXnpMxBx8F+E2U=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-yM\/fkzxvzns4T3aw9H9C84ov9+G6uFf5m24RQv2L5a0=",
+      "hash": "sha256-bdfOF4azjJSg073xiJ02XlGyxg9L1XFWlTq+5hGWB\/A=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -833,20 +845,8 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-OXVJdh4FxAo7hgv3HCXRD6zazshb3c\/nT77KMrcV3Wg=",
+      "hash": "sha256-taFHyXoMUsLnz77mbt5+Pr4lnrCnNZqz+WPkhbwE1gE=",
       "url": "_framework\/blazor.boot.json"
-    },
-    {
-      "hash": "sha256-rnkeVtcxS4PihFm2ubtCGhgvkzoRObZTdIu6lRsJu2A=",
-      "url": "_framework\/Microsoft.Extensions.Localization.dll"
-    },
-    {
-      "hash": "sha256-KsL2v55KESYdrXazOUeB2eInnbai5SwYXKclQiCvGS0=",
-      "url": "_framework\/Microsoft.Extensions.Localization.Abstractions.dll"
-    },
-    {
-      "hash": "sha256-fZeXRwimdnkNYIcH1nxZtKemTPxYlfxqYtGXFluJYpY=",
-      "url": "_framework\/MudBlazor.dll"
     },
     {
       "hash": "sha256-YRt7VVv7R8QKqqxiF7U39TJJE9k7rvVd35MPHWRs7Wk=",
@@ -857,5 +857,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "nDZ13HwE"
+  "version": "qv8KO68o"
 };

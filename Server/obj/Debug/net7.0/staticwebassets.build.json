@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "B75maz1ShrGzppO5MIMnkhlQq4CK89j546hGyLNYuOE=",
+  "Hash": "yq5gp7lT2LcxRZGnJj8qTZKo0hrfSoBCWNDMvwpheLo=",
   "Source": "StellarJadeManager.Server",
   "BasePath": "_content/StellarJadeManager.Server",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "StellarJadeManager.Client",
       "GetPublishAssetsTargets": "ComputeFilesToPublish;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "BuildProjectReferences=false;ResolveAssemblyReferencesFindRelatedSatellites=true;_PublishingBlazorWasmProject=true;Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "BuildProjectReferences=false;ResolveAssemblyReferencesFindRelatedSatellites=true;_PublishingBlazorWasmProject=true",
       "AdditionalPublishPropertiesToRemove": "NoBuild;RuntimeIdentifier;WebPublishProfileFile;TargetFramework",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
     }
   ],
@@ -28,6 +28,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.css",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.js",
+      "SourceId": "MudBlazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\",
+      "BasePath": "_content/MudBlazor",
+      "RelativePath": "MudBlazor.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.js"
+    },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.boot.json",
       "SourceId": "StellarJadeManager.Client",
@@ -114,23 +148,6 @@
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\runtimes\\browser-wasm\\native\\dotnet.wasm"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\icudt.dat",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt.dat",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "native",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\runtimes\\browser-wasm\\native\\icudt.dat"
-    },
-    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\icudt_CJK.dat",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -182,6 +199,23 @@
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\icudt.dat",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt.dat",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "native",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\runtimes\\browser-wasm\\native\\icudt.dat"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -196,7 +230,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0\\lib\\net7.0\\Microsoft.AspNetCore.Authorization.dll"
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.5\\lib\\net7.0\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
@@ -213,7 +247,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.0\\lib\\net7.0\\Microsoft.AspNetCore.Components.dll"
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.5\\lib\\net7.0\\Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll",
@@ -230,7 +264,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\7.0.0\\lib\\net7.0\\Microsoft.AspNetCore.Components.Forms.dll"
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\7.0.5\\lib\\net7.0\\Microsoft.AspNetCore.Components.Forms.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.dll",
@@ -247,7 +281,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components.web\\7.0.0\\lib\\net7.0\\Microsoft.AspNetCore.Components.Web.dll"
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components.web\\7.0.5\\lib\\net7.0\\Microsoft.AspNetCore.Components.Web.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.WebAssembly.dll",
@@ -281,7 +315,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.0\\lib\\net7.0\\Microsoft.AspNetCore.Metadata.dll"
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.5\\lib\\net7.0\\Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.CSharp.dll",
@@ -488,6 +522,40 @@
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.extensions.http\\7.0.0\\lib\\net7.0\\Microsoft.Extensions.Http.dll"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.Abstractions.dll",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Localization.Abstractions.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\7.0.5\\lib\\net7.0\\Microsoft.Extensions.Localization.Abstractions.dll"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.dll",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Localization.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.extensions.localization\\7.0.5\\lib\\net7.0\\Microsoft.Extensions.Localization.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Logging.Abstractions.dll",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -536,7 +604,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\lib\\net7.0\\Microsoft.Extensions.Options.dll"
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\lib\\net7.0\\Microsoft.Extensions.Options.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Primitives.dll",
@@ -570,7 +638,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.jsinterop\\7.0.0\\lib\\net7.0\\Microsoft.JSInterop.dll"
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.jsinterop\\7.0.5\\lib\\net7.0\\Microsoft.JSInterop.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.JSInterop.WebAssembly.dll",
@@ -673,6 +741,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\runtimes\\browser-wasm\\lib\\net7.0\\mscorlib.dll"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\MudBlazor.dll",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/MudBlazor.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\lib\\net7.0\\MudBlazor.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\netstandard.dll",
@@ -3531,6 +3616,23 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Net.WebSockets.Client.dll"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\+30ZrOXN.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Localization.Abstractions.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.Abstractions.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.Abstractions.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\+8iyArE3.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -3650,23 +3752,6 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.Pipes.AccessControl.dll"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\0WRUxaD+.gz",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Web.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.dll"
-    },
-    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\1F12XZ2l.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -3682,23 +3767,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Xml.Serialization.dll"
-    },
-    {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\1IjSGNFH.gz",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.Extensions.Options.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\1Iotlywl.gz",
@@ -3973,23 +4041,6 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Numerics.Vectors.dll"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\5yFXvGG5.gz",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
-    },
-    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\6CsAnJVZ.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -4141,6 +4192,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.FileSystem.Primitives.dll"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\9k7kCLIs.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Web.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\9Tv8jyz2.gz",
@@ -5027,23 +5095,6 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.FileExtensions.dll"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\IjQ2AU1C.gz",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
-    },
-    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\iokEFPsz.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -5195,40 +5246,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.dll"
-    },
-    {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\KEfgpBFh.gz",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Forms.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll"
-    },
-    {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\kHX5Ecof.gz",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\km7zf+Ao.gz",
@@ -5435,6 +5452,23 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Net.WebProxy.dll"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\ms25rod3.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Forms.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\MW+2nOnf.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -5503,6 +5537,23 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Runtime.dll"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\Nj9H36oE.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\NJDDmAcY.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -5552,6 +5603,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Primitives.dll"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\NsBLD+2q.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\Ny3v7GJP.gz",
@@ -5894,6 +5962,23 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.DependencyInjection.dll"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\qJN+qRE8.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\QLUrnBuf.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -6011,6 +6096,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.WebAssembly.dll"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\r11OaNb6.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/MudBlazor.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\MudBlazor.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\MudBlazor.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\rg6FRCB2.gz",
@@ -6285,7 +6387,7 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Transactions.Local.dll"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\Tt57ha+E.gz",
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\TOmEjqnw.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
       "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
@@ -6727,6 +6829,23 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\StellarJadeManager.Client.dll"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\YiOeec5e.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Options.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\YoCHgyHY.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -6948,6 +7067,23 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\StellarJadeManager.Shared.pdb"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\zVksAMRk.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Localization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Localization.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\ZwxcqowF.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -6982,23 +7118,6 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Threading.ThreadPool.dll"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\service-worker.js",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\",
-      "BasePath": "/",
-      "RelativePath": "service-worker.js",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorServiceWorker",
-      "AssetTraitValue": "ServiceWorkerJs",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "wwwroot\\service-worker.js"
-    },
-    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker-assets.js.build",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -7014,6 +7133,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net7.0\\service-worker-assets.js.build"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\service-worker.js",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\",
+      "BasePath": "/",
+      "RelativePath": "service-worker.js",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorServiceWorker",
+      "AssetTraitValue": "ServiceWorkerJs",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "wwwroot\\service-worker.js"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\css\\app.css",

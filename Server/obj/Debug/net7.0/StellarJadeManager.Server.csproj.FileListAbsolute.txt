@@ -42,3 +42,13 @@ D:\StellarJadeManager\StellarJadeManager\Server\obj\Debug\net7.0\refint\StellarJ
 D:\StellarJadeManager\StellarJadeManager\Server\obj\Debug\net7.0\StellarJadeManager.Server.pdb
 D:\StellarJadeManager\StellarJadeManager\Server\obj\Debug\net7.0\StellarJadeManager.Server.genruntimeconfig.cache
 D:\StellarJadeManager\StellarJadeManager\Server\obj\Debug\net7.0\ref\StellarJadeManager.Server.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Web.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.Extensions.Localization.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.Extensions.Localization.Abstractions.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.JSInterop.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\MudBlazor.dll
