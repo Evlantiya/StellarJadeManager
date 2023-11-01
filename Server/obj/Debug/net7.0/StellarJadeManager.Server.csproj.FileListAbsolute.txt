@@ -52,3 +52,8 @@ D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.Exten
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Microsoft.JSInterop.dll
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\MudBlazor.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\PatchData\Version_1_0.json
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\PatchData\Version_1_1.json
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\PatchData\Version_1_2.json
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\PatchData\Version_1_3.json
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\PatchData\Version_1_4.json

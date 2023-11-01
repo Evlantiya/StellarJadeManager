@@ -1,0 +1,23 @@
+{
+    "patchInfo": {
+        "version":"1.4",
+        "title":"Jolted Awake From a Winter Dream",
+        "releaseDate":"11.10.2023",
+        "weeksCount":6,
+        "events":[
+            {
+                "eventTitle":"Aetherium Wars",
+                "startDate":"11.10.2023",
+                "endDate":"13.11.2023",
+                "stellarJadesAmount":1200
+            },
+            {
+                "eventTitle":"Planar Infinity",
+                "startDate":"27.10.2023",
+                "endDate":"13.11.2023",
+                "stellarJadesAmount":500
+            }
+        ],
+        "banners":[]
+    }
+}
