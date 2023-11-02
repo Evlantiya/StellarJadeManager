@@ -1,0 +1,30 @@
+@inject HttpClient Http
+@inject ILogger<PatchCalendar> logger
+
+
+<p>test</p>
+
+@if(patches is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @foreach(var patch in patches)
+    {
+        <p>@patch.Version</p>
+    }
+}
+
+
+@code{
+    private List<Patch> patchesInit {get; set;} = new();
+    public List<Patch> patches {get; set;} = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        logger.LogInformation("start blazor component");
+        patchesInit = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new List<Patch>();
+        patches = patchesInit.ToList();
+    }
+}

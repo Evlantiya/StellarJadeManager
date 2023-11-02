@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2GDPvjsoBhuTtKOJkfK4trljzaj6E8dc7gFoBUeJVg4=",
+  "Hash": "aa8E5GuheOgQXUbcu9D9Kev1Y9r9WyIhYFxjDm7WWPs=",
   "Source": "StellarJadeManager.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -7104,6 +7104,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Threading.ThreadPool.dll"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\StellarJadeManager.Client.styles.css",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "BasePath": "/",
+      "RelativePath": "StellarJadeManager.Client.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\StellarJadeManager.Client.styles.css"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\StellarJadeManager.Client.bundle.scp.css",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "BasePath": "/",
+      "RelativePath": "StellarJadeManager.Client.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\StellarJadeManager.Client.bundle.scp.css"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker-assets.js",

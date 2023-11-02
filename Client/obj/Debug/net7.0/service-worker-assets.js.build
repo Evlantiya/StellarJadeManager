@@ -17,6 +17,10 @@
       "url": "manifest.json"
     },
     {
+      "hash": "sha256-wtorOvmWzpgViqYFhkeYpXn4qCEqxWeS\/INhLu4RdP0=",
+      "url": "StellarJadeManager.Client.styles.css"
+    },
+    {
       "hash": "sha256-\/EkWRHMHBhfvvlx5hLVtXGPm8+Gyp4WkPiKKiiJIrqQ=",
       "url": "_framework\/Microsoft.AspNetCore.Authorization.dll"
     },
@@ -825,19 +829,19 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-ybmcoYtT0M1pFICN4yUy1F5W6p97F3ZjR8b5vRGqwbI=",
+      "hash": "sha256-fbX2aFBL\/eaP0F\/e9GEmxu8dDPYoEylvezeaaD+4UTc=",
       "url": "_framework\/StellarJadeManager.Shared.dll"
     },
     {
-      "hash": "sha256-sRx0Q6\/YmAb8nSBTxOTo2b1rA6udeIk53Vx3epq4JrA=",
+      "hash": "sha256-v6hnPOCWWcXKZeUonazwewAcpx9c8WzdmYOfB8UO6yk=",
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-yFaNOp6jXBdjRVLtEd84r2uhfD1uZ+FW+o80Wo5fB28=",
+      "hash": "sha256-aum94XNOYlNJMNSTLsRaSv9Z8s5i7yqZDKfwgz0I3E0=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-qnG5INMoLcVztMaWU24EnOmJMzeQUzOeP+TRV90wvVY=",
+      "hash": "sha256-q7AJgM7p0EgDybyumCX98DIcw+FL9D6o1PyRzcX5iQc=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -845,7 +849,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-NBxQYRphotrc9FmunLoaQRX0DvTHhb6NU\/LqgowU47E=",
+      "hash": "sha256-qrYFpkSDPP6Hra1Iq6v76QNNEX7XZdQ2vpajSjx3KBc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -857,5 +861,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "MQANW3zE"
+  "version": "4SywiPO2"
 };

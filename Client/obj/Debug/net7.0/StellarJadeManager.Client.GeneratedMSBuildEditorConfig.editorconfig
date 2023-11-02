@@ -31,3 +31,7 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/StellarJadeManager/StellarJadeManager/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/PatchCalendar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYXRjaENhbGVuZGFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-fdt5iiks5l

@@ -4,7 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-
+builder.Services.AddSingleton<IPatchRepository, LocalPatchRepositroy>();
+builder.Services.AddMemoryCache();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

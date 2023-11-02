@@ -851,3 +851,5 @@ D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\+30ZrO
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\YiOeec5e.gz
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\TOmEjqnw.gz
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\r11OaNb6.gz
+D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\PatchCalendar.razor.rz.scp.css
+D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\projectbundle\StellarJadeManager.Client.bundle.scp.css

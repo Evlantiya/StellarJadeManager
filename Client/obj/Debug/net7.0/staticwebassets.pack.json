@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\StellarJadeManager.Client.styles.css",
+      "PackagePath": "staticwebassets\\StellarJadeManager.Client.styles.css"
+    },
+    {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker-assets.js",
       "PackagePath": "staticwebassets\\service-worker-assets.js"
     },

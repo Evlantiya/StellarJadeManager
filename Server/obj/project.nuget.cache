@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UXXp7EY7FgEh8ZnZVo+R5JpoyDLNxb+lQwT/LQW033M6Z2gZqMGvhI5VToW2jw/PmIGWxfwhD5/C4nHQTpsZNA==",
+  "dgSpecHash": "ZHUV5a/CRnmLaMs+jkDuT57ejZ+EjhTbvMtKIDNUduKophlY+n2WwDsWN4XxLJQJGqg5FfhX1xMkg7cSmXxM/A==",
   "success": true,
   "projectFilePath": "D:\\StellarJadeManager\\StellarJadeManager\\Server\\StellarJadeManager.Server.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\serfe\\.nuget\\packages\\microsoft.jsinterop\\7.0.5\\microsoft.jsinterop.7.0.5.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.0\\microsoft.jsinterop.webassembly.7.0.0.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\mudblazor.6.11.0.nupkg.sha512",
+    "C:\\Users\\serfe\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512"

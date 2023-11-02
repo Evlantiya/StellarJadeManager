@@ -1,71 +1,9 @@
 ﻿@page "/"
-<!-- @bind-DateRange="_dateRange" -->
+
 <h1>Hello, world!</h1>
-<p>@Date</p>
-
-<MudDatePicker @bind-Date="date">
-
-</MudDatePicker>
-@* <MudDateRangePicker @ref="_picker" Label="With action buttons"
-@bind-DateRange="_dateRange"
-AutoClose="@_autoClose"
-IsDateDisabledFunc="@((DateTime dt)=>(dt < DateTime.Now.Date))"
-MinDate="@gameRelease"
-MaxDate="@DateTime.Now.AddDays(183)"
-PickerVariant="PickerVariant.Static">
-        <PickerActions>
-            <MudButton Class="mr-auto align-self-start" OnClick="@(() => _picker.Clear())">Clear</MudButton>
-            <MudButton OnClick="@(() => _picker.Close(false))">Cancel</MudButton>
-            <MudButton Color="Color.Primary" OnClick="@(() => _picker.Close())">Ok</MudButton>
-        </PickerActions>
-</MudDateRangePicker> 
-<MudContainer MaxWidth="MaxWidth.ExtraSmall">
-    <MudDatePicker @ref="_picker"
-                   AutoClose="@_autoClose"
-                   IsDateDisabledFunc="@((DateTime dt)=>(dt < DateTime.Now.Date))"
-                   @bind-Date="date"
-                   MinDate="@gameRelease"
-                   MaxDate="@DateTime.Now.AddDays(183)"
-                   DisplayMonths="1"
-                   AdditionalDateClassesFunc="@(GetDateRangeClasses)">
-        <PickerActions>
-            <MudButton Class="mr-auto align-self-start" OnClick="@(ClearPicker)">Clear</MudButton>
-             <MudButton OnClick="@(() => _picker.Close(false))">Cancel</MudButton>
-            <MudButton Color="Color.Primary" OnClick="@(() => _picker.Close(true))">Ok</MudButton>
-        </PickerActions>
-    </MudDatePicker>
-</MudContainer>  *@
 
 
+<PatchCalendar>
+
+</PatchCalendar>
  
-
-@code {
-    public DateTime? Date => date.Value.AddDays(7*6);
-    private MudDatePicker _picker;
-    private DateRange _dateRange = new DateRange(DateTime.Now.Date, DateTime.Now.AddDays(7).Date);
-    private bool _autoClose = false;
-    private DateTime gameRelease = new DateTime(2023, 4, 26);
-    private DateTime? date = DateTime.Today;
-
-    @* private void hren(DateRange dateRange){
-        date.
-        
-    }  *@
-
-    private string GetDateRangeClasses(DateTime dt){
-        if (dt == DateTime.Today && date != DateTime.Today){
-            return "mud-selected mud-range mud-range-start-selected mud-theme-primary";
-        } 
-        if (dt > DateTime.Today && dt < date) {
-            return "mud-range mud-range-between";
-        }
-        if (dt == date && date != DateTime.Today) {
-            return "mud-selected mud-range mud-range-end-selected mud-theme-primary";
-        }
-        return "";
-    }
-    private  void ClearPicker(MouseEventArgs e){
-        _picker.Clear();
-        _picker.Date = DateTime.Today;
-    }
-}

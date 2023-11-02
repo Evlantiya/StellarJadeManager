@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yq5gp7lT2LcxRZGnJj8qTZKo0hrfSoBCWNDMvwpheLo=",
+  "Hash": "S2QdFi6s7dTxCKh+ds5wxgN1JeXSXTUmteQvhdlDCaE=",
   "Source": "StellarJadeManager.Server",
   "BasePath": "_content/StellarJadeManager.Server",
   "Mode": "Default",
@@ -7116,6 +7116,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Threading.ThreadPool.dll"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\StellarJadeManager.Client.styles.css",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "BasePath": "/",
+      "RelativePath": "StellarJadeManager.Client.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\bundle\\StellarJadeManager.Client.styles.css"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker-assets.js.build",
