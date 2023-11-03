@@ -9,7 +9,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-vHtdIy27s8FkdqiE9c\/kOoOUHaIdiXAkLLNkAp2kjI8=",
+      "hash": "sha256-huCHxaq49IKYjTfqPstZfhM2ZznyDbp+o9QtEY7dfiA=",
       "url": "index.html"
     },
     {
@@ -17,7 +17,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-wtorOvmWzpgViqYFhkeYpXn4qCEqxWeS\/INhLu4RdP0=",
+      "hash": "sha256-b729Twk7mMD37zKR9zp12espmTTsewmetf7Pip7jCik=",
       "url": "StellarJadeManager.Client.styles.css"
     },
     {
@@ -829,19 +829,19 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-fbX2aFBL\/eaP0F\/e9GEmxu8dDPYoEylvezeaaD+4UTc=",
+      "hash": "sha256-KNLJT\/xq4sJZ7hiW3SqC+CPi\/cbJ8wQl1T8R3y0RK3g=",
       "url": "_framework\/StellarJadeManager.Shared.dll"
     },
     {
-      "hash": "sha256-v6hnPOCWWcXKZeUonazwewAcpx9c8WzdmYOfB8UO6yk=",
+      "hash": "sha256-YZD+YxgqrMtLhUQTOZAefs3r7Oi3YAbiPOTeNv5TmGE=",
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-aum94XNOYlNJMNSTLsRaSv9Z8s5i7yqZDKfwgz0I3E0=",
+      "hash": "sha256-PIXL1DinQ8Cx67gvwZRytaQ4o\/VxJA+Hxw3A3\/U5Hgw=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-q7AJgM7p0EgDybyumCX98DIcw+FL9D6o1PyRzcX5iQc=",
+      "hash": "sha256-6eOqMh4anZTMFKfZ5Tre\/E0Ib13Rlw8maRb6\/Dj\/Hu4=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -849,7 +849,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-qrYFpkSDPP6Hra1Iq6v76QNNEX7XZdQ2vpajSjx3KBc=",
+      "hash": "sha256-owY9EUGdokM7h1pYxBbwG0o6u7Ic5gIsmxmgeQf8T9E=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -861,5 +861,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "4SywiPO2"
+  "version": "bJU4y3tv"
 };

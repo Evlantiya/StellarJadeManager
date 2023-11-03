@@ -19,14 +19,22 @@ public class LocalPatchRepositroy : IPatchRepository
             var patchJSONString = File.ReadAllText(patchJSONFileName);
             dynamic? patchJSON = JsonConvert.DeserializeObject(patchJSONString);
 
-            var patchInfo = patchJSON?.patchInfo.Value ?? "undefined";
+            var patchInfo = patchJSON.patchInfo.Value;
             // string name = patchJSON?.name?.Value ?? "undefined";
             string version = patchJSON.patchInfo.version.Value;
             string title = patchJSON.patchInfo.title.Value;
             DateTime releaseDate = DateTime.Parse(patchJSON.patchInfo.releaseDate.Value);
             int weeksCount = (int) patchJSON.patchInfo.weeksCount.Value;
-
-            patches.Add(new Patch(version,title,releaseDate, weeksCount));
+            List<Event> events = new();
+            var eventsInfo=patchJSON.patchInfo.events;
+            foreach(var e in eventsInfo){
+                string eventTitle = e.eventTitle.Value;
+                DateTime startDate = DateTime.Parse(e.startDate.Value);
+                DateTime endDate = DateTime.Parse(e.endDate.Value);
+                int stellarJadesAmount = (int) e.stellarJadesAmount.Value;
+                events.Add(new Event(eventTitle, startDate, endDate, stellarJadesAmount));
+            }
+            patches.Add(new Patch(version,title,releaseDate, weeksCount, events));
             logger.LogInformation("end local repo construct");
         }
     }

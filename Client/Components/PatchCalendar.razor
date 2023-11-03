@@ -12,19 +12,58 @@ else
 {
     @foreach(var patch in patches)
     {
-        <p>@patch.Version</p>
+        @* <p></p>
+        <p>version @patch.Version</p>
+        <p>Release @patch.ReleaseDate</p>
+        <p>End @patch.ReleaseDate.AddDays(7*patch.WeeksCount)</p> *@
     }
 }
+<button @onclick="SetSelectedPatchToPrevious"> <MudIcon Icon="@Icons.Material.Filled.NavigateBefore"/> Previous patch</button>
+<button @onclick="SetSelectedPatchToNext">Next patch <MudIcon Icon="@Icons.Material.Filled.NavigateNext"/></button>
+@* <p>Now @DateTime.Now</p> *@
+@if(selectedPatch != null){
+    <p>@selectedPatch.ReleaseDate</p>
+    <div class="calendar-container">
+        @for(int i=0; i < selectedPatch.WeeksCount*7; i++){
+            var currentDate = selectedPatch.ReleaseDate.AddDays(i);
+            <button class="day day-@(i+1)" @onclick="@(e => SetSelectedDate(currentDate))">
+                @currentDate.ToString("dd/M", System.Globalization.CultureInfo.InvariantCulture)
+                </button>
+        }
+        @* <button class="day day_1">1</button><button class="day day_2">2</button><button class="day day_3">3</button><button class="day day_4">4</button><button class="day day_5">5</button><button class="day day_6">6</button><button class="day day_7">7</button><button class="day day_8">8</button><button class="day day_9">9</button><button class="day day_10">10</button><button class="day day_11">11</button><button class="day day_12">12</button><button class="day day_13">13</button><button class="day day_14">14</button><button class="day day_15">15</button><button class="day day_16">16</button><button class="day day_17">17</button><button class="day day_18">18</button><button class="day day_19">19</button><button class="day day_20">20</button><button class="day day_21">21</button><button class="day day_22">22</button><button class="day day_23">23</button><button class="day day_24">24</button><button class="day day_25">25</button><button class="day day_26">26</button><button class="day day_27">27</button><button class="day day_28">28</button><button class="day day_29">29</button><button class="day day_30">30</button><button class="day day_31">31</button><button class="day day_32">32</button><button class="day day_33">33</button><button class="day day_34">34</button><button class="day day_35">35</button><button class="day day_36">36</button><button class="day day_37">37</button><button class="day day_38">38</button><button class="day day_39">39</button><button class="day day_40">40</button><button class="day day_41">41</button><button class="day day_42">42</button><button class="day day_43">43</button> *@
+    </div>
+}
+<p>@selectedPatch?.Version</p>
+<p>@selectedDate</p>
 
 
 @code{
     private List<Patch> patchesInit {get; set;} = new();
     public List<Patch> patches {get; set;} = new();
+    
+    public DateTime selectedDate {get; set;} = DateTime.Today;
+
+    public Patch selectedPatch {get;set;} = null!; //refactor
+
+    public void SetSelectedDate(DateTime date){
+        selectedDate=date;
+        @* logger.LogInformation($"Button on calendar clicked wit date {date}"); *@
+    }
+
+    public void SetSelectedPatchToPrevious(){
+        int prevIndex = patches.IndexOf(selectedPatch) - 1;
+        selectedPatch = patches[prevIndex < 0 ? 0 : prevIndex];
+    }
+    public void SetSelectedPatchToNext(){
+        int nextIndex = patches.IndexOf(selectedPatch) + 1;
+        selectedPatch = patches[nextIndex > patches.Count-1 ? patches.Count-1 : nextIndex];
+    }
 
     protected override async Task OnInitializedAsync()
     {
         logger.LogInformation("start blazor component");
         patchesInit = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new List<Patch>();
         patches = patchesInit.ToList();
+        selectedPatch = patches.First(p=>p.ReleaseDate.AddDays(7*p.WeeksCount) > DateTime.Now);
     }
 }

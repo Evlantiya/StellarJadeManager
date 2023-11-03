@@ -1,0 +1,10 @@
+.day[b-fdt5iiks5l]{
+    display: block;
+    padding:1rem;
+    border: 1px solid black;
+}
+
+.calendar-container[b-fdt5iiks5l]{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
