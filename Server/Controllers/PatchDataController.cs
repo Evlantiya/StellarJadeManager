@@ -21,7 +21,12 @@ public class PatchController: ControllerBase
     [HttpGet]
     public IEnumerable<Patch> Get()
     {
-        logger.LogInformation("Get controller call");
-        return patchRepository.GetAll().ToList();
+        return patchRepository.GetAll().ToList(); 
     }
+
+    [HttpPost]
+    [Route("rolls")]
+    public void post_test(int rollsAmount){
+        logger.LogInformation(rollsAmount.ToString()); 
+    } 
 }

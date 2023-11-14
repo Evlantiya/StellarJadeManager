@@ -4,6 +4,10 @@
     border: 1px solid black;
 }
 
+.day-disabled[b-fdt5iiks5l]{
+    background-color: gray;
+}
+
 .calendar-container[b-fdt5iiks5l]{
     display: grid;
     grid-template-columns: repeat(7, 1fr);

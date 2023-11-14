@@ -5,7 +5,7 @@ public class Patch{
     public string Title {get; private set;}
     public DateTime ReleaseDate {get; private set;}
     public int WeeksCount {get; private set;}
-    public List<Event> Events {get; private set;}  = new();
+    public List<Event> Events {get; private set;}
     // public List<Banner> Banners {get; private set;} = new();
 
     public Patch(string version, string title, DateTime releaseDate, int weeksCount, List<Event> events)

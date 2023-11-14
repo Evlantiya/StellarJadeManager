@@ -1,19 +1,15 @@
 public class Event
 {
 
-    public string Title {get; set;} = "undefined";
+    public string EventTitle {get; set;} = "undefined";
     public DateTime StartDate {get; set;}
     public DateTime EndDate {get; set;}
     public int StellarJadesAmount {get; set;}
-    public Event(string title, DateTime start, DateTime end, int stellarJadesAmount)
+    public Event(string eventTitle, DateTime startDate, DateTime endDate, int stellarJadesAmount)
     {
-        this.Title=title;
-        this.StartDate=StartDate;
-        this.EndDate=EndDate;
-        this.StellarJadesAmount=stellarJadesAmount;
-    }
-
-    public Event()
-    {
+        this.EventTitle = eventTitle;
+        this.StartDate = startDate;
+        this.EndDate = endDate;
+        this.StellarJadesAmount = stellarJadesAmount;
     }
 }

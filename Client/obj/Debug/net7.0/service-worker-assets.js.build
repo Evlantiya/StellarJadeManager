@@ -9,7 +9,27 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-huCHxaq49IKYjTfqPstZfhM2ZznyDbp+o9QtEY7dfiA=",
+      "hash": "sha256-34AkrpsLvrVFwUU5M3+NJA9ji5Fk0lHYjQjU5GOsUYk=",
+      "url": "Images\/1_0_The_Rail_Unto_the_Stars.webp"
+    },
+    {
+      "hash": "sha256-h5SNHMpwkKCTGZiSec5tDPYJepAlAxmhIuZI3VhKdcU=",
+      "url": "Images\/1_1_Galactic_Roaming.webp"
+    },
+    {
+      "hash": "sha256-2I1MMfRGnhAf6ex+AvRIFoiKjiWm5k95GOwfCKhyX7I=",
+      "url": "Images\/1_2_Even_Immortality_Ends.webp"
+    },
+    {
+      "hash": "sha256-d2ER2H0nFrrXarjT9QkPi3U6Mx2bUsJuyl2uKwht4LE=",
+      "url": "Images\/1_3_Celestial_Eyes_Above_Mortal_Ruins.webp"
+    },
+    {
+      "hash": "sha256-bULGZUsVRJb74Y0rIsfwV0ciRux+lcBHLAHIcSr6XGw=",
+      "url": "Images\/1_4_Jolted_Awake_From_a_Winter_Dream.webp"
+    },
+    {
+      "hash": "sha256-X0BqoYceh9pTVZdT20YZSRRdiPBgtKI0VhvJM09Mucw=",
       "url": "index.html"
     },
     {
@@ -17,7 +37,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-b729Twk7mMD37zKR9zp12espmTTsewmetf7Pip7jCik=",
+      "hash": "sha256-dZRVIbVzcpHCu5VLb2n1EUNAVkVOQiLCgEevKh0ws1w=",
       "url": "StellarJadeManager.Client.styles.css"
     },
     {
@@ -829,19 +849,19 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-KNLJT\/xq4sJZ7hiW3SqC+CPi\/cbJ8wQl1T8R3y0RK3g=",
+      "hash": "sha256-fn7uYIib+Dxautg0DHRjCnr3N8aYuDz7W0MHjpTM924=",
       "url": "_framework\/StellarJadeManager.Shared.dll"
     },
     {
-      "hash": "sha256-YZD+YxgqrMtLhUQTOZAefs3r7Oi3YAbiPOTeNv5TmGE=",
+      "hash": "sha256-MP4AQHHEpKvar7zobrAgeeI9N15vb4SfA73J1ArWbFk=",
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-PIXL1DinQ8Cx67gvwZRytaQ4o\/VxJA+Hxw3A3\/U5Hgw=",
+      "hash": "sha256-Hcmzvs3YOIxefEwiAf6oaV+a5BiNbiaNhOGTbpfV5FQ=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-6eOqMh4anZTMFKfZ5Tre\/E0Ib13Rlw8maRb6\/Dj\/Hu4=",
+      "hash": "sha256-txW\/T\/lSRgXZZH0abiwwQOR+WGaP\/\/edNAMZ4zUN2gY=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -849,7 +869,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-owY9EUGdokM7h1pYxBbwG0o6u7Ic5gIsmxmgeQf8T9E=",
+      "hash": "sha256-nBsma\/92o6TyGHq1uYx6DPgRw8x8krVUgEcrIBtaXVg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -861,5 +881,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "bJU4y3tv"
+  "version": "g2ck9kZ3"
 };

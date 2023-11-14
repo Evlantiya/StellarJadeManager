@@ -1,0 +1,23 @@
+{
+    "patchInfo": {
+        "version":"1.5",
+        "title":"TEST",
+        "releaseDate":"15.11.2023",
+        "weeksCount":6,
+        "events":[
+            {
+                "eventTitle":"Aurum Alley's Hustle and Bustle",
+                "startDate":"15.11.2023",
+                "endDate":"17.12.2023",
+                "stellarJadesAmount":1200
+            },
+            {
+                "eventTitle":"Space Station Task Force",
+                "startDate":"27.11.2023",
+                "endDate":"11.12.2023",
+                "stellarJadesAmount":480
+            }
+        ],
+        "banners":[]
+    }
+}

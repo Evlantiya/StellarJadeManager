@@ -2,52 +2,68 @@
 @inject ILogger<PatchCalendar> logger
 
 
-<p>test</p>
+<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-space-around mb-4">
+    <button @onclick="SetSelectedPatchToPrevious"> <MudIcon Icon="@Icons.Material.Filled.NavigateBefore"/> Previous patch</button>
+    <p>Version @selectedPatch?.Version</p>
+    <button @onclick="SetSelectedPatchToNext">Next patch <MudIcon Icon="@Icons.Material.Filled.NavigateNext"/></button>
+</MudContainer>
 
-@if(patches is null)
-{
-    <p><em>Loading...</em></p>
-}
-else
-{
-    @foreach(var patch in patches)
-    {
-        @* <p></p>
-        <p>version @patch.Version</p>
-        <p>Release @patch.ReleaseDate</p>
-        <p>End @patch.ReleaseDate.AddDays(7*patch.WeeksCount)</p> *@
-    }
-}
-<button @onclick="SetSelectedPatchToPrevious"> <MudIcon Icon="@Icons.Material.Filled.NavigateBefore"/> Previous patch</button>
-<button @onclick="SetSelectedPatchToNext">Next patch <MudIcon Icon="@Icons.Material.Filled.NavigateNext"/></button>
-@* <p>Now @DateTime.Now</p> *@
 @if(selectedPatch != null){
-    <p>@selectedPatch.ReleaseDate</p>
+    @* <p>@selectedPatch.ReleaseDate</p> *@
     <div class="calendar-container">
         @for(int i=0; i < selectedPatch.WeeksCount*7; i++){
             var currentDate = selectedPatch.ReleaseDate.AddDays(i);
-            <button class="day day-@(i+1)" @onclick="@(e => SetSelectedDate(currentDate))">
+            <button class="day day-@(i+1) @(currentDate < DateTime.Today?"day-disabled" : "")" @onclick="@(e => SetSelectedDate(currentDate))">
                 @currentDate.ToString("dd/M", System.Globalization.CultureInfo.InvariantCulture)
                 </button>
         }
-        @* <button class="day day_1">1</button><button class="day day_2">2</button><button class="day day_3">3</button><button class="day day_4">4</button><button class="day day_5">5</button><button class="day day_6">6</button><button class="day day_7">7</button><button class="day day_8">8</button><button class="day day_9">9</button><button class="day day_10">10</button><button class="day day_11">11</button><button class="day day_12">12</button><button class="day day_13">13</button><button class="day day_14">14</button><button class="day day_15">15</button><button class="day day_16">16</button><button class="day day_17">17</button><button class="day day_18">18</button><button class="day day_19">19</button><button class="day day_20">20</button><button class="day day_21">21</button><button class="day day_22">22</button><button class="day day_23">23</button><button class="day day_24">24</button><button class="day day_25">25</button><button class="day day_26">26</button><button class="day day_27">27</button><button class="day day_28">28</button><button class="day day_29">29</button><button class="day day_30">30</button><button class="day day_31">31</button><button class="day day_32">32</button><button class="day day_33">33</button><button class="day day_34">34</button><button class="day day_35">35</button><button class="day day_36">36</button><button class="day day_37">37</button><button class="day day_38">38</button><button class="day day_39">39</button><button class="day day_40">40</button><button class="day day_41">41</button><button class="day day_42">42</button><button class="day day_43">43</button> *@
     </div>
+    <p>Event start date @selectedPatch.Events[0].StartDate</p>
+    <p>Event gemi @selectedPatch.Events[0].StellarJadesAmount</p>
 }
-<p>@selectedPatch?.Version</p>
-<p>@selectedDate</p>
+<p>Selected date @selectedDate</p>
 
 
 @code{
-    private List<Patch> patchesInit {get; set;} = new();
-    public List<Patch> patches {get; set;} = new();
+
+    [Parameter]
+    public EventCallback<int> OnSelectedDateChanged {get; set;}
+
+    private List<Patch> patchesInit {get; set;} 
+    public List<Patch> patches {get; set;}
     
     public DateTime selectedDate {get; set;} = DateTime.Today;
 
+    public Patch currentPatch {get; set;} = null!;
     public Patch selectedPatch {get;set;} = null!; //refactor
 
-    public void SetSelectedDate(DateTime date){
-        selectedDate=date;
+    private async Task SetSelectedDate(DateTime date){
+        if (date >= DateTime.Today){
+            selectedDate=date;
+            var stellarJadesAmount = await Task.Run(() => calculateEventStellarJadeBySelectedDate());
+            await OnSelectedDateChanged.InvokeAsync(stellarJadesAmount);  
+        } 
+            
         @* logger.LogInformation($"Button on calendar clicked wit date {date}"); *@
+    }
+
+    //Linked list? refactor
+    private int calculateEventStellarJadeBySelectedDate(){
+        var currentIndex = patches.IndexOf(currentPatch);
+        var selectedIndex = patches.IndexOf(selectedPatch);
+        int result = 0;
+        var dateRange = new EventDateRange(DateTime.Today, selectedDate);
+        //var hren = patches.SkipWhile(p=>indexRange.Contains(patches.IndexOf(p))).ToList();
+        var patchRange = patches.Skip(currentIndex).SkipLast(patches.Count-selectedIndex-1);
+        foreach(var patch in patchRange){
+            foreach(var patchEvent in patch.Events){
+                //рефактор модели ивента, посчитать через сколько дней доступны все награды
+                if(dateRange.IsDateInRange(patchEvent.StartDate.AddDays(7))){ //если прошло больше недели с начала ивента и открылись все награды
+                    result+=patchEvent.StellarJadesAmount;
+                }
+            }
+        }
+        return result;
     }
 
     public void SetSelectedPatchToPrevious(){
@@ -62,8 +78,11 @@ else
     protected override async Task OnInitializedAsync()
     {
         logger.LogInformation("start blazor component");
-        patchesInit = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new List<Patch>();
+        patchesInit = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new();
         patches = patchesInit.ToList();
-        selectedPatch = patches.First(p=>p.ReleaseDate.AddDays(7*p.WeeksCount) > DateTime.Now);
+        currentPatch = patches.First(p => p.ReleaseDate.AddDays(7*p.WeeksCount) > DateTime.Now);
+        selectedPatch = currentPatch;
+        StateHasChanged();
+
     }
 }

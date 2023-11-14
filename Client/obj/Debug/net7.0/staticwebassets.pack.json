@@ -21,6 +21,26 @@
       "PackagePath": "staticwebassets\\service-worker.js"
     },
     {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_0_The_Rail_Unto_the_Stars.webp",
+      "PackagePath": "staticwebassets\\Images\\1_0_The_Rail_Unto_the_Stars.webp"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_1_Galactic_Roaming.webp",
+      "PackagePath": "staticwebassets\\Images\\1_1_Galactic_Roaming.webp"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_2_Even_Immortality_Ends.webp",
+      "PackagePath": "staticwebassets\\Images\\1_2_Even_Immortality_Ends.webp"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_3_Celestial_Eyes_Above_Mortal_Ruins.webp",
+      "PackagePath": "staticwebassets\\Images\\1_3_Celestial_Eyes_Above_Mortal_Ruins.webp"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_4_Jolted_Awake_From_a_Winter_Dream.webp",
+      "PackagePath": "staticwebassets\\Images\\1_4_Jolted_Awake_From_a_Winter_Dream.webp"
+    },
+    {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },

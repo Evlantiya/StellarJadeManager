@@ -11,7 +11,6 @@ public class LocalPatchRepositroy : IPatchRepository
     public LocalPatchRepositroy(IMemoryCache memCache , ILogger<LocalPatchRepositroy> logger){
         this.cache=memCache;
         this.logger= logger;
-        logger.LogInformation("start local repo construct");
 
         var patchesJSONFileNames = Directory.GetFiles("Data/Patches");
 
@@ -35,7 +34,6 @@ public class LocalPatchRepositroy : IPatchRepository
                 events.Add(new Event(eventTitle, startDate, endDate, stellarJadesAmount));
             }
             patches.Add(new Patch(version,title,releaseDate, weeksCount, events));
-            logger.LogInformation("end local repo construct");
         }
     }
 
