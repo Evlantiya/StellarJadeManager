@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider Theme="@theme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -21,13 +21,34 @@
         </MudNavMenu>
     </MudDrawer>
     <MudMainContent>
-        <MudContainer MaxWidth="MaxWidth.Medium" Class="mt-4">
-            @Body
-        </MudContainer>
+            <MudContainer MaxWidth="MaxWidth.Medium" Color="Color.Primary" Class="mt-4">
+                @Body
+            </MudContainer>
     </MudMainContent>
 </MudLayout>
 
 @code {
+
+    MudTheme theme = new MudTheme(){
+
+        Palette = new PaletteLight()
+        {
+            Primary = Colors.Grey.Darken4,
+            Secondary = Colors.Amber.Darken2,
+            TextPrimary = Colors.Grey.Lighten4,
+            TextSecondary = Colors.Amber.Darken2,
+            Background = Colors.Grey.Darken3,
+            AppbarBackground = Colors.Grey.Darken4,
+            DrawerBackground = Colors.Grey.Darken4,
+            DrawerText = Colors.Grey.Lighten4
+            
+        },
+        PaletteDark = new PaletteDark()
+        {
+            Primary = Colors.Brown.Lighten1
+        },
+    };
+
     bool _drawerOpen = false;
 
     void DrawerToggle()

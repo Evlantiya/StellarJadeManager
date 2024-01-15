@@ -2,14 +2,32 @@
 @inject ILogger<PatchCalendar> logger
 
 
-<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-space-around mb-4">
-    <button @onclick="SetSelectedPatchToPrevious"> <MudIcon Icon="@Icons.Material.Filled.NavigateBefore"/> Previous patch</button>
-    <p>Version @selectedPatch?.Version</p>
-    <button @onclick="SetSelectedPatchToNext">Next patch <MudIcon Icon="@Icons.Material.Filled.NavigateNext"/></button>
-</MudContainer>
 
-@if(selectedPatch != null){
-    @* <p>@selectedPatch.ReleaseDate</p> *@
+@if(patches!=null && patches.Count>0){
+    <MudCarousel Class="mud-width-full" @ref="_carousel" ItemsSource="@patches.Select(p=>p.Title).ToList()"
+        @bind-SelectedIndex="selectedIndex"
+        ShowArrows="@true" ShowBullets="@true" EnableSwipeGesture="@true" AutoCycle="@false"
+        Style="height:500px;">
+
+        <ItemTemplate>
+            <div class="hren d-flex flex-column flex-column justify-center" style="height:100%">
+                <div class="banner-info mx-auto my-auto" style="width:75%;">
+                    <MudImage 
+                    ObjectFit="@ObjectFit.ScaleDown"
+                    ObjectPosition="@ObjectPosition.Top" 
+                    Src="@($"images/1_6_Crown_of_the_Mundane_and_Divine.webp")"
+                    Alt="Mony the dog" Elevation="25" Class="mx-auto my-auto rounded-lg" Style="filter: brightness(65%); width:100%"/>
+                    <div class="selected-patch-info relative d-flex flex-row">
+                        <MudText Typo="Typo.h4" Align="@Align.Center" Class="mx-auto">@patches[selectedIndex].Version @context</MudText>
+                        @* <MudText Align="@Align.Center" Class="mx-auto">@patches[selectedIndex].Version</MudText> *@
+                    </div>
+                </div>
+            </div>
+        </ItemTemplate>
+    </MudCarousel>
+    
+    var selectedPatch = patches[selectedIndex];
+
     <div class="calendar-container">
         @for(int i=0; i < selectedPatch.WeeksCount*7; i++){
             var currentDate = selectedPatch.ReleaseDate.AddDays(i);
@@ -18,24 +36,37 @@
                 </button>
         }
     </div>
+}
+
+
+@* <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-space-around mb-4">
+    <button @onclick="SetSelectedPatchToPrevious"> <MudIcon Icon="@Icons.Material.Filled.NavigateBefore"/> Previous patch</button>
+    <p>Version @selectedPatch?.Version</p>
+    <button @onclick="SetSelectedPatchToNext">Next patch <MudIcon Icon="@Icons.Material.Filled.NavigateNext"/></button>
+</MudContainer> *@
+
+@* @if(selectedPatch != null){
+    <p>@selectedPatch.ReleaseDate</p>
     <p>Event start date @selectedPatch.Events[0].StartDate</p>
     <p>Event gemi @selectedPatch.Events[0].StellarJadesAmount</p>
 }
 <p>Selected date @selectedDate</p>
+<p>Selected index @selectedIndex</p> *@
 
 
 @code{
 
     [Parameter]
     public EventCallback<int> OnSelectedDateChanged {get; set;}
-
+    private MudCarousel<string> _carousel;
+    private int selectedIndex = 0;
     private List<Patch> patchesInit {get; set;} 
     public List<Patch> patches {get; set;}
     
     public DateTime selectedDate {get; set;} = DateTime.Today;
 
     public Patch currentPatch {get; set;} = null!;
-    public Patch selectedPatch {get;set;} = null!; //refactor
+    @* public Patch selectedPatch {get;set;} = null!; //refactor *@
 
     private async Task SetSelectedDate(DateTime date){
         if (date >= DateTime.Today){
@@ -50,7 +81,7 @@
     //Linked list? refactor
     private int calculateEventStellarJadeBySelectedDate(){
         var currentIndex = patches.IndexOf(currentPatch);
-        var selectedIndex = patches.IndexOf(selectedPatch);
+        @* var selectedIndex = patches.IndexOf(selectedPatch); *@
         int result = 0;
         var dateRange = new EventDateRange(DateTime.Today, selectedDate);
         //var hren = patches.SkipWhile(p=>indexRange.Contains(patches.IndexOf(p))).ToList();
@@ -66,14 +97,14 @@
         return result;
     }
 
-    public void SetSelectedPatchToPrevious(){
+    @* public void SetSelectedPatchToPrevious(){
         int prevIndex = patches.IndexOf(selectedPatch) - 1;
         selectedPatch = patches[prevIndex < 0 ? 0 : prevIndex];
     }
     public void SetSelectedPatchToNext(){
         int nextIndex = patches.IndexOf(selectedPatch) + 1;
         selectedPatch = patches[nextIndex > patches.Count-1 ? patches.Count-1 : nextIndex];
-    }
+    } *@
 
     protected override async Task OnInitializedAsync()
     {
@@ -81,7 +112,8 @@
         patchesInit = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new();
         patches = patchesInit.ToList();
         currentPatch = patches.First(p => p.ReleaseDate.AddDays(7*p.WeeksCount) > DateTime.Now);
-        selectedPatch = currentPatch;
+        selectedIndex = patches.IndexOf(currentPatch);
+        @* selectedPatch = currentPatch; *@
         StateHasChanged();
 
     }

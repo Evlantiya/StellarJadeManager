@@ -1,21 +1,27 @@
 {
     "patchInfo": {
         "version":"1.5",
-        "title":"TEST",
+        "title":"The Crepuscule Zone",
         "releaseDate":"15.11.2023",
         "weeksCount":6,
         "events":[
             {
-                "eventTitle":"Aurum Alley's Hustle and Bustle",
+                "eventTitle":"A Foxian Tale of the Haunted",
                 "startDate":"15.11.2023",
-                "endDate":"17.12.2023",
+                "endDate":"25.12.2023",
                 "stellarJadesAmount":1200
             },
             {
-                "eventTitle":"Space Station Task Force",
-                "startDate":"27.11.2023",
+                "eventTitle":"Stellar Shadowseeker",
+                "startDate":"01.12.2023",
                 "endDate":"11.12.2023",
-                "stellarJadesAmount":480
+                "stellarJadesAmount":500
+            },
+            {
+                "eventTitle":"Boulder Town Martial Exhibition",
+                "startDate":"06.12.2023",
+                "endDate":"25.12.2023",
+                "stellarJadesAmount":590
             }
         ],
         "banners":[]

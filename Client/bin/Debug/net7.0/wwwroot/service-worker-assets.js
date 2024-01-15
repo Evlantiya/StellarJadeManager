@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-ApvV\/81qZcuxqxfR7MK1gjS8uW+hGhjP+\/HfHaEGzGA=",
+      "hash": "sha256-2doaObDaHXdE7jFfT2Ut4cviKA8AYYH5EvdItJeC3qk=",
       "url": "css\/app.css"
     },
     {
@@ -29,7 +29,15 @@
       "url": "Images\/1_4_Jolted_Awake_From_a_Winter_Dream.webp"
     },
     {
-      "hash": "sha256-X0BqoYceh9pTVZdT20YZSRRdiPBgtKI0VhvJM09Mucw=",
+      "hash": "sha256-TOoNVjr3aca5PiHK8Ogv9o+BEi\/UW6GHhMLx3mNbMCM=",
+      "url": "Images\/1_5_The_Crepuscule_Zone.webp"
+    },
+    {
+      "hash": "sha256-2RpLkBn8reD2rl8brwCTbPqyQQBFNFjbvotta\/Nr4Y8=",
+      "url": "Images\/1_6_Crown_of_the_Mundane_and_Divine.webp"
+    },
+    {
+      "hash": "sha256-rSNNRG\/mE5818+ut7zCZygNynIGxPosRCywRBtyUdmg=",
       "url": "index.html"
     },
     {
@@ -37,7 +45,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-dZRVIbVzcpHCu5VLb2n1EUNAVkVOQiLCgEevKh0ws1w=",
+      "hash": "sha256-3pl5aAyoz2myDLqtqtr6fpUSzSxeY\/ywgXYHRMN36PM=",
       "url": "StellarJadeManager.Client.styles.css"
     },
     {
@@ -857,11 +865,11 @@
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-LvA4QpdpBD0ar3Ec+OtmM03oN\/Q\/hIPMVlLat\/hLTTI=",
+      "hash": "sha256-l16cB9h9GGVmE8chAzpkC3wmDddiY158VTjNMeiEU+A=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-2GbNjAjzLwa2LQwG3Pha6o3aBXfnQn+2rfo2glNqmB8=",
+      "hash": "sha256-mRyF0kyS9jo+GOjWy8jgR0Z3kyFG2CeiZutitHY3Cpg=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -869,7 +877,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-MFLTMdA9nudNh2HoDfb\/QcPxrHSDSqzg1n3VVMyLduk=",
+      "hash": "sha256-zSaovIYceBuTkK41x1kn5unkvGRxOUb6brkJVqlspXI=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -881,5 +889,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "YsbdS5b1"
+  "version": "hF2muj\/u"
 };

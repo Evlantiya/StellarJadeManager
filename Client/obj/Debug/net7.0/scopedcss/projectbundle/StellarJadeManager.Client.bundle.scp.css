@@ -13,3 +13,11 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
+
+section.mud-carousel[b-fdt5iiks5l]{
+    background-image: url(Images/1_6_Crown_of_the_Mundane_and_Divine.webp);
+}
+
+.selected-patch-info[b-fdt5iiks5l]{
+    bottom: 30px;
+}

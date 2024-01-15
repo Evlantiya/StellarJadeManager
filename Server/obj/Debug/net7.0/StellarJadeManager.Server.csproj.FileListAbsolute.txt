@@ -59,3 +59,4 @@ D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Ve
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Version_1_3.json
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Version_1_4.json
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Version_1_5.json
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Version_1_6.json

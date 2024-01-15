@@ -41,6 +41,14 @@
       "PackagePath": "staticwebassets\\Images\\1_4_Jolted_Awake_From_a_Winter_Dream.webp"
     },
     {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_5_The_Crepuscule_Zone.webp",
+      "PackagePath": "staticwebassets\\Images\\1_5_The_Crepuscule_Zone.webp"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_6_Crown_of_the_Mundane_and_Divine.webp",
+      "PackagePath": "staticwebassets\\Images\\1_6_Crown_of_the_Mundane_and_Divine.webp"
+    },
+    {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
