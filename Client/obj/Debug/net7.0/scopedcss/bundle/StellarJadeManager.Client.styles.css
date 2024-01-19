@@ -12,6 +12,10 @@
 .calendar-container[b-fdt5iiks5l]{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    border-width: 1px;
+    /* border-color: var(--mud-palette-primary); */
+    border-color: rgba(39,44,52,1);
+    box-shadow: 0px 0px 10px 5px #212121;
 }
 
 section.mud-carousel[b-fdt5iiks5l]{
@@ -19,5 +23,7 @@ section.mud-carousel[b-fdt5iiks5l]{
 }
 
 .selected-patch-info[b-fdt5iiks5l]{
-    bottom: 30px;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%,-20%);
 }

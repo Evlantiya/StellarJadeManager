@@ -1,6 +1,6 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider Theme="@theme" />
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="@theme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
@@ -21,10 +21,15 @@
         </MudNavMenu>
     </MudDrawer>
     <MudMainContent>
-            <MudContainer MaxWidth="MaxWidth.Medium" Color="Color.Primary" Class="mt-4">
+            <MudContainer MaxWidth="@MaxWidth.Medium" Color="Color.Primary" Class="mt-4">
                 @Body
             </MudContainer>
     </MudMainContent>
+    <footer class="mt-10 pb-10">
+        <MudContainer MaxWidth="@MaxWidth.Large">
+            <MudText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam quaerat rem harum molestias et incidunt cupiditate, facilis dolorem perspiciatis asperiores illum. Velit sit nam placeat labore, at cumque vel quaerat?</MudText>
+        </MudContainer>
+    </footer>
 </MudLayout>
 
 @code {
@@ -33,23 +38,32 @@
 
         Palette = new PaletteLight()
         {
-            Primary = Colors.Grey.Darken4,
+            @* Primary = Colors.Grey.Darken4,
             Secondary = Colors.Amber.Darken2,
             TextPrimary = Colors.Grey.Lighten4,
             TextSecondary = Colors.Amber.Darken2,
             Background = Colors.Grey.Darken3,
             AppbarBackground = Colors.Grey.Darken4,
             DrawerBackground = Colors.Grey.Darken4,
-            DrawerText = Colors.Grey.Lighten4
+            DrawerText = Colors.Grey.Lighten4 *@
             
         },
         PaletteDark = new PaletteDark()
         {
-            Primary = Colors.Brown.Lighten1
+            Primary = Colors.Amber.Darken2,
+            Secondary = Colors.Grey.Darken4,
+            TextPrimary = Colors.Grey.Lighten4,
+            TextSecondary = Colors.Amber.Darken2,
+            Background = Colors.Grey.Darken3,
+            AppbarBackground = Colors.Grey.Darken4,
+            DrawerBackground = Colors.Grey.Darken4,
+            DrawerText = Colors.Grey.Lighten4,
+            Surface = Colors.Grey.Darken4,
         },
     };
 
     bool _drawerOpen = false;
+    bool _isDarkMode = true;
 
     void DrawerToggle()
     {

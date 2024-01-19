@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jr5AlWmL/kGPMnf7RQxKONmMoj549xXKZ64Y038HuJA=",
+  "Hash": "6Jh9D5pEHVDnmEqLvjyu6BE78ZrTTHXtcZsayEcm0xo=",
   "Source": "StellarJadeManager.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -7242,12 +7242,12 @@
       "OriginalItemSpec": "wwwroot\\icon-512.png"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_0_The_Rail_Unto_the_Stars.webp",
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_0.webp",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/1_0_The_Rail_Unto_the_Stars.webp",
+      "RelativePath": "Images/1_0.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7256,15 +7256,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\1_0_The_Rail_Unto_the_Stars.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\1_0.webp"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_1_Galactic_Roaming.webp",
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_1.webp",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/1_1_Galactic_Roaming.webp",
+      "RelativePath": "Images/1_1.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7273,15 +7273,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\1_1_Galactic_Roaming.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\1_1.webp"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_2_Even_Immortality_Ends.webp",
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_2.webp",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/1_2_Even_Immortality_Ends.webp",
+      "RelativePath": "Images/1_2.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7290,15 +7290,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\1_2_Even_Immortality_Ends.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\1_2.webp"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_3_Celestial_Eyes_Above_Mortal_Ruins.webp",
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_3.webp",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/1_3_Celestial_Eyes_Above_Mortal_Ruins.webp",
+      "RelativePath": "Images/1_3.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7307,15 +7307,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\1_3_Celestial_Eyes_Above_Mortal_Ruins.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\1_3.webp"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_4_Jolted_Awake_From_a_Winter_Dream.webp",
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_4.webp",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/1_4_Jolted_Awake_From_a_Winter_Dream.webp",
+      "RelativePath": "Images/1_4.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7324,15 +7324,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\1_4_Jolted_Awake_From_a_Winter_Dream.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\1_4.webp"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_5_The_Crepuscule_Zone.webp",
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_5.webp",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/1_5_The_Crepuscule_Zone.webp",
+      "RelativePath": "Images/1_5.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7341,15 +7341,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\1_5_The_Crepuscule_Zone.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\1_5.webp"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_6_Crown_of_the_Mundane_and_Divine.webp",
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\1_6.webp",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/1_6_Crown_of_the_Mundane_and_Divine.webp",
+      "RelativePath": "Images/1_6.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7358,7 +7358,41 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\1_6_Crown_of_the_Mundane_and_Divine.webp"
+      "OriginalItemSpec": "wwwroot\\Images\\1_6.webp"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\stellarJade.webp",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/stellarJade.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\stellarJade.webp"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\warp.webp",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/warp.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\warp.webp"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\index.html",

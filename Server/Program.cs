@@ -6,6 +6,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IPatchRepository, LocalPatchRepositroy>();
 builder.Services.AddMemoryCache();
+builder.Services.AddCors();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -24,7 +25,7 @@ app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseCors(builder => builder.AllowAnyOrigin());
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");

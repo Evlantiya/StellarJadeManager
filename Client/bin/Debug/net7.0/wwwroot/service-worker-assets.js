@@ -10,34 +10,42 @@
     },
     {
       "hash": "sha256-34AkrpsLvrVFwUU5M3+NJA9ji5Fk0lHYjQjU5GOsUYk=",
-      "url": "Images\/1_0_The_Rail_Unto_the_Stars.webp"
+      "url": "Images\/1_0.webp"
     },
     {
       "hash": "sha256-h5SNHMpwkKCTGZiSec5tDPYJepAlAxmhIuZI3VhKdcU=",
-      "url": "Images\/1_1_Galactic_Roaming.webp"
+      "url": "Images\/1_1.webp"
     },
     {
       "hash": "sha256-2I1MMfRGnhAf6ex+AvRIFoiKjiWm5k95GOwfCKhyX7I=",
-      "url": "Images\/1_2_Even_Immortality_Ends.webp"
+      "url": "Images\/1_2.webp"
     },
     {
       "hash": "sha256-d2ER2H0nFrrXarjT9QkPi3U6Mx2bUsJuyl2uKwht4LE=",
-      "url": "Images\/1_3_Celestial_Eyes_Above_Mortal_Ruins.webp"
+      "url": "Images\/1_3.webp"
     },
     {
       "hash": "sha256-bULGZUsVRJb74Y0rIsfwV0ciRux+lcBHLAHIcSr6XGw=",
-      "url": "Images\/1_4_Jolted_Awake_From_a_Winter_Dream.webp"
+      "url": "Images\/1_4.webp"
     },
     {
       "hash": "sha256-TOoNVjr3aca5PiHK8Ogv9o+BEi\/UW6GHhMLx3mNbMCM=",
-      "url": "Images\/1_5_The_Crepuscule_Zone.webp"
+      "url": "Images\/1_5.webp"
     },
     {
       "hash": "sha256-2RpLkBn8reD2rl8brwCTbPqyQQBFNFjbvotta\/Nr4Y8=",
-      "url": "Images\/1_6_Crown_of_the_Mundane_and_Divine.webp"
+      "url": "Images\/1_6.webp"
     },
     {
-      "hash": "sha256-rSNNRG\/mE5818+ut7zCZygNynIGxPosRCywRBtyUdmg=",
+      "hash": "sha256-3NM\/mSL0r\/8NmOxERQq7cXr4vC94l\/l7J\/KAysivFL0=",
+      "url": "Images\/stellarJade.webp"
+    },
+    {
+      "hash": "sha256-ipv3AhN4NWZci3ulDp\/3nWOiQi6kHyDCBNSWAJ7cFcQ=",
+      "url": "Images\/warp.webp"
+    },
+    {
+      "hash": "sha256-kb9uMBCmP47F9vh5D9cpadiev9tuAENF0\/E9PZRaJf0=",
       "url": "index.html"
     },
     {
@@ -45,7 +53,7 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-3pl5aAyoz2myDLqtqtr6fpUSzSxeY\/ywgXYHRMN36PM=",
+      "hash": "sha256-\/OHrELLDoy7\/RhtddsgLIcTTHS46b2wThqUT9WABIFU=",
       "url": "StellarJadeManager.Client.styles.css"
     },
     {
@@ -865,11 +873,11 @@
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-l16cB9h9GGVmE8chAzpkC3wmDddiY158VTjNMeiEU+A=",
+      "hash": "sha256-CE89mb26QDQAbxncjaMvuKqPyP8JMU1eRAnmdyRDkbI=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-mRyF0kyS9jo+GOjWy8jgR0Z3kyFG2CeiZutitHY3Cpg=",
+      "hash": "sha256-hWZ8LcUX++dqw77GNxO7qHQ2VMrGxEO\/2be51DPZG2I=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -877,7 +885,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-zSaovIYceBuTkK41x1kn5unkvGRxOUb6brkJVqlspXI=",
+      "hash": "sha256-gBXTVr1Ma2lI2ht5D4v96wQQ9g1wXx9oq4C8FWBehsw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -889,5 +897,5 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     }
   ],
-  "version": "hF2muj\/u"
+  "version": "wsYEs9OL"
 };

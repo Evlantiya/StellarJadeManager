@@ -1,60 +1,83 @@
 @inject HttpClient Http
 @inject ILogger<PatchCalendar> logger
+@* @using System.Collections.Generic *@
 
 
 
 @if(patches!=null && patches.Count>0){
-    <MudCarousel Class="mud-width-full" @ref="_carousel" ItemsSource="@patches.Select(p=>p.Title).ToList()"
-        @bind-SelectedIndex="selectedIndex"
-        ShowArrows="@true" ShowBullets="@true" EnableSwipeGesture="@true" AutoCycle="@false"
-        Style="height:500px;">
 
-        <ItemTemplate>
-            <div class="hren d-flex flex-column flex-column justify-center" style="height:100%">
-                <div class="banner-info mx-auto my-auto" style="width:75%;">
-                    <MudImage 
-                    ObjectFit="@ObjectFit.ScaleDown"
-                    ObjectPosition="@ObjectPosition.Top" 
-                    Src="@($"images/1_6_Crown_of_the_Mundane_and_Divine.webp")"
-                    Alt="Mony the dog" Elevation="25" Class="mx-auto my-auto rounded-lg" Style="filter: brightness(65%); width:100%"/>
-                    <div class="selected-patch-info relative d-flex flex-row">
-                        <MudText Typo="Typo.h4" Align="@Align.Center" Class="mx-auto">@patches[selectedIndex].Version @context</MudText>
-                        @* <MudText Align="@Align.Center" Class="mx-auto">@patches[selectedIndex].Version</MudText> *@
-                    </div>
-                </div>
-            </div>
-        </ItemTemplate>
+    <MudCarousel Class="mud-width-full" Style="height:500px;" ShowArrows="@true" ShowBullets="@true" EnableSwipeGesture="@true" AutoCycle="@false" TData="object" @bind-SelectedIndex="selectedIndex">
+        @foreach(var p in patches)
+        {
+            <MudCarouselItem Transition="@Transition.Fade">
+                <VersionBanner title="@p.Title" version="@p.Version"></VersionBanner>
+            </MudCarouselItem>
+        }
     </MudCarousel>
-    
     var selectedPatch = patches[selectedIndex];
+    @* <MudContainer MaxWidth="@MaxWidth.Small"> *@
 
-    <div class="calendar-container">
+    <div class="my-6 calendar-container">
         @for(int i=0; i < selectedPatch.WeeksCount*7; i++){
             var currentDate = selectedPatch.ReleaseDate.AddDays(i);
-            <button class="day day-@(i+1) @(currentDate < DateTime.Today?"day-disabled" : "")" @onclick="@(e => SetSelectedDate(currentDate))">
+            @* <button class="day day-@(i+1) @(currentDate < DateTime.Today?"day-disabled" : "")" @onclick="@(e => SetSelectedDate(currentDate))">
                 @currentDate.ToString("dd/M", System.Globalization.CultureInfo.InvariantCulture)
-                </button>
+                </button> *@
+            var disabled = currentDate < DateTime.Today;
+            var today = currentDate == DateTime.Today;
+            var color_hren = "";
+            if(currentDate == selectedDate){
+                Console.WriteLine(currentDate.ToString());
+                color_hren = Colors.Amber.Darken2;
+            }
+            else if(today){
+                color_hren = Colors.Red.Darken1;
+            }
+            else if(currentDate>DateTime.Today && currentDate < selectedDate){
+                color_hren = Colors.Grey.Darken3;
+            }
+            else{
+                color_hren= Color.Tertiary.ToString();
+            }
+            <MudButton Style="@($"border-radius:0; background:{color_hren}")"
+            Disabled="disabled" Variant="disabled ? Variant.Outlined :Variant.Filled" OnClick="@(e =>SetSelectedDate(currentDate))">
+                @currentDate.ToString("dd/M", System.Globalization.CultureInfo.InvariantCulture)
+            </MudButton>
         }
     </div>
+    @* </MudContainer> *@
 }
-
-
-@* <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-space-around mb-4">
-    <button @onclick="SetSelectedPatchToPrevious"> <MudIcon Icon="@Icons.Material.Filled.NavigateBefore"/> Previous patch</button>
-    <p>Version @selectedPatch?.Version</p>
-    <button @onclick="SetSelectedPatchToNext">Next patch <MudIcon Icon="@Icons.Material.Filled.NavigateNext"/></button>
-</MudContainer> *@
-
-@* @if(selectedPatch != null){
-    <p>@selectedPatch.ReleaseDate</p>
-    <p>Event start date @selectedPatch.Events[0].StartDate</p>
-    <p>Event gemi @selectedPatch.Events[0].StellarJadesAmount</p>
-}
-<p>Selected date @selectedDate</p>
-<p>Selected index @selectedIndex</p> *@
-
+    @* <p>@selectedDate.ToString()</p>  *@
+    <MudTextField T="DateTime" ReadOnly="@true" @bind-Value='selectedDate' Label="Выбранная дата"  />
+    <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Гемов за ивенты"  />
+    @* <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Дней пропуска"  /> *@
+    <MudSelect T="int" Label="Звезд в зеркале" AnchorOrigin="Origin.BottomCenter" @bind-Value="mirror_stars">
+        @for(int i=0; i<13;i++){
+            <MudSelectItem  T="int" Value="i*3" />
+        }
+    </MudSelect>
+    @* <MudCheckBox Value="month_pass" Label="Пропуск снабженца" Color="Color.Primary"></MudCheckBox> *@
+    <MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="test" Label="Пропуск снабженца" Color="Color.Primary"/>
+    @* <input type="checkbox" @bind-value="@month_pass"> *@
+    <MudText Typo="Typo.h5" Align="@Align.Start" Class="mx-auto">
+        Итого звездного нефрита: <MudText Color="@Color.Primary" Typo="Typo.h5" Align="@Align.Start">
+           <MudImage Width="24" Height="24" Src="images/stellarJade.webp"></MudImage> @(resultStellarJades) = <MudImage Width="24" Height="24" Src="images/warp.webp"></MudImage> @(resultStellarJades/240) <MudImage Width="24" Height="24" Src="images/stellarJade.webp"></MudImage> @(resultStellarJades%160) 
+        </MudText>
+    </MudText>
+    @if(chances != null){
+        <MudText Typo="Typo.h5" Align="@Align.Start" Class="mx-auto">
+            Шанс @(Math.Round(chances[(resultStellarJades/160).ToString()], 2))%
+        </MudText>
+    }
 
 @code{
+
+    public void test(bool value){
+        month_pass = value;
+        Console.WriteLine("TEST");
+    }
+
+    public bool Basic_CheckBox1 { get; set; } = true;
 
     [Parameter]
     public EventCallback<int> OnSelectedDateChanged {get; set;}
@@ -62,17 +85,27 @@
     private int selectedIndex = 0;
     private List<Patch> patchesInit {get; set;} 
     public List<Patch> patches {get; set;}
-    
+    public Dictionary<string,double> chances {get;set;}
+    public bool month_pass { get; set; } = false;
+    public int mirror_stars {get;set;} = 0;
+    public int dailyIncom {get {
+        return month_pass?150 : 60;
+    }}
+
+    public int resultStellarJades => stellarJadesAmountForEvents + mirror_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
+
     public DateTime selectedDate {get; set;} = DateTime.Today;
 
     public Patch currentPatch {get; set;} = null!;
     @* public Patch selectedPatch {get;set;} = null!; //refactor *@
 
+    public int stellarJadesAmountForEvents {get; set;} = 0;
+
     private async Task SetSelectedDate(DateTime date){
         if (date >= DateTime.Today){
             selectedDate=date;
-            var stellarJadesAmount = await Task.Run(() => calculateEventStellarJadeBySelectedDate());
-            await OnSelectedDateChanged.InvokeAsync(stellarJadesAmount);  
+            stellarJadesAmountForEvents = await Task.Run(() => calculateEventStellarJadeBySelectedDate());
+            await OnSelectedDateChanged.InvokeAsync(stellarJadesAmountForEvents);  
         } 
             
         @* logger.LogInformation($"Button on calendar clicked wit date {date}"); *@
@@ -97,19 +130,11 @@
         return result;
     }
 
-    @* public void SetSelectedPatchToPrevious(){
-        int prevIndex = patches.IndexOf(selectedPatch) - 1;
-        selectedPatch = patches[prevIndex < 0 ? 0 : prevIndex];
-    }
-    public void SetSelectedPatchToNext(){
-        int nextIndex = patches.IndexOf(selectedPatch) + 1;
-        selectedPatch = patches[nextIndex > patches.Count-1 ? patches.Count-1 : nextIndex];
-    } *@
-
     protected override async Task OnInitializedAsync()
     {
         logger.LogInformation("start blazor component");
         patchesInit = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new();
+        chances = await Http.GetFromJsonAsync<Dictionary<string,double>>($"/predict") ?? new();
         patches = patchesInit.ToList();
         currentPatch = patches.First(p => p.ReleaseDate.AddDays(7*p.WeeksCount) > DateTime.Now);
         selectedIndex = patches.IndexOf(currentPatch);
@@ -117,4 +142,14 @@
         StateHasChanged();
 
     }
+    public int CalculateResultStallarJadeAmount(){
+        return stellarJadesAmountForEvents + mirror_stars * 20 + 
+        (selectedDate - DateTime.Today).Days * dailyIncom;
+    }
+
+    @* public async Task<double> predictChance(int pullsNumber){
+        var chance = await Http.GetFromJsonAsync<Dictionary<string,double>>($"/predict?pulls={pullsNumber}");
+        Console.WriteLine(chance["chance"]);
+        return chance["chance"];
+    } *@
 }
