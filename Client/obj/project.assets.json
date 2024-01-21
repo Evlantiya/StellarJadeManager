@@ -2,6 +2,29 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "Blazor-ApexCharts/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.3",
+          "Microsoft.AspNetCore.Components.Web": "6.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Blazor-ApexCharts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Blazor-ApexCharts.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazor-ApexCharts.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazor-ApexCharts.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/7.0.5": {
         "type": "package",
         "dependencies": {
@@ -566,6 +589,29 @@
       }
     },
     "net7.0/browser-wasm": {
+      "Blazor-ApexCharts/2.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "6.0.3",
+          "Microsoft.AspNetCore.Components.Web": "6.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Blazor-ApexCharts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Blazor-ApexCharts.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/Blazor-ApexCharts.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazor-ApexCharts.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/7.0.5": {
         "type": "package",
         "dependencies": {
@@ -1125,6 +1171,29 @@
     }
   },
   "libraries": {
+    "Blazor-ApexCharts/2.2.1": {
+      "sha512": "Ow1vpqBc6R7Gir3FIY7dBO84f7PUWiB2GtlPZDh6bvdEiau6DHYSMKzt6vtdO149gEgk2CfAztQyWm+aXxV+LA==",
+      "type": "package",
+      "path": "blazor-apexcharts/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "apexchart_logo.png",
+        "blazor-apexcharts.2.2.1.nupkg.sha512",
+        "blazor-apexcharts.nuspec",
+        "build/Blazor-ApexCharts.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazor-ApexCharts.props",
+        "buildTransitive/Blazor-ApexCharts.props",
+        "lib/net6.0/Blazor-ApexCharts.dll",
+        "lib/net6.0/Blazor-ApexCharts.xml",
+        "staticwebassets/css/apexcharts.css",
+        "staticwebassets/js/apexcharts.esm.js",
+        "staticwebassets/js/blazor-apexcharts.js"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/7.0.5": {
       "sha512": "17BgaYa1QB8mOERZ/TSNwsWHrh65iU61VrsqivbZc+VUqnACtPCPbP0MFl/7CznXWCOXQZ59QRB6A5t0skyo2g==",
       "type": "package",
@@ -2065,6 +2134,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Blazor-ApexCharts >= 2.2.1",
       "Microsoft.AspNetCore.Components.WebAssembly >= 7.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 7.0.0",
       "Microsoft.Extensions.Http >= 7.0.0",
@@ -2115,6 +2185,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "Blazor-ApexCharts": {
+            "target": "Package",
+            "version": "[2.2.1, )"
+          },
           "Microsoft.AspNetCore.Components.WebAssembly": {
             "target": "Package",
             "version": "[7.0.0, )"

@@ -3,13 +3,14 @@
     <h1>Patch Calendar</h1>
 </MudContainer>
 
-<PatchCalendar OnSelectedDateChanged="@SetStellarJades">
+<PatchCalendar currentGems="@test" OnSelectedDateChanged="@SetStellarJades">
 </PatchCalendar>
  
  @* <p>@hren</p> *@
 
  @code{
 
+    public int test = 3200;
     public int hren = 0;
     public void SetStellarJades(int amount){
         hren = amount;

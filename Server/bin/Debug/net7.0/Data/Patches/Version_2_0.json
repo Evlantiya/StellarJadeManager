@@ -5,7 +5,18 @@
         "releaseDate":"07.02.2024",
         "weeksCount":6,
         "events":[
-         
+            {
+                "eventTitle":"Unknown",
+                "startDate":"07.02.2024",
+                "endDate":"17.03.2024",
+                "stellarJadesAmount":1200
+            },
+            {
+                "eventTitle":"Unknown",
+                "startDate":"28.02.2024",
+                "endDate":"12.03.2024",
+                "stellarJadesAmount":500
+            }
         ],
         "banners":[]
     }

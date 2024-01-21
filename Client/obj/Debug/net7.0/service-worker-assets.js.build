@@ -37,6 +37,10 @@
       "url": "Images\/1_6.webp"
     },
     {
+      "hash": "sha256-7ghWI6s8KfjuQpCwb9WTI1xKtl1ZVsqvjohcf\/xiwP8=",
+      "url": "Images\/429_Mkht.jpg"
+    },
+    {
       "hash": "sha256-3NM\/mSL0r\/8NmOxERQq7cXr4vC94l\/l7J\/KAysivFL0=",
       "url": "Images\/stellarJade.webp"
     },
@@ -45,7 +49,7 @@
       "url": "Images\/warp.webp"
     },
     {
-      "hash": "sha256-kb9uMBCmP47F9vh5D9cpadiev9tuAENF0\/E9PZRaJf0=",
+      "hash": "sha256-iQgvTnYvkA4dqOcvQJZz+Nmgz1OiQi1eH7fSf92nZRs=",
       "url": "index.html"
     },
     {
@@ -53,8 +57,12 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-\/OHrELLDoy7\/RhtddsgLIcTTHS46b2wThqUT9WABIFU=",
+      "hash": "sha256-fGAPv5nGeEMSO9c8VWAKdSEncaXZuKlkoaqkLQsT1kE=",
       "url": "StellarJadeManager.Client.styles.css"
+    },
+    {
+      "hash": "sha256-JQSTQ32N0hwOJwrfCy6xHG+g5WzFx6RkIliyA3izylg=",
+      "url": "_framework\/Blazor-ApexCharts.dll"
     },
     {
       "hash": "sha256-\/EkWRHMHBhfvvlx5hLVtXGPm8+Gyp4WkPiKKiiJIrqQ=",
@@ -873,11 +881,11 @@
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-CE89mb26QDQAbxncjaMvuKqPyP8JMU1eRAnmdyRDkbI=",
+      "hash": "sha256-PXJ84Otcun2KUaH7bmswkcc3d+neMQii5yynLxOvwus=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-hWZ8LcUX++dqw77GNxO7qHQ2VMrGxEO\/2be51DPZG2I=",
+      "hash": "sha256-+7HsfL2OzdMM6um8vzxJuc8jSj29ezKNVNPjwlGuRns=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -885,7 +893,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-gBXTVr1Ma2lI2ht5D4v96wQQ9g1wXx9oq4C8FWBehsw=",
+      "hash": "sha256-frQURyN1qp4ME1FfMCvLsST4JB5cvXhms+KVka\/yDHg=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -895,7 +903,19 @@
     {
       "hash": "sha256-GCtA+TppdsK+07YxEakAQLwOkibijn+mpWkqphJvaKc=",
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
+    },
+    {
+      "hash": "sha256-We76yQ6BbUqy3OL7pB4AiChSOtAH\/BdDsZ0Z+MzXvD0=",
+      "url": "_content\/Blazor-ApexCharts\/css\/apexcharts.css"
+    },
+    {
+      "hash": "sha256-N7JnTvH1xWLumnIl31lOOOtMIl\/YApm+Kgdza8H6MoA=",
+      "url": "_content\/Blazor-ApexCharts\/js\/apexcharts.esm.js"
+    },
+    {
+      "hash": "sha256-3IHZEH\/v7PGPoqWRc0sRHcA6Pr7xbRsbXRqG\/WsFIqI=",
+      "url": "_content\/Blazor-ApexCharts\/js\/blazor-apexcharts.js"
     }
   ],
-  "version": "wsYEs9OL"
+  "version": "qExHSJAo"
 };

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ZHUV5a/CRnmLaMs+jkDuT57ejZ+EjhTbvMtKIDNUduKophlY+n2WwDsWN4XxLJQJGqg5FfhX1xMkg7cSmXxM/A==",
+  "dgSpecHash": "yAakZobZCAU3jYa4M2WtIbGtuh8mjGcPD9r8SvPWqyxt6uEPOtBy9vkGk1ihgMfBx7L8TkLANtEYsb5qX4SNcw==",
   "success": true,
   "projectFilePath": "D:\\StellarJadeManager\\StellarJadeManager\\Server\\StellarJadeManager.Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\blazor-apexcharts.2.2.1.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.5\\microsoft.aspnetcore.authorization.7.0.5.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.5\\microsoft.aspnetcore.components.7.0.5.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.5\\microsoft.aspnetcore.components.analyzers.7.0.5.nupkg.sha512",

@@ -6,7 +6,7 @@
 
 @if(patches!=null && patches.Count>0){
 
-    <MudCarousel Class="mud-width-full" Style="height:500px;" ShowArrows="@true" ShowBullets="@true" EnableSwipeGesture="@true" AutoCycle="@false" TData="object" @bind-SelectedIndex="selectedIndex">
+    <MudCarousel Class="mud-width-full" Style="height:340px;" ShowArrows="@true" ShowBullets="@false" EnableSwipeGesture="@true" AutoCycle="@false" TData="object" @bind-SelectedIndex="selectedIndex">
         @foreach(var p in patches)
         {
             <MudCarouselItem Transition="@Transition.Fade">
@@ -17,7 +17,7 @@
     var selectedPatch = patches[selectedIndex];
     @* <MudContainer MaxWidth="@MaxWidth.Small"> *@
 
-    <div class="my-6 calendar-container">
+    <div class="mt-4 mb-8 mx-auto calendar-container">
         @for(int i=0; i < selectedPatch.WeeksCount*7; i++){
             var currentDate = selectedPatch.ReleaseDate.AddDays(i);
             @* <button class="day day-@(i+1) @(currentDate < DateTime.Today?"day-disabled" : "")" @onclick="@(e => SetSelectedDate(currentDate))">
@@ -28,21 +28,23 @@
             var color_hren = "";
             if(currentDate == selectedDate){
                 Console.WriteLine(currentDate.ToString());
-                color_hren = Colors.Amber.Darken2;
+                color_hren = Colors.Amber.Darken3;
             }
             else if(today){
                 color_hren = Colors.Red.Darken1;
             }
             else if(currentDate>DateTime.Today && currentDate < selectedDate){
-                color_hren = Colors.Grey.Darken3;
+                @* color_hren = Colors.Grey.Darken3; *@
+                color_hren = Colors.Amber.Darken1;
             }
             else{
-                color_hren= Color.Tertiary.ToString();
+                color_hren= MudBlazor.Color.Tertiary.ToString();
             }
             <MudButton Style="@($"border-radius:0; background:{color_hren}")"
             Disabled="disabled" Variant="disabled ? Variant.Outlined :Variant.Filled" OnClick="@(e =>SetSelectedDate(currentDate))">
                 @currentDate.ToString("dd/M", System.Globalization.CultureInfo.InvariantCulture)
             </MudButton>
+
         }
     </div>
     @* </MudContainer> *@
@@ -50,6 +52,7 @@
     @* <p>@selectedDate.ToString()</p>  *@
     <MudTextField T="DateTime" ReadOnly="@true" @bind-Value='selectedDate' Label="Выбранная дата"  />
     <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Гемов за ивенты"  />
+    <MudTextField @bind-Value='currentGems' T="int" Label="Текущее количество гемов"  />
     @* <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Дней пропуска"  /> *@
     <MudSelect T="int" Label="Звезд в зеркале" AnchorOrigin="Origin.BottomCenter" @bind-Value="mirror_stars">
         @for(int i=0; i<13;i++){
@@ -57,42 +60,148 @@
         }
     </MudSelect>
     @* <MudCheckBox Value="month_pass" Label="Пропуск снабженца" Color="Color.Primary"></MudCheckBox> *@
-    <MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="test" Label="Пропуск снабженца" Color="Color.Primary"/>
+<MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="set_checkbox" Label="Пропуск снабженца" Color="MudBlazor.Color.Primary" />
     @* <input type="checkbox" @bind-value="@month_pass"> *@
-    <MudText Typo="Typo.h5" Align="@Align.Start" Class="mx-auto">
-        Итого звездного нефрита: <MudText Color="@Color.Primary" Typo="Typo.h5" Align="@Align.Start">
-           <MudImage Width="24" Height="24" Src="images/stellarJade.webp"></MudImage> @(resultStellarJades) = <MudImage Width="24" Height="24" Src="images/warp.webp"></MudImage> @(resultStellarJades/240) <MudImage Width="24" Height="24" Src="images/stellarJade.webp"></MudImage> @(resultStellarJades%160) 
-        </MudText>
-    </MudText>
-    @if(chances != null){
-        <MudText Typo="Typo.h5" Align="@Align.Start" Class="mx-auto">
-            Шанс @(Math.Round(chances[(resultStellarJades/160).ToString()], 2))%
-        </MudText>
-    }
+<MudDivider class=mt-10></MudDivider>
+    <div class="d-flex flex-row my-10">
+        <div class="ml-16">
+            <MudText
+            Typo="Typo.h5"
+            Align="@MudBlazor.Align.Start"
+            Class="mx-auto">
+                Итого звездного нефрита:
+            </MudText>
+            <div class="d-flex flex-row">
+                <MudImage Width="32" Height="32" Src="images/stellarJade.webp"></MudImage>
+                <MudText Typo="Typo.h5" Class="mr-4" Color="MudBlazor.Color.Primary">@(resultStellarJades)</MudText>
+                <MudText Typo="Typo.h5" Class="mr-4">=</MudText>
+                <MudImage Width="32" Height="32" Src="images/warp.webp"></MudImage>
+                <MudText Typo="Typo.h5" Class="mr-4" Color="MudBlazor.Color.Primary">@(resultStellarJades/160)</MudText>
+                <MudImage Width="32" Height="32" Src="images/stellarJade.webp"></MudImage>
+                <MudText Typo="Typo.h5" Class="mr-4" Color="MudBlazor.Color.Primary">@(resultStellarJades%160)</MudText>
+            </div>
+        </div>
+        <MudSpacer/>
+        <div class="mr-16">
+            @if(chances != null){
+                <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto">
+                        Шанс:
+                 </MudText>
+                @if (resultStellarJades / 160 <= 0)
+                {
+                    <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto" Color="MudBlazor.Color.Primary">
+                        0.0%
+                    </MudText>
+                }
+                @if (resultStellarJades/160 >= 90)
+                {
+                    <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto" Color="MudBlazor.Color.Primary">
+                        100.0%
+                    </MudText>
+                }
+            @if (resultStellarJades / 160 > 0 && resultStellarJades / 160 < 90)
+            {
+                <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto" Color="MudBlazor.Color.Primary">
+                    @(Math.Round(chances[(resultStellarJades/160).ToString()], 2))%
+                </MudText>
+            }
+            }
+        </div>
+    </div>
+
+
+    @* @if(XAxisPullsNumber != null){
+        <MudChart ChartType="MudBlazor.ChartType.Line"
+            ChartSeries="chancesChart"
+            XAxisLabels="@XAxisPullsNumber"
+            Width="100%" Height="800px" ChartOptions="@_options">
+
+        </MudChart>
+    <MudSlider @bind-Value="_options.MaxNumYAxisTicks" Min="1" Max="400" Step="5" Color="MudBlazor.Color.Info">Y-Axis Ticks: @_options.YAxisTicks.ToString()</MudSlider>
+        
+    } *@
+@if(test !=null && test.Count > 0)
+{
+    <div id="synced-charts">
+        <ApexChart TItem="Roll" Options="apexOptions" Height="350">
+                <ApexPointSeries  TItem="Roll"
+                    Items="test"
+                    Name="Попытки"
+                    SeriesType="SeriesType.Bar"
+                    XValue="e=>Int32.Parse(e.roll)"
+                    YValue="e=>e.allPulls"
+                    />
+                <ApexPointSeries  TItem="Roll"
+                    Items="test"
+                    Name="Шанс 5⭐"
+                    SeriesType="SeriesType.Area"
+                    XValue="e=>Int32.Parse(e.roll)"
+                    YValue="e=>(decimal) e.chance"/>
+
+        
+        </ApexChart>
+        @* <ApexChart TItem="Roll" Options="apexOptions2" Height="200" XAxisType="XAxisType.Numeric">
+                <ApexPointSeries  TItem="Roll"
+                    Items="test"
+                    Name="Всего попыток"
+                    SeriesType="SeriesType.Bar"
+                    XValue="e=>Int32.Parse(e.roll)"
+                    YValue="e=>e.allPulls"/>
+        
+        </ApexChart> *@
+    </div>
+    
+}
+
+@if(pullsData!=null && pullsData.ContainsKey("1"))
+{
+    <p>hren</p>
+}
+
+
+
 
 @code{
 
-    public void test(bool value){
+    //NEED FOR MUD CHECKBOX, DOESNT WORK WITHOUT THIS FOR REASON THAT GOD ONLY KNOWS
+    public void set_checkbox(bool value)
+    {
         month_pass = value;
-        Console.WriteLine("TEST");
     }
+    ApexChartOptions<Roll> apexOptions {get; set;}
 
     public bool Basic_CheckBox1 { get; set; } = true;
 
     [Parameter]
     public EventCallback<int> OnSelectedDateChanged {get; set;}
+
+    [Parameter]
+    public int currentGems {get; set;}
     private MudCarousel<string> _carousel;
     private int selectedIndex = 0;
     private List<Patch> patchesInit {get; set;} 
     public List<Patch> patches {get; set;}
     public Dictionary<string,double> chances {get;set;}
+    public List<ChartSeries> chancesChart = new(){
+            new ChartSeries(){Name="Шансы получить легендарного персонажа"}
+            //new ChartSeries(){Name="Кумулятивная хрень"}
+    };
+
+    public List<Roll> test { get; set; } = new();
+    public string[] XAxisPullsNumber ;
+
+    public Dictionary<string,List<int>> pullsData = new();
+
+    private readonly ChartOptions _options = new();
+
+
     public bool month_pass { get; set; } = false;
     public int mirror_stars {get;set;} = 0;
     public int dailyIncom {get {
         return month_pass?150 : 60;
     }}
 
-    public int resultStellarJades => stellarJadesAmountForEvents + mirror_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
+    public int resultStellarJades => currentGems + stellarJadesAmountForEvents + mirror_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
 
     public DateTime selectedDate {get; set;} = DateTime.Today;
 
@@ -134,7 +243,125 @@
     {
         logger.LogInformation("start blazor component");
         patchesInit = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new();
+
         chances = await Http.GetFromJsonAsync<Dictionary<string,double>>($"/predict") ?? new();
+        pullsData = await Http.GetFromJsonAsync<Dictionary<string,List<int>>>($"/pulls") ?? new();
+        var hren = chances.Values.ToArray();
+        chancesChart[0].Data = hren;
+        //chancesChart[1].Data = new double[hren.Length];
+        //var prev = 0.0;
+        //for(int i=0; i<chances.Count ; i++){
+        //    chancesChart[1].Data[i] = prev + hren[i]/6;
+        //    prev = prev + hren[i]/6;
+        //}
+        foreach(var items in chances)
+        {
+            test.Add(new Roll() {
+                roll = items.Key,
+                 chance = items.Value,
+                  allPulls = pullsData[items.Key][0],
+                   legendaryPulls = pullsData[items.Key][1]});
+        }
+        _options.YAxisTicks = 5;
+        _options.InterpolationOption = InterpolationOption.NaturalSpline;
+        _options.MaxNumYAxisTicks = 5;
+        XAxisPullsNumber = chances.Keys.ToArray();
+
+
+        apexOptions = new ApexChartOptions<Roll>{
+            
+            Theme = new Theme
+                {
+                    Mode = Mode.Dark,
+                    Palette = PaletteType.Palette1
+                },
+            Xaxis = new XAxis{
+                TickAmount=16,
+                Min=1,
+                Max=90,
+                Labels = new XAxisLabels{
+                    Rotate = -45.0,
+                }
+            },
+            Yaxis = new List<YAxis>{
+                new YAxis
+                {
+                    ForceNiceScale = false,
+                    Min=0,
+                    Max=20000000,
+                    Title = new AxisTitle{Text="Попытки"},
+                    SeriesName="Попытки",
+                    Labels = new YAxisLabels
+                    {
+                        Formatter = @"function (value) {if (value >= 1000000) {return (value / 1000000) + 'M';} else {return value.toString();}}",
+                        MinWidth = 40,
+                    }
+                },
+                new YAxis
+                {
+                    ForceNiceScale = false,
+                    Min=0,
+                    Max=100,
+                    Opposite = true,
+                    Title = new AxisTitle{Text="Шанс 5⭐"},
+                    SeriesName="Шанс 5⭐",
+                    Labels = new YAxisLabels
+                    {
+                        MinWidth = 40,
+                        Formatter = @"function (value) {return Number(value).toString()+'%';}"
+                    }
+                }
+            },
+            Chart = new Chart{
+                
+                Group = "pulls",
+                Toolbar = new Toolbar {Show=false},
+                Zoom = new Zoom {Enabled = false},
+                
+            },
+            Annotations = new Annotations{
+                Xaxis = new List<AnnotationsXAxis> { new AnnotationsXAxis{
+                        X=73
+                    }
+                }
+            }
+            
+            
+        };
+        @* apexOptions2 = new ApexChartOptions<Roll>{
+            Theme = new Theme
+                {
+                    Mode = Mode.Dark,
+                    Palette = PaletteType.Palette1
+                },
+            Xaxis = new XAxis{
+                Labels = new XAxisLabels{
+                    Rotate = -45.0,
+                    RotateAlways=true,
+                    Style = new AxisLabelStyle{
+                        FontSize = "8px"
+                    }
+                }
+            },
+            Yaxis = new List<YAxis>{
+                new YAxis
+                {
+                    
+                    Labels = new YAxisLabels
+                    {
+                        MinWidth = 40,
+
+                    }
+                }   
+            },
+            Chart = new Chart{
+                Group = "pulls",
+                Toolbar = new Toolbar {Show=false},
+                Zoom = new Zoom {Enabled = false},
+                
+            }
+            
+        }; *@
         patches = patchesInit.ToList();
         currentPatch = patches.First(p => p.ReleaseDate.AddDays(7*p.WeeksCount) > DateTime.Now);
         selectedIndex = patches.IndexOf(currentPatch);
@@ -147,9 +374,13 @@
         (selectedDate - DateTime.Today).Days * dailyIncom;
     }
 
-    @* public async Task<double> predictChance(int pullsNumber){
-        var chance = await Http.GetFromJsonAsync<Dictionary<string,double>>($"/predict?pulls={pullsNumber}");
-        Console.WriteLine(chance["chance"]);
-        return chance["chance"];
-    } *@
+        public class Roll
+        {
+        public string roll { get; set; }
+        public double chance { get; set; }
+
+        public int allPulls {get;set;}
+        public int legendaryPulls {get;set;}
+
+        }
 }

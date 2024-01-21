@@ -9,6 +9,7 @@
 }
 
 .calendar-container[b-fdt5iiks5l]{
+    max-width: 75%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     border-width: 1px;

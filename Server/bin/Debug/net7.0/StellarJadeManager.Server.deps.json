@@ -17,6 +17,18 @@
           "StellarJadeManager.Server.dll": {}
         }
       },
+      "Blazor-ApexCharts/2.2.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "7.0.5",
+          "Microsoft.AspNetCore.Components.Web": "7.0.5"
+        },
+        "runtime": {
+          "lib/net6.0/Blazor-ApexCharts.dll": {
+            "assemblyVersion": "2.2.1.0",
+            "fileVersion": "2.2.1.0"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authorization/7.0.5": {
         "dependencies": {
           "Microsoft.AspNetCore.Metadata": "7.0.5",
@@ -254,6 +266,7 @@
       },
       "StellarJadeManager.Client/1.0.0": {
         "dependencies": {
+          "Blazor-ApexCharts": "2.2.1",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.0",
           "Microsoft.Extensions.Http": "7.0.0",
           "MudBlazor": "6.11.0",
@@ -275,6 +288,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Blazor-ApexCharts/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ow1vpqBc6R7Gir3FIY7dBO84f7PUWiB2GtlPZDh6bvdEiau6DHYSMKzt6vtdO149gEgk2CfAztQyWm+aXxV+LA==",
+      "path": "blazor-apexcharts/2.2.1",
+      "hashPath": "blazor-apexcharts.2.2.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/7.0.5": {
       "type": "package",

@@ -6,8 +6,29 @@
 
 <MudLayout>
     <MudAppBar>
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="MudBlazor.Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         Stellar Jade Manager
+        <MudSpacer/>
+        <MudImage Width="32" Height="32" Src="images/stellarJade.webp"></MudImage>
+        
+        @* <MudTextField Style="width:100px" Class="mx-2" FullWidth="false" @bind-Value='currentGems' T="int" Variant="Variant.Outlined"/> *@
+        
+        <MudTooltip>
+            <ChildContent>
+               <p class="mr-6">@currentGems</p>
+            </ChildContent>
+            <TooltipContent>
+                <div class="d-flex flex-row">
+                    <MudImage Width="20" Height="20" Src="images/warp.webp"></MudImage>
+                    <MudText>@(currentGems/160)</MudText>
+                </div>
+            </TooltipContent>
+        </MudTooltip>
+
+
+        <MudAvatar>
+            <MudImage Class="align-self-end" Src="images/429_Mkht.jpg"></MudImage>
+        </MudAvatar>
     </MudAppBar>
     <MudDrawer @bind-Open="@_drawerOpen">
         <MudNavMenu>
@@ -21,7 +42,7 @@
         </MudNavMenu>
     </MudDrawer>
     <MudMainContent>
-            <MudContainer MaxWidth="@MaxWidth.Medium" Color="Color.Primary" Class="mt-4">
+            <MudContainer MaxWidth="@MaxWidth.Medium" Color="Color.Primary" Class="my-4 px-0">
                 @Body
             </MudContainer>
     </MudMainContent>
@@ -34,6 +55,7 @@
 
 @code {
 
+    public int currentGems {get;set;} = 3200;
     MudTheme theme = new MudTheme(){
 
         Palette = new PaletteLight()

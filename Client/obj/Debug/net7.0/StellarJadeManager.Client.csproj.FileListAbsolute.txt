@@ -849,6 +849,10 @@ D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\TOmEjq
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\r11OaNb6.gz
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\PatchCalendar.razor.rz.scp.css
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\projectbundle\StellarJadeManager.Client.bundle.scp.css
+D:\StellarJadeManager\StellarJadeManager\Client\bin\Debug\net7.0\wwwroot\_framework\Blazor-ApexCharts.dll
+D:\StellarJadeManager\StellarJadeManager\Client\bin\Debug\net7.0\wwwroot\_framework\Blazor-ApexCharts.dll.gz
+D:\StellarJadeManager\StellarJadeManager\Client\bin\Debug\net7.0\Blazor-ApexCharts.dll
+D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\qY9mINE1.gz
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\UQ3ASIB3.gz
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\zqlgxpnO.gz
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\yGbAsG7a.gz

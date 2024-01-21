@@ -7,6 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "Blazor-ApexCharts.dll": "sha256-JQSTQ32N0hwOJwrfCy6xHG+g5WzFx6RkIliyA3izylg=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-\/EkWRHMHBhfvvlx5hLVtXGPm8+Gyp4WkPiKKiiJIrqQ=",
       "Microsoft.AspNetCore.Components.dll": "sha256-SvjxqyTqc68zPsYivPRkvjKRhUg5zYufzqwGNS83bwg=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-eoQ2CgfBGkvbK4QUMBgFDPIBqJem+g8247Fb3ZmnmCI=",
@@ -203,14 +204,14 @@
       "netstandard.dll": "sha256-kj5cBXzwPYC+HD+P8+6VybY34JtEzjXjMIHXEI3hIiM=",
       "System.Private.CoreLib.dll": "sha256-Awk1lCiFfH7r9AAZfBtGqS8rhv6UJ5lUu3yF6HDH3tQ=",
       "StellarJadeManager.Shared.dll": "sha256-fn7uYIib+Dxautg0DHRjCnr3N8aYuDz7W0MHjpTM924=",
-      "StellarJadeManager.Client.dll": "sha256-lH4wb2Idm4G8spwxkVIIiB4unYlH0DVAMnwy5nNwHM4="
+      "StellarJadeManager.Client.dll": "sha256-Hh8BPS7\/m5Mey9iJqVd+5odISrtl7bMBVaQ1CS+ZaTQ="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "StellarJadeManager.Shared.pdb": "sha256-MP4AQHHEpKvar7zobrAgeeI9N15vb4SfA73J1ArWbFk=",
-      "StellarJadeManager.Client.pdb": "sha256-wvVIO+q4ijDKYoGG5ItAEFG7R0ziBKhkw94gqeRxsZc="
+      "StellarJadeManager.Client.pdb": "sha256-lWfd+TXgcseQ5AN9X+hxXaksqpj2ux7ayC8um4d4a7A="
     },
     "runtime": {
       "dotnet.7.0.0.9ofio3rncj.js": "sha256-2jNLve8W0sST0LAebgAc1IwSnGhkbjOKO8QPWWiJssI=",

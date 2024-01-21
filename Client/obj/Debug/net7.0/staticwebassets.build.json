@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6Jh9D5pEHVDnmEqLvjyu6BE78ZrTTHXtcZsayEcm0xo=",
+  "Hash": "SXZfosNFPcWC9MR+1Gbof4f0T+jvDkaMXRjwkjcQQw4=",
   "Source": "StellarJadeManager.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -16,6 +16,57 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\css\\apexcharts.css",
+      "SourceId": "Blazor-ApexCharts",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\",
+      "BasePath": "_content/Blazor-ApexCharts",
+      "RelativePath": "css/apexcharts.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\css\\apexcharts.css"
+    },
+    {
+      "Identity": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\js\\apexcharts.esm.js",
+      "SourceId": "Blazor-ApexCharts",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\",
+      "BasePath": "_content/Blazor-ApexCharts",
+      "RelativePath": "js/apexcharts.esm.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\js\\apexcharts.esm.js"
+    },
+    {
+      "Identity": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\js\\blazor-apexcharts.js",
+      "SourceId": "Blazor-ApexCharts",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\",
+      "BasePath": "_content/Blazor-ApexCharts",
+      "RelativePath": "js/blazor-apexcharts.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\staticwebassets\\js\\blazor-apexcharts.js"
+    },
     {
       "Identity": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.css",
       "SourceId": "MudBlazor",
@@ -49,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\mudblazor\\6.11.0\\staticwebassets\\MudBlazor.min.js"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor-ApexCharts.dll",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazor-ApexCharts.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\lib\\net6.0\\Blazor-ApexCharts.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.boot.json",
@@ -6069,6 +6137,23 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.ComponentModel.Primitives.dll"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\qY9mINE1.gz",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazor-ApexCharts.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor-ApexCharts.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor-ApexCharts.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\build-gz\\R0ZyxvqR.gz",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Computed",
@@ -7359,6 +7444,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\1_6.webp"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\429_Mkht.jpg",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/429_Mkht.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\429_Mkht.jpg"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\stellarJade.webp",

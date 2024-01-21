@@ -1,12 +1,12 @@
-<div class="banner-info relative mx-auto my-auto" style="width:75%;">
+<div class="banner-info relative mx-auto my-auto" style="width:50%;">
     <MudImage
     ObjectFit="@ObjectFit.ScaleDown"
     ObjectPosition="@ObjectPosition.Top" 
     Src="@($"images/{version.Replace('.','_')}.webp")"
     onerror="this.src='images/1_0.webp';" 
     Alt="Mony the dog" Elevation="25" Class="mx-auto my-auto rounded-lg" Style="width:100%"/>
-    <MudText Typo="Typo.h6" Align="@Align.Center" Class="mx-auto">@version</MudText>
-    <MudText Typo="Typo.h6" Align="@Align.Center" Class="mx-auto">@title</MudText>
+    <MudText Typo="Typo.h6" Align="@MudBlazor.Align.Center" Class="mx-auto">@title</MudText>
+    <MudText Typo="Typo.h6" Align="@MudBlazor.Align.Center" Class="mx-auto">@version</MudText>
 </div>
 
 @code{
