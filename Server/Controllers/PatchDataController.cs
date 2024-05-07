@@ -21,8 +21,10 @@ public class PatchController: ControllerBase
     [HttpGet]
     public IEnumerable<Patch> Get()
     {
-        return patchRepository.GetAll().ToList(); 
+        return patchRepository.GetRelevant().ToList(); 
     }
+
+
 
     
 

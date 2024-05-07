@@ -62,3 +62,5 @@ D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Ve
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Version_1_6.json
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Version_2_0.json
 D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Blazor-ApexCharts.dll
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Version_2_1.json
+D:\StellarJadeManager\StellarJadeManager\Server\bin\Debug\net7.0\Data\Patches\Version_2_2.json

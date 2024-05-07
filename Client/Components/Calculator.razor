@@ -1,0 +1,111 @@
+@inject HttpClient Http
+
+<MudTextField T="DateTime" ReadOnly="@true" @bind-Value='selectedDate' Label="Выбранная дата"  />
+    <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Гемов за ивенты"  />
+    <MudTextField @bind-Value='currentGems' T="int" Label="Текущее количество гемов"  />
+    <MudSelect T="int" Label="Звезд в зеркале" AnchorOrigin="Origin.BottomCenter" @bind-Value="mirror_stars">
+        @for(int i=0; i<13;i++){
+            <MudSelectItem  T="int" Value="i*3" />
+        }
+    </MudSelect>
+<MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="set_checkbox" Label="Пропуск снабженца" Color="MudBlazor.Color.Primary" />
+<MudDivider class=mt-10></MudDivider>
+@*TEST*@
+<MudInputString @bind-Value='warp_url'/>
+<MudButton OnClick="@Test">
+    <p>
+        test
+    </p>
+</MudButton>
+    <div class="d-flex flex-row my-10">
+        <div class="ml-16">
+            <MudText
+            Typo="Typo.h5"
+            Align="@MudBlazor.Align.Start"
+            Class="mx-auto">
+                Итого звездного нефрита:
+            </MudText>
+            <div class="d-flex flex-row">
+                <MudImage Width="32" Height="32" Src="images/stellarJade.webp"></MudImage>
+                <MudText Typo="Typo.h5" Class="mr-4" Color="MudBlazor.Color.Primary">@(resultStellarJades)</MudText>
+                <MudText Typo="Typo.h5" Class="mr-4">=</MudText>
+                <MudImage Width="32" Height="32" Src="images/warp.webp"></MudImage>
+                <MudText Typo="Typo.h5" Class="mr-4" Color="MudBlazor.Color.Primary">@(resultStellarJades/160)</MudText>
+                <MudImage Width="32" Height="32" Src="images/stellarJade.webp"></MudImage>
+                <MudText Typo="Typo.h5" Class="mr-4" Color="MudBlazor.Color.Primary">@(resultStellarJades%160)</MudText>
+            </div>
+        </div>
+        <MudSpacer/>
+        <div class="mr-16">
+            @if(chances != null && chances.Count()==90){
+                <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto">
+                        Шанс:
+                 </MudText>
+                @if (resultStellarJades / 160 <= 0)
+                {
+                    <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto" Color="MudBlazor.Color.Primary">
+                        0.0%
+                    </MudText>
+                }
+                @if (resultStellarJades/160 >= 90)
+                {
+                    <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto" Color="MudBlazor.Color.Primary">
+                        100.0%
+                    </MudText>
+                }
+            @if (resultStellarJades / 160 > 0 && resultStellarJades / 160 < 90)
+            {
+                <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto" Color="MudBlazor.Color.Primary">
+                    @(Math.Round(chances[(resultStellarJades/160)]*100, 4))%
+                </MudText>
+            }
+            }
+        </div>
+    </div>
+
+@code{
+    [Parameter]
+    public int currentGems {get; set;}
+
+    [Parameter]
+    public List<Patch> patches {get; set;}
+    
+    [Parameter]
+    public DateTime selectedDate {get; set;}
+
+    [Parameter]
+    public Dictionary<int, double> chances {get; set;}
+
+    string warp_url = "";
+    private async Task Test(){
+
+        @* var content = new StringContent(warp_url, Encoding.UTF8, "text/plain"); *@
+        var hren = await Http.PostAsJsonAsync<string>("/api/warp/parse", warp_url);
+
+    }
+    public void set_checkbox(bool value)
+    {
+        month_pass = value;
+    }
+    public bool month_pass { get; set; } = false;
+    public int mirror_stars {get;set;} = 0;
+    public int dailyIncom {get {
+        return month_pass ? 150 : 60;
+    }}
+    public int stellarJadesAmountForEvents {get; set;} = 0;
+    public int resultStellarJades => currentGems + stellarJadesAmountForEvents + mirror_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
+    private int calculateEventStellarJadeBySelectedDate(){
+        int result = 0;
+        var dateRange = new EventDateRange(DateTime.Today, selectedDate);
+
+        foreach(var patch in patches.Where(p => selectedDate >= p.ReleaseDate)){
+            foreach(var patchEvent in patch.Events){
+                //рефактор модели ивента, посчитать через сколько дней доступны все награды
+                if(dateRange.IsDateInRange(patchEvent.StartDate.AddDays(7))){ //если прошло больше недели с начала ивента и открылись все награды
+                    result+=patchEvent.StellarJadesAmount;
+                }
+            }
+        }
+        return result;
+    }
+}

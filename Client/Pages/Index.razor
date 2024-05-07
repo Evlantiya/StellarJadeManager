@@ -1,18 +1,52 @@
 ﻿@page "/"
-<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center mb-8">
-    <h1>Patch Calendar</h1>
-</MudContainer>
+@inject HttpClient Http
 
-<PatchCalendar currentGems="@test" OnSelectedDateChanged="@SetStellarJades">
-</PatchCalendar>
+@if(isDataLoaded){
+    <Calendar patches="patches" OnSelectedDateChanged="SetSelectedDate"></Calendar>
+}else
+{
+    <MudProgressCircular Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Indeterminate="true" />
+}
+<Calculator patches="patches" currentGems="test" chances="chances" selectedDate="selectedDate"></Calculator>
+
+@* <PatchCalendar currentGems="@test" OnSelectedDateChanged="@SetStellarJades">
+</PatchCalendar> *@
  
  @* <p>@hren</p> *@
 
  @code{
-
+    public bool isDataLoaded = false;
+    public List<Patch> patches;
     public int test = 3200;
+    public DateTime selectedDate = DateTime.Today;
     public int hren = 0;
+    public Dictionary<int, double> chances = new();
     public void SetStellarJades(int amount){
         hren = amount;
+    }
+
+    public void SetSelectedDate(DateTime date){
+        selectedDate = date;
+    }
+
+    protected override async Task OnInitializedAsync(){
+        //симуляция сервака с мл, коэфы регрессии
+        var const_a = 3623.0/850; 
+        var b = -497.0/8500;
+        for (int roll_num = 1;roll_num <= 90; roll_num++){
+            if(roll_num == 90){
+                chances.Add(roll_num, 1);
+            }
+            else if(roll_num < 74){
+                chances.Add(roll_num, 0.006);
+            }
+            else{
+                chances.Add(roll_num, b*roll_num + const_a);
+            }
+        }   
+        patches = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new();
+        isDataLoaded = true;
+        StateHasChanged();
+
     }
  }

@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/Calculator.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYWxjdWxhdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/Graphs.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xHcmFwaHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/StellarJadeManager/StellarJadeManager/Client/Components/VersionBanner.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWZXJzaW9uQmFubmVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -35,6 +43,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/StellarJadeManager/StellarJadeManager/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/Calendar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDYWxlbmRhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-5apyhbfdeq
 
 [D:/StellarJadeManager/StellarJadeManager/Client/Components/PatchCalendar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYXRjaENhbGVuZGFyLnJhem9y

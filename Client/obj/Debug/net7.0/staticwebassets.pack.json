@@ -49,8 +49,788 @@
       "PackagePath": "staticwebassets\\Images\\1_6.webp"
     },
     {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\2_1.webp",
+      "PackagePath": "staticwebassets\\Images\\2_1.webp"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\2_2.webp",
+      "PackagePath": "staticwebassets\\Images\\2_2.webp"
+    },
+    {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\429_Mkht.jpg",
       "PackagePath": "staticwebassets\\Images\\429_Mkht.jpg"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\background.webp",
+      "PackagePath": "staticwebassets\\Images\\background.webp"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\background_blured.webp",
+      "PackagePath": "staticwebassets\\Images\\background_blured.webp"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\10_Male MC.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\10_Male MC.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\11_Female MC.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\11_Female MC.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\12_Pela.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\12_Pela.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\13_Sampo.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\13_Sampo.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\14_Welt.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\14_Welt.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\15_Serval.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\15_Serval.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\16_Silver Wolf.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\16_Silver Wolf.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\1_Arlan.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\1_Arlan.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\2_Asta.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\2_Asta.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\3_Danheng.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\3_Danheng.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\4_Herta.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\4_Herta.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\5_Hook.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\5_Hook.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\6_Himeko.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\6_Himeko.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\7_Gepard.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\7_Gepard.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\8_Kafka.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\8_Kafka.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\9_Clara.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\9_Clara.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Acheron 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Acheron 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Acheron 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Acheron 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Acheron 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Acheron 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Acheron 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Acheron 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Argenti 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Argenti 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Argenti 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Argenti 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Argenti 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Argenti 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Argenti 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Argenti 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Arlan.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Arlan.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Asta.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Asta.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Aventurine 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Aventurine 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Aventurine 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Aventurine 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Aventurine 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Aventurine 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Aventurine 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Aventurine 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Bailu 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Bailu 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Bailu 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Bailu 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Bailu.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Bailu.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Black Swan 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Black Swan 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Black Swan 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Black Swan 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Black Swan 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Black Swan 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Black Swan 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Black Swan 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Blade 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Blade 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Blade 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Blade 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Blade 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Blade 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Blade 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Blade 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Blade.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Blade.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Cheers.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Cheers.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Clockie (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Clockie (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Clockie.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Clockie.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Critter.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Critter.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dan Heng Imbibitor Lunae 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dan Heng Imbibitor Lunae 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dan Heng Imbibitor Lunae 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dan Heng Imbibitor Lunae 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dan Heng Imbibitor Lunae 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dan Heng Imbibitor Lunae 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dan Heng Imbibitor Lunae 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dan Heng Imbibitor Lunae 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dr. Ratio 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dr. Ratio 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dr. Ratio 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dr. Ratio 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dr. Ratio 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dr. Ratio 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dr. Ratio 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dr. Ratio 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Dreamjolt Troupe - Mr. Domescreen.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Dreamjolt Troupe - Mr. Domescreen.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Fu Xuan 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Fu Xuan 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Fu Xuan 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Fu Xuan 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Fu Xuan 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Fu Xuan 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Fu Xuan 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Fu Xuan 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Gallagher 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Gallagher 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Gallagher 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Gallagher 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Gallagher 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Gallagher 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Gepard.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Gepard.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Guinaifen 1 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Guinaifen 1 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Guinaifen 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Guinaifen 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Guinaifen 2 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Guinaifen 2 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Guinaifen 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Guinaifen 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Guinaifen 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Guinaifen 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Hanu.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Hanu.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Hanya 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Hanya 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Hanya 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Hanya 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Hanya 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Hanya 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Herta.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Herta.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Himeko.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Himeko.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Hook.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Hook.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Huohuo 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Huohuo 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Huohuo 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Huohuo 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Huohuo 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Huohuo 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Huohuo 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Huohuo 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Jing Yuan 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Jing Yuan 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Jing Yuan 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Jing Yuan 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Jingliu 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Jingliu 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Jingliu 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Jingliu 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Jingliu 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Jingliu 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Jingliu 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Jingliu 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Kafka 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Kafka 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Kafka 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Kafka 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Kafka 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Kafka 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Kafka 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Kafka 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Kakavasha.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Kakavasha.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Luka 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Luka 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Luka 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Luka 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Luka 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Luka 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Luocha.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Luocha.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Lynx 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Lynx 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Lynx 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Lynx 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Lynx 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Lynx 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_10.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_10.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_11.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_11.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_12.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_12.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_13.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_13.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_14.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_14.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_15.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_15.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_16.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_16.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_5.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_5.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_6.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_6.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_7.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_7.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_8.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_8.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\March 7th_9.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\March 7th_9.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Misha 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Misha 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Misha 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Misha 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Misha 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Misha 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Natasha.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Natasha.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Origami Bird.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Origami Bird.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Other.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Other.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pela.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pela.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Peppy.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Peppy.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 1 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 1 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 1 (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 1 (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 10 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 10 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 10.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 10.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 11.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 11.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 12.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 12.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 13.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 13.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 14.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 14.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 15.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 15.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 16.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 16.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 2 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 2 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 2 (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 2 (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 3 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 3 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 3 (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 3 (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 4 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 4 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 4 (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 4 (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 5 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 5 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 5 (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 5 (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 5.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 5.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 6 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 6 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 6 (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 6 (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 6.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 6.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 7 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 7 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 7 (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 7 (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 7.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 7.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 8 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 8 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 8.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 8.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 9 (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 9 (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Pom-Pom 9.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Pom-Pom 9.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Qing Que.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Qing Que.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Qingque.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Qingque.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Ruan Mei 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Ruan Mei 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Ruan Mei 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Ruan Mei 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Ruan Mei 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Ruan Mei 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Ruan Mei 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Ruan Mei 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sampo (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sampo (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sampo (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sampo (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sampo.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sampo.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Screwllum.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Screwllum.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Serval.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Serval.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sparkle 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sparkle 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sparkle 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sparkle 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sparkle 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sparkle 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sparkle 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sparkle 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sushang (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sushang (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sushang (3).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sushang (3).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Sushang.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Sushang.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Tail.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Tail.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Talisman.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Talisman.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Tingyun (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Tingyun (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Tingyun.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Tingyun.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Topaz 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Topaz 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Topaz 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Topaz 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Topaz 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Topaz 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Topaz 4.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Topaz 4.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Trailblazer_female.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Trailblazer_female.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Trailblazer_male.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Trailblazer_male.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Trash Can.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Trash Can.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Welt.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Welt.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Xueyi 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Xueyi 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Xueyi 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Xueyi 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Xueyi 3.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Xueyi 3.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Yanqing 1.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Yanqing 1.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Yanqing 2.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Yanqing 2.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Yukong (2).png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Yukong (2).png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\Yukong.png",
+      "PackagePath": "staticwebassets\\Images\\emotes\\Yukong.png"
     },
     {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\stellarJade.webp",

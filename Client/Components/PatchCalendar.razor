@@ -1,6 +1,6 @@
+@using System.Text
 @inject HttpClient Http
 @inject ILogger<PatchCalendar> logger
-@* @using System.Collections.Generic *@
 
 
 
@@ -15,14 +15,10 @@
         }
     </MudCarousel>
     var selectedPatch = patches[selectedIndex];
-    @* <MudContainer MaxWidth="@MaxWidth.Small"> *@
-
     <div class="mt-4 mb-8 mx-auto calendar-container">
         @for(int i=0; i < selectedPatch.WeeksCount*7; i++){
             var currentDate = selectedPatch.ReleaseDate.AddDays(i);
-            @* <button class="day day-@(i+1) @(currentDate < DateTime.Today?"day-disabled" : "")" @onclick="@(e => SetSelectedDate(currentDate))">
-                @currentDate.ToString("dd/M", System.Globalization.CultureInfo.InvariantCulture)
-                </button> *@
+
             var disabled = currentDate < DateTime.Today;
             var today = currentDate == DateTime.Today;
             var color_hren = "";
@@ -41,28 +37,30 @@
                 color_hren= MudBlazor.Color.Tertiary.ToString();
             }
             <MudButton Style="@($"border-radius:0; background:{color_hren}")"
-            Disabled="disabled" Variant="disabled ? Variant.Outlined :Variant.Filled" OnClick="@(e =>SetSelectedDate(currentDate))">
+            Disabled="disabled" Variant="disabled ? Variant.Outlined : Variant.Filled" OnClick="@(e =>SetSelectedDate(currentDate))">
                 @currentDate.ToString("dd/M", System.Globalization.CultureInfo.InvariantCulture)
             </MudButton>
 
         }
     </div>
-    @* </MudContainer> *@
 }
-    @* <p>@selectedDate.ToString()</p>  *@
     <MudTextField T="DateTime" ReadOnly="@true" @bind-Value='selectedDate' Label="Выбранная дата"  />
     <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Гемов за ивенты"  />
     <MudTextField @bind-Value='currentGems' T="int" Label="Текущее количество гемов"  />
-    @* <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Дней пропуска"  /> *@
     <MudSelect T="int" Label="Звезд в зеркале" AnchorOrigin="Origin.BottomCenter" @bind-Value="mirror_stars">
         @for(int i=0; i<13;i++){
             <MudSelectItem  T="int" Value="i*3" />
         }
     </MudSelect>
-    @* <MudCheckBox Value="month_pass" Label="Пропуск снабженца" Color="Color.Primary"></MudCheckBox> *@
 <MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="set_checkbox" Label="Пропуск снабженца" Color="MudBlazor.Color.Primary" />
-    @* <input type="checkbox" @bind-value="@month_pass"> *@
 <MudDivider class=mt-10></MudDivider>
+@*TEST*@
+<MudInputString @bind-Value='warp_url'/>
+<MudButton OnClick="@Test">
+    <p>
+        test
+    </p>
+</MudButton>
     <div class="d-flex flex-row my-10">
         <div class="ml-16">
             <MudText
@@ -153,16 +151,19 @@
     
 }
 
-@if(pullsData!=null && pullsData.ContainsKey("1"))
-{
-    <p>hren</p>
-}
 
 
 
 
 @code{
 
+    string warp_url = "";
+    private async Task Test(){
+
+        @* var content = new StringContent(warp_url, Encoding.UTF8, "text/plain"); *@
+        var hren = await Http.PostAsJsonAsync<string>("/api/warp/parse", warp_url);
+        var l=0;
+    }
     //NEED FOR MUD CHECKBOX, DOESNT WORK WITHOUT THIS FOR REASON THAT GOD ONLY KNOWS
     public void set_checkbox(bool value)
     {
@@ -248,12 +249,7 @@
         pullsData = await Http.GetFromJsonAsync<Dictionary<string,List<int>>>($"/pulls") ?? new();
         var hren = chances.Values.ToArray();
         chancesChart[0].Data = hren;
-        //chancesChart[1].Data = new double[hren.Length];
-        //var prev = 0.0;
-        //for(int i=0; i<chances.Count ; i++){
-        //    chancesChart[1].Data[i] = prev + hren[i]/6;
-        //    prev = prev + hren[i]/6;
-        //}
+
         foreach(var items in chances)
         {
             test.Add(new Roll() {

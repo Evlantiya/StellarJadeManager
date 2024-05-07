@@ -47,4 +47,9 @@ public class LocalPatchRepositroy : IPatchRepository
     {
         return patches;
     }
+
+    public IEnumerable<Patch> GetRelevant()
+    {
+        return patches.Where(p => !(p.ReleaseDate.AddDays(7*p.WeeksCount) < DateTime.Today));
+    }
 }

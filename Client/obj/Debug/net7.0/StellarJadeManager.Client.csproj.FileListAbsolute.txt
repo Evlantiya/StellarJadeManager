@@ -857,3 +857,4 @@ D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\UQ3ASI
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\zqlgxpnO.gz
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\yGbAsG7a.gz
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\mpL88G08.gz
+D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\Calendar.razor.rz.scp.css

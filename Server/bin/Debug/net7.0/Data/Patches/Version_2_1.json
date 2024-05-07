@@ -1,0 +1,29 @@
+{
+    "patchInfo": {
+        "version":"2.1",
+        "title":"Into the Yawning Chasm",
+        "releaseDate":"27.03.2024",
+        "weeksCount":6,
+        "events":[
+            {
+                "eventTitle":"Cosmodyssey",
+                "startDate":"27.03.2024",
+                "endDate":"06.05.2024",
+                "stellarJadesAmount":1000
+            },
+            {
+                "eventTitle":"Vignettes in a Cup",
+                "startDate":"29.03.2024",
+                "endDate":"06.05.2024",
+                "stellarJadesAmount":1000
+            },
+            {
+                "eventTitle":"Tides of War",
+                "startDate":"13.04.2024",
+                "endDate":"06.05.2024",
+                "stellarJadesAmount":480
+            }
+        ],
+        "banners":[]
+    }
+}
