@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarJadeManager.Server", "Server\StellarJadeManager.Server.csproj", "{E38A0FE5-747C-4955-B01A-C73BF56F9272}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StellarJadeManager.Server", "Server\StellarJadeManager.Server.csproj", "{E38A0FE5-747C-4955-B01A-C73BF56F9272}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarJadeManager.Client", "Client\StellarJadeManager.Client.csproj", "{A54EB856-EABC-497A-A3FD-2DFD3E27DC52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StellarJadeManager.Client", "Client\StellarJadeManager.Client.csproj", "{A54EB856-EABC-497A-A3FD-2DFD3E27DC52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StellarJadeManager.Shared", "Shared\StellarJadeManager.Shared.csproj", "{37BA6C0C-FABC-4FBE-AF4F-C25447BE7334}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StellarJadeManager.Shared", "Shared\StellarJadeManager.Shared.csproj", "{37BA6C0C-FABC-4FBE-AF4F-C25447BE7334}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

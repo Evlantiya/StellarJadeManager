@@ -841,6 +841,14 @@
       "PackagePath": "staticwebassets\\Images\\warp.webp"
     },
     {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },

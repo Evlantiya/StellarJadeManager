@@ -1,9 +1,26 @@
 using Microsoft.AspNetCore.ResponseCompression;
+using Supabase;
+using StellarJadeManager.Server.Extensions;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.OpenApi.Models;
+using StellarJadeManager.Server.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddSupabaseAuth(builder.Configuration);
+builder.Services.AddSupabaseClient(builder.Configuration);
+
+builder.Services.AddSwaggerGen();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration["Supabase:ConnectionString"]));
+
 builder.Services.AddSingleton<IPatchRepository, LocalPatchRepositroy>();
 builder.Services.AddScoped<IWarpService, WarpService>();
 builder.Services.AddMemoryCache();
@@ -15,6 +32,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 else
 {
@@ -24,17 +43,13 @@ else
 
 app.UseHttpsRedirection();
 app.UseBlazorFrameworkFiles();
-app.UseStaticFiles();
 app.UseRouting();
-// app.UseCors(builder => builder.AllowAnyOrigin());
+app.UseCors(builder => builder.AllowAnyOrigin());
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseStaticFiles();
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
-// app.Use(async (context, next) =>
-//             {
-//                 await Task.Delay(1000000000);
-//                 await next.Invoke();
-//                 await Task.Delay(35);
-//             });
 
 app.Run();

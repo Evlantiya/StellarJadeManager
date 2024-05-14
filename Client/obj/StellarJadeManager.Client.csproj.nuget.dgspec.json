@@ -48,9 +48,21 @@
               "target": "Package",
               "version": "[2.2.1, )"
             },
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Authentication": {
+              "target": "Package",
+              "version": "[7.0.18, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
               "suppressParent": "All",
@@ -64,6 +76,10 @@
             "MudBlazor": {
               "target": "Package",
               "version": "[6.11.0, )"
+            },
+            "Supabase": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [

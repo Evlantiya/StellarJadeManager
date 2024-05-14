@@ -1,0 +1,37 @@
+﻿@page "/test"
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims;
+@inject Supabase.Client supabaseClient
+
+
+<h3>Auth test</h3>
+
+<h3>Registration</h3>
+<Registration></Registration>
+<h3>Login</h3>
+<Login OnSinginIn="Test"></Login>
+
+
+<AuthorizeView>
+    <Authorized>
+        @if (context.User.HasClaim(c => c.Type == ClaimTypes.Email))
+        {
+            <h1>Hello, @context.User.Claims.First(c => c.Type == ClaimTypes.Email).Value</h1>
+        }
+        else
+        {
+            <h11>govno</h11>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <h1>Hello, Guest!</h1>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+    public void Test()
+    {
+        //StateHasChanged();
+    }
+}

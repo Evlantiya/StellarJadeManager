@@ -1,0 +1,43 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Forms
+@using Newtonsoft.Json;
+@using StellarJadeManager.Shared;
+@using System.Text;
+@inject HttpClient http
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+
+
+<MudPaper Elevation="2" Class="pa-4 mx-auto" Style="max-width: 500px;">
+    <MudText Typo="Typo.h4" GutterBottom="true">Register</MudText>
+    <EditForm Model="@registrationModel" OnValidSubmit="HandleRegistration">
+        <MudTextField @bind-Value="registrationModel.Email" Label="Email" For="@(() => registrationModel.Email)" FullWidth Variant="Variant.Filled" />
+        <MudTextField @bind-Value="registrationModel.Password" Label="Password" For="@(() => registrationModel.Password)" InputType="InputType.Password" FullWidth Variant="Variant.Filled" />
+
+        <MudButton ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Variant="Variant.Filled" Class="mt-4">Register</MudButton>
+    </EditForm>
+</MudPaper>
+
+@code {
+    private UserCredentials registrationModel = new UserCredentials();
+
+    private async Task HandleRegistration()
+    {
+        var json = JsonConvert.SerializeObject(registrationModel);
+        var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = await http.PostAsync("/api/user/register", jsonContent);
+        var json_response = await response.Content.ReadAsStringAsync();
+        if (response.IsSuccessStatusCode)
+        {
+            var session = JsonConvert.DeserializeObject<Supabase.Gotrue.Session>(json_response);
+            await sessionStorage.SetItemAsync("user_session", session);
+        }
+        else
+        {
+            Console.WriteLine(json_response);
+        }
+    }
+
+
+}

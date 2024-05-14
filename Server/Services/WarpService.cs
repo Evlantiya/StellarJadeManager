@@ -23,19 +23,24 @@ public class WarpService : IWarpService
 
         GetGachaLogResponse? warpPage;
         var warpsData = new List<Warp>();
-        var endId = "0";
-        do{
-            var query = $"&page=1&size=20&gacha_type=11&end_id={endId}";
-            var hren = warpUrl + query;
-            var test = await _httpClient.GetStringAsync(hren);
-            warpPage = JsonConvert.DeserializeObject<GetGachaLogResponse>(test);
+        foreach (int banner in Enum.GetValues(typeof(BannerEnum)))
+        {
+            var endId = "0";
+            do{
+                var query = $"&page=1&size=20&gacha_type=11&end_id={endId}";
+                var hren = warpUrl + query;
+                var test = await _httpClient.GetStringAsync(hren);
+                warpPage = JsonConvert.DeserializeObject<GetGachaLogResponse>(test);
 
-            // warpPage = await _httpClient.GetFromJsonAsync<GetGachaLogResponse>(hren);
-            List<Warp> warps = warpPage?.data?.list ?? new List<Warp>();
-            warpsData.AddRange(warps);
-            endId = warps.LastOrDefault()?.id ?? "0";
-        } 
-        while (warpPage != null && warpPage.data.list.Count > 0);
+                // warpPage = await _httpClient.GetFromJsonAsync<GetGachaLogResponse>(hren);
+                List<Warp> warps = warpPage?.data?.list ?? new List<Warp>();
+                warpsData.AddRange(warps);
+                endId = warps.LastOrDefault()?.id ?? "0";
+            } 
+            while (warpPage != null && warpPage.data.list.Count > 0);
+        }
+        string jsonString = JsonConvert.SerializeObject(warpsData, Formatting.Indented);
+        File.WriteAllText($"Data/Warps/warps_{warpsData?.FirstOrDefault()?.uid ?? "0"}", jsonString);
         return true;
     }
 }
