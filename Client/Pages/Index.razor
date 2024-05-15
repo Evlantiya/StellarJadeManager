@@ -16,7 +16,7 @@
 
  @code{
     public bool isDataLoaded = false;
-    public List<Patch> patches;
+    public List<PatchDTO> patches;
     public int test = 3200;
     public DateTime selectedDate = DateTime.Today;
     public int hren = 0;
@@ -44,7 +44,7 @@
                 chances.Add(roll_num, b*roll_num + const_a);
             }
         }   
-        patches = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new();
+        patches = await Http.GetFromJsonAsync<List<PatchDTO>>("/api/patches") ?? new();
         isDataLoaded = true;
         StateHasChanged();
 

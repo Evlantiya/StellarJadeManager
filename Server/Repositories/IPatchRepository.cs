@@ -1,8 +1,8 @@
 using System.Text.Json.Nodes;
 
 public interface IPatchRepository{
-    public Patch Get(string version);
-    public IEnumerable<Patch> GetAll();
+    public PatchDTO Get(string version);
+    public IEnumerable<PatchDTO> GetAll();
 
-    public IEnumerable<Patch> GetRelevant();
+    public IEnumerable<PatchDTO> GetRelevant();
 }

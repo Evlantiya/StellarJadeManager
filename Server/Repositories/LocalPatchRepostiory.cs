@@ -4,7 +4,7 @@ using Microsoft.Extensions.Caching.Memory;
 
 public class LocalPatchRepositroy : IPatchRepository
 {
-    private List<Patch> patches = new();
+    private List<PatchDTO> patches = new();
     private IMemoryCache cache;
     ILogger<LocalPatchRepositroy> logger;
 
@@ -24,31 +24,31 @@ public class LocalPatchRepositroy : IPatchRepository
             string title = patchJSON.patchInfo.title.Value;
             DateTime releaseDate = DateTime.Parse(patchJSON.patchInfo.releaseDate.Value);
             int weeksCount = (int) patchJSON.patchInfo.weeksCount.Value;
-            List<Event> events = new();
+            List<EventDTO> events = new();
             var eventsInfo=patchJSON.patchInfo.events;
             foreach(var e in eventsInfo){
                 string eventTitle = e.eventTitle.Value;
                 DateTime startDate = DateTime.Parse(e.startDate.Value);
                 DateTime endDate = DateTime.Parse(e.endDate.Value);
                 int stellarJadesAmount = (int) e.stellarJadesAmount.Value;
-                events.Add(new Event(eventTitle, startDate, endDate, stellarJadesAmount));
+                events.Add(new EventDTO(eventTitle, startDate, endDate, stellarJadesAmount));
             }
-            patches.Add(new Patch(version,title,releaseDate, weeksCount, events));
+            patches.Add(new PatchDTO(version,title,releaseDate, weeksCount, events));
         }
     }
 
-    public Patch Get(string version)
+    public PatchDTO Get(string version)
     {
         //validate for patch version later
         return patches.First(p => p.Version == version);
     }
 
-    public IEnumerable<Patch> GetAll()
+    public IEnumerable<PatchDTO> GetAll()
     {
         return patches;
     }
 
-    public IEnumerable<Patch> GetRelevant()
+    public IEnumerable<PatchDTO> GetRelevant()
     {
         return patches.Where(p => !(p.ReleaseDate.AddDays(7*p.WeeksCount) < DateTime.Today));
     }

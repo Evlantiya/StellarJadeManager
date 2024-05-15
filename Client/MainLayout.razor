@@ -1,4 +1,7 @@
-﻿@inherits LayoutComponentBase
+﻿@using Microsoft.AspNetCore.Components.Authorization
+
+
+@inherits LayoutComponentBase
 
 <MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="@theme" />
 <MudDialogProvider />
@@ -13,18 +16,26 @@
         
         @* <MudTextField Style="width:100px" Class="mx-2" FullWidth="false" @bind-Value='currentGems' T="int" Variant="Variant.Outlined"/> *@
         
-        <MudTooltip>
-            <ChildContent>
-               <p class="mr-6">@currentGems</p>
-            </ChildContent>
-            <TooltipContent>
-                <div class="d-flex flex-row">
-                    <MudImage Width="20" Height="20" Src="images/warp.webp"></MudImage>
-                    <MudText>@(currentGems/160)</MudText>
-                </div>
-            </TooltipContent>
-        </MudTooltip>
 
+        <AuthorizeView>
+            <NotAuthorized>
+                <MudNavLink Href="/test" Icon="@Icons.Material.Filled.Dashboard">Регистрация/Войти</MudNavLink>
+            </NotAuthorized>
+            <Authorized>
+                <MudTooltip>
+                    <ChildContent>
+                       <p class="mr-6">@currentGems</p>
+                    </ChildContent>
+                    <TooltipContent>
+                        <div class="d-flex flex-row">
+                            <MudImage Width="20" Height="20" Src="images/warp.webp"></MudImage>
+                            <MudText>@(currentGems/160)</MudText>
+                        </div>
+                    </TooltipContent>
+                </MudTooltip>
+            </Authorized>
+
+        </AuthorizeView>
 
         <MudAvatar>
             <MudImage Class="align-self-end" Src="images/429_Mkht.jpg"></MudImage>

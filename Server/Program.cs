@@ -6,23 +6,27 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
-using StellarJadeManager.Server.Context;
 using Microsoft.EntityFrameworkCore;
+using StellarJadeManager.Server;
+using StellarJadeManager.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSupabaseAuth(builder.Configuration);
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+
+builder.Services.AddJWTAuth(builder.Configuration);
 builder.Services.AddSupabaseClient(builder.Configuration);
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<PostgresContext>(options =>
     options.UseNpgsql(builder.Configuration["Supabase:ConnectionString"]));
 
 builder.Services.AddSingleton<IPatchRepository, LocalPatchRepositroy>();
 builder.Services.AddScoped<IWarpService, WarpService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddMemoryCache();
 builder.Services.AddCors();
 builder.Services.AddHttpClient();

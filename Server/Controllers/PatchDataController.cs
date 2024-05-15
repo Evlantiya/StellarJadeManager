@@ -19,7 +19,7 @@ public class PatchController: ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Patch> Get()
+    public IEnumerable<PatchDTO> Get()
     {
         return patchRepository.GetRelevant().ToList(); 
     }

@@ -180,8 +180,8 @@
     public int currentGems {get; set;}
     private MudCarousel<string> _carousel;
     private int selectedIndex = 0;
-    private List<Patch> patchesInit {get; set;} 
-    public List<Patch> patches {get; set;}
+    private List<PatchDTO> patchesInit {get; set;} 
+    public List<PatchDTO> patches {get; set;}
     public Dictionary<string,double> chances {get;set;}
     public List<ChartSeries> chancesChart = new(){
             new ChartSeries(){Name="Шансы получить легендарного персонажа"}
@@ -206,7 +206,7 @@
 
     public DateTime selectedDate {get; set;} = DateTime.Today;
 
-    public Patch currentPatch {get; set;} = null!;
+    public PatchDTO currentPatch {get; set;} = null!;
     @* public Patch selectedPatch {get;set;} = null!; //refactor *@
 
     public int stellarJadesAmountForEvents {get; set;} = 0;
@@ -243,7 +243,7 @@
     protected override async Task OnInitializedAsync()
     {
         logger.LogInformation("start blazor component");
-        patchesInit = await Http.GetFromJsonAsync<List<Patch>>("/api/patches") ?? new();
+        patchesInit = await Http.GetFromJsonAsync<List<PatchDTO>>("/api/patches") ?? new();
 
         chances = await Http.GetFromJsonAsync<Dictionary<string,double>>($"/predict") ?? new();
         pullsData = await Http.GetFromJsonAsync<Dictionary<string,List<int>>>($"/pulls") ?? new();

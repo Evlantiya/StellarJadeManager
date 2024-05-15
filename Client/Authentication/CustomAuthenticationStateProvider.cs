@@ -2,6 +2,8 @@
 using Blazored.SessionStorage;
 using System.Security.Claims;
 using Blazored.SessionStorage;
+using StellarJadeManager.Shared;
+using Supabase.Gotrue;
 
 namespace StellarJadeManager.Client.Authentication
 {
@@ -19,16 +21,18 @@ namespace StellarJadeManager.Client.Authentication
         {
             try
             {
-                var userSession = await _sessionStorage.GetItemAsync<Supabase.Gotrue.Session>("user_session");
+                var userSession = await _sessionStorage.GetItemAsync<UserSession>("user_session");
                 if (userSession == null)
                     return await Task.FromResult(new AuthenticationState(_anonymous));
-                var claimsPrincipal = new ClaimsPrincipal(
-                    new ClaimsIdentity(new List<Claim>
-                        {
-                                new Claim(ClaimTypes.Email, userSession.User.Email),
-                                new Claim(ClaimTypes.Role, userSession.User.Role)
-                        }, "JwtAuth")
-                    );
+                var claimsIdentity = new ClaimsIdentity(new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, userSession.Name),
+                    new Claim(ClaimTypes.Email, userSession.Email),
+
+                }, "JwtAuth");
+                claimsIdentity.AddClaim(new Claim(type: "LastActive", value: userSession.LastActive.ToString()));
+                claimsIdentity.AddClaim(new Claim(type: "Id", value: userSession.UserId.ToString()));
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
                 return await Task.FromResult(new AuthenticationState(claimsPrincipal));
             }
@@ -38,17 +42,16 @@ namespace StellarJadeManager.Client.Authentication
             }
         }
 
-        public async Task UpdateAuthenticationState(Supabase.Gotrue.Session? userSession)
+        public async Task UpdateAuthenticationState(UserSession? userSession)
         {
             ClaimsPrincipal claimsPrincipal;
 
             if (userSession != null)
             {
-                claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Email, userSession.User.Email),
-                        new Claim(ClaimTypes.Role, userSession.User.Role)
-                    }));
+                //claimsPrincipal = new ClaimsPrincipal(new ClaimsIdentity(new List<Claim>
+                //    {
+                //        new Claim(ClaimTypes.Email, userSession.Email),
+                //    }));
                 //userSession.ExpiryTimeStamp = DateTime.Now.AddSeconds(userSession.ExpiresIn);
                 await _sessionStorage.SetItemAsync("user_session", userSession);
             }
@@ -68,9 +71,9 @@ namespace StellarJadeManager.Client.Authentication
 
             try
             {
-                var userSession = await _sessionStorage.GetItemAsync<Supabase.Gotrue.Session>("user_session");
-                if (userSession != null && !userSession.Expired())
-                    result = userSession.AccessToken;
+                var userSession = await _sessionStorage.GetItemAsync<UserSession>("user_session");
+                if (userSession != null && userSession.Expiration > DateTime.Now )
+                    result = userSession.Token;
             }
             catch { }
 

@@ -4,6 +4,8 @@
 @using Newtonsoft.Json;
 @using System.Text;
 @using StellarJadeManager.Client.Authentication;
+
+
 @inject HttpClient http
 @inject Supabase.Client supabaseClient
 @inject AuthenticationStateProvider authStateProvider
@@ -32,7 +34,7 @@
         var json_response = await response.Content.ReadAsStringAsync();
         if (response.IsSuccessStatusCode)
         {
-            var session = JsonConvert.DeserializeObject<Supabase.Gotrue.Session>(json_response);
+            var session = JsonConvert.DeserializeObject<UserSession>(json_response);
             var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
             await customAuthStateProvider.UpdateAuthenticationState(session);
             await OnSinginIn.InvokeAsync();
