@@ -9,7 +9,23 @@
 @inject AuthenticationStateProvider authStateProvider
 @inject Blazored.LocalStorage.ILocalStorageService localStorage
 @inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+@inject NavigationManager Navigation
 
+
+<MudContainer Class="d-flex justify-center flex-column align-center" Style="with:50%; height:100%">
+    <MudText Typo="Typo.h4">Регистрация</MudText>
+    <EditForm Model="@registrationModel" OnValidSubmit="HandleRegistration">
+        <MudContainer MaxWidth="MaxWidth.Medium" Class="d-flex flex-column justify-space-around">
+            <MudTextField Class="my-2" @bind-Value="registrationModel.Name" Label="Name" For="@(() => registrationModel.Name)" FullWidth Variant="Variant.Filled" />
+            <MudTextField Class="my-2" @bind-Value="registrationModel.Email" Label="Email" For="@(() => registrationModel.Email)" FullWidth Variant="Variant.Filled" />
+            <MudTextField Class="my-2" @bind-Value="registrationModel.Password" Label="Password" For="@(() => registrationModel.Password)" InputType="InputType.Password" FullWidth Variant="Variant.Filled" />
+            <MudButton Class="my-4" ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Variant="Variant.Filled">Register</MudButton>
+        </MudContainer>
+    </EditForm>
+</MudContainer>
+
+
+@*
 
 <MudPaper Elevation="2" Class="pa-4 mx-auto" Style="max-width: 500px;">
     <MudText Typo="Typo.h4" GutterBottom="true">Register</MudText>
@@ -21,6 +37,7 @@
         <MudButton ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Variant="Variant.Filled" Class="mt-4">Register</MudButton>
     </EditForm>
 </MudPaper>
+*@
 
 @code {
     private UserRegistrationDTO registrationModel = new UserRegistrationDTO();
@@ -36,6 +53,8 @@
             var session = JsonConvert.DeserializeObject<UserSession>(json_response);
             var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
             await customAuthStateProvider.UpdateAuthenticationState(session);
+            StateHasChanged();
+            Navigation.NavigateTo("/");
         }
         else
         {

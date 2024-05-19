@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StellarJadeManager.Server;
+namespace StellarJadeManager.Shared;
 
 public partial class Banner
 {

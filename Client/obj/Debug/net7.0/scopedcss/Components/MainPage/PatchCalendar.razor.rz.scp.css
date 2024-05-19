@@ -1,14 +1,14 @@
-.day[b-5apyhbfdeq]{
+.day[b-dd915bkyrl]{
     display: block;
     padding:1rem;
     border: 1px solid black;
 }
 
-.day-disabled[b-5apyhbfdeq]{
+.day-disabled[b-dd915bkyrl]{
     background-color: gray;
 }
 
-.calendar-container[b-5apyhbfdeq]{
+.calendar-container[b-dd915bkyrl]{
     max-width: 75%;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -18,11 +18,11 @@
     box-shadow: 0px 0px 10px 5px #212121;
 }
 
-section.mud-carousel[b-5apyhbfdeq]{
+section.mud-carousel[b-dd915bkyrl]{
     background-image: url(Images/1_6_Crown_of_the_Mundane_and_Divine.webp);
 }
 
-.selected-patch-info[b-5apyhbfdeq]{
+.selected-patch-info[b-dd915bkyrl]{
     bottom: 0%;
     left: 50%;
     transform: translate(-50%,-20%);

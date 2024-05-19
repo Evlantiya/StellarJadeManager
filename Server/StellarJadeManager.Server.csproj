@@ -39,8 +39,4 @@
     <ProjectReference Include="..\Shared\StellarJadeManager.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Context\" />
-  </ItemGroup>
-
 </Project>

@@ -1,0 +1,15 @@
+﻿<MudDialog>
+    <DialogContent>
+        <MudContainer Class="d-flex justify-space-between align-center my-5">
+            <MudImage Src="/Images/emotes/Sparkle 2.png" Alt="Login Image" Style="width: 50%;" />
+            <Login></Login>
+        </MudContainer>
+    </DialogContent>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(true));
+    void Cancel() => MudDialog.Cancel();
+}

@@ -1,7 +1,5 @@
 .day{
-    display: block;
-    padding:1rem;
-    border: 1px solid black;
+    aspect-ratio:1/1;
 }
 
 .day-disabled{
@@ -9,13 +7,15 @@
 }
 
 .calendar-container{
-    max-width: 75%;
+    width:100%;
+    height:auto;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    border-width: 1px;
+    grid-template-rows:1fr;
+/*    border-width: 1px;*/
     /* border-color: var(--mud-palette-primary); */
-    border-color: rgba(39,44,52,1);
-    box-shadow: 0px 0px 10px 5px #212121;
+/*    border-color: rgba(39,44,52,1);
+    box-shadow: 0px 0px 10px 5px #212121;*/
 }
 
 section.mud-carousel{

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StellarJadeManager.Server;
+namespace StellarJadeManager.Shared;
 
-public class User
+public  class User
 {
     public User(string name, string email, string salt, string hash)
     {
@@ -11,7 +11,7 @@ public class User
         Email = email;
         Salt = salt;
         Hash = hash;
-        LastActive = DateTime.Now;
+        LastActive= DateTime.Now;
     }
 
     public int Id { get; set; }

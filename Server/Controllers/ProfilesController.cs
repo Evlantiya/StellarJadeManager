@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StellarJadeManager.Server;
+using StellarJadeManager.Shared;
 
 namespace StellarJadeManager.Server.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/profile")]
+    [Authorize]
     [ApiController]
     public class ProfilesController : ControllerBase
     {
@@ -22,16 +24,17 @@ namespace StellarJadeManager.Server.Controllers
         }
 
         // GET: api/Profiles
-        [HttpGet]
-        [Authorize]
-        public async Task<ActionResult<IEnumerable<Profile>>> GetProfiles()
+        [HttpGet("list")]
+        
+        public async Task<ActionResult<List<Profile>>> GetProfiles()
         {
-            var hren = User.Claims.ToList();
+            var id = Convert.ToInt32(User.Claims.First(claim => claim.Type == "Id").Value);
             if (_context.Profiles == null)
             {
                 return NotFound();
             }
-            return await _context.Profiles.ToListAsync();
+            var profiles = await _context.Profiles.Where(profile => profile.UserId == id).ToListAsync();
+            return profiles;
         }
 
         // GET: api/Profiles/5
@@ -52,16 +55,15 @@ namespace StellarJadeManager.Server.Controllers
             return profile;
         }
 
-        // PUT: api/Profiles/5
+        // PUT: api/profile/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProfile(int id, Profile profile)
+        public async Task<IActionResult> PutProfile([FromQuery] string id,[FromBody] Profile profile)
         {
-            if (id != profile.Uid)
+            if (id != profile.Id.ToString())
             {
                 return BadRequest();
             }
-
             _context.Entry(profile).State = EntityState.Modified;
 
             try
@@ -132,7 +134,7 @@ namespace StellarJadeManager.Server.Controllers
             return NoContent();
         }
 
-        private bool ProfileExists(int id)
+        private bool ProfileExists(string id)
         {
             return (_context.Profiles?.Any(e => e.Uid == id)).GetValueOrDefault();
         }

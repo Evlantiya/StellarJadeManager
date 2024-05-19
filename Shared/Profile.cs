@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StellarJadeManager.Server;
+namespace StellarJadeManager.Shared;
 
 public partial class Profile
 {
     public int Id { get; set; }
-
-    public int? Uid { get; set; }
 
     public string? ProfileName { get; set; }
 
@@ -23,9 +21,9 @@ public partial class Profile
 
     public bool SupplyPass { get; set; }
 
+    public string? Uid { get; set; }
+
     public virtual User User { get; set; } = null!;
 
     public virtual ICollection<UserBannerInfo> UserBannerInfos { get; set; } = new List<UserBannerInfo>();
-
-    public virtual ICollection<Warp> Warps { get; set; } = new List<Warp>();
 }

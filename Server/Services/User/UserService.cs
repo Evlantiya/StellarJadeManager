@@ -25,11 +25,15 @@ namespace StellarJadeManager.Server.Services
 
         public async Task<UserSession> SignIn(string email, string password)
         {
-            var user = await _db.Users.FirstAsync(user => user.Email == email);
+            var user = await _db.Users.FirstOrDefaultAsync(user => user.Email == email);
+            if(user == null) 
+            {
+                throw new Exception("User not found");
+            }
             var hashed = PasswordHasher.HashPassword(password, Convert.FromBase64String(user.Salt));
             if (user.Hash != Convert.ToBase64String(hashed))
             {
-                throw new Exception("Wrong email or password");
+                throw new Exception("Wrong password");
             }
             user.LastActive = DateTime.Now;
             var session = GenerateUserSession(user);
@@ -50,7 +54,7 @@ namespace StellarJadeManager.Server.Services
             //    Hash = Convert.ToBase64String(hash),
             //    LastActive = DateTime.Now,
             //};
-            var profile = new Server.Profile { User = user };
+            var profile = new Shared.Profile { User = user, UserId = user.Id, ProfileName = "Профиль 1" };
             user.Profiles.Add(profile);
             await _db.Users.AddAsync(user);
             var session = GenerateUserSession(user);

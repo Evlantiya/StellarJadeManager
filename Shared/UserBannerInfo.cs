@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StellarJadeManager.Server;
+namespace StellarJadeManager.Shared;
 
 public partial class UserBannerInfo
 {
@@ -19,5 +19,9 @@ public partial class UserBannerInfo
 
     public bool GuaranteedEpic { get; set; }
 
+    public string Uid { get; set; } = null!;
+
     public virtual Profile Profile { get; set; } = null!;
+
+    public virtual ICollection<Warp> Warps { get; set; } = new List<Warp>();
 }

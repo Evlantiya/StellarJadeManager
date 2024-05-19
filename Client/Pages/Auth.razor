@@ -1,0 +1,66 @@
+﻿@page "/auth"
+@using Microsoft.AspNetCore.Components.Authorization
+@using System.Security.Claims;
+@using StellarJadeManager.Client.Components.LogIn;
+@inject IDialogService DialogService
+@using MudBlazor
+
+
+
+<MudText Typo="Typo.h2" Align="MudBlazor.Align.Center" GutterBottom>Добро пожаловать</MudText>
+<MudText Typo="Typo.h5" Align="MudBlazor.Align.Center" GutterBottom>Войдите в аккаунт или зарегистрируйте новый, чтобы сохранить ваши данные</MudText>
+<MudImage Width="250" Src="/Images/emotes/Asta.png" Alt="Asta" Class="py-4"></MudImage>
+<MudButtonGroup Color="MudBlazor.Color.Primary" Variant="Variant.Filled" Size="MudBlazor.Size.Large">
+    <MudButton OnClick="ShowLoginDialog">Войти</MudButton>
+    <MudButton OnClick="ShowRegisterDialog">Регистрация</MudButton>
+</MudButtonGroup>
+
+<style>
+    .dialog-background {
+        backdrop-filter: blur(10px);
+    }
+</style>
+
+
+<AuthorizeView>
+    <Authorized>
+        @if (context.User.HasClaim(c => c.Type == ClaimTypes.Email))
+        {
+            <h1>Hello, @context.User.Claims.First(c => c.Type == ClaimTypes.Email).Value</h1>
+        }
+        else
+        {
+            <h11>govno</h11>
+        }
+    </Authorized>
+    <NotAuthorized>
+        <h1>Hello, Guest!</h1>
+    </NotAuthorized>
+</AuthorizeView>
+
+
+@code {
+
+
+    DialogOptions blurOptions = new DialogOptions { ClassBackground = "dialog-background" };
+
+    private async Task ShowLoginDialog()
+    {
+        var dialog = DialogService.Show<LogInDialog>("Вход", blurOptions);
+        var result = await dialog.Result;
+        if (!result.Cancelled)
+        {
+            Console.WriteLine("User logged in");
+        }
+    }
+
+    private async Task ShowRegisterDialog()
+    {
+        var dialog = DialogService.Show<RegistrationDialog>("Регистрация", blurOptions);
+        var result = await dialog.Result;
+        if (!result.Cancelled)
+        {
+            Console.WriteLine("User registered");
+        }
+    }
+}

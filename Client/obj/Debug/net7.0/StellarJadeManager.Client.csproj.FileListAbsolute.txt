@@ -1227,8 +1227,6 @@ D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\staticwebassets
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\staticwebassets.pack.json
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\staticwebassets.build.json
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\staticwebassets.development.json
-D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\Calendar.razor.rz.scp.css
-D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\PatchCalendar.razor.rz.scp.css
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\bundle\StellarJadeManager.Client.styles.css
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\projectbundle\StellarJadeManager.Client.bundle.scp.css
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\service-worker\service-worker.js
@@ -1238,3 +1236,5 @@ D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\StellarJadeMana
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\refint\StellarJadeManager.Client.dll
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\StellarJadeManager.Client.pdb
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\ref\StellarJadeManager.Client.dll
+D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\MainPage\Calendar.razor.rz.scp.css
+D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\MainPage\PatchCalendar.razor.rz.scp.css

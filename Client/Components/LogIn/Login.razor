@@ -4,26 +4,31 @@
 @using Newtonsoft.Json;
 @using System.Text;
 @using StellarJadeManager.Client.Authentication;
+@inject NavigationManager Navigation
 
 
 @inject HttpClient http
-@inject Supabase.Client supabaseClient
 @inject AuthenticationStateProvider authStateProvider
 
-<MudPaper Class="pa-4">
-    <MudText Typo="Typo.h5">Login</MudText>
+<MudContainer Class="d-flex justify-center flex-column align-center" Style="with:50%; height:100%">
+    <MudText Typo="Typo.h4">Вход</MudText>
     <EditForm Model="@userModel" OnValidSubmit="HandleLogin">
-        <MudTextField @bind-Value="userModel.Email"  Label="Email" For="@(() => userModel.Email)" FullWidth />
-        <MudTextField @bind-Value="userModel.Password" Label="Password" For="@(() => userModel.Password)" FullWidth InputType="InputType.Password" />
-        <MudButton ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Variant="Variant.Filled">Login</MudButton>
+        <MudContainer MaxWidth="MaxWidth.Medium" Class="d-flex flex-column justify-space-around">
+            <MudTextField @bind-Value="userModel.Email"  Label="Email" For="@(() => userModel.Email)" FullWidth Class="my-2" />
+            
+            <MudTextField @bind-Value="userModel.Password" Label="Password" For="@(() => userModel.Password)" Class="my-2" FullWidth InputType="InputType.Password" />
+            <MudButton ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Class="my-2" Variant="Variant.Filled">Войти</MudButton>
+            <MudText Color="MudBlazor.Color.Error">@errorMsg</MudText>
+        </MudContainer>
     </EditForm>
-</MudPaper>
+</MudContainer>
 
 @code {
 
     [Parameter]
     public EventCallback OnSinginIn { get; set; }
 
+    public string errorMsg = "";
     private UserModel userModel = new UserModel();
 
     private async Task HandleLogin()
@@ -34,15 +39,17 @@
         var json_response = await response.Content.ReadAsStringAsync();
         if (response.IsSuccessStatusCode)
         {
+            errorMsg = "";
             var session = JsonConvert.DeserializeObject<UserSession>(json_response);
             var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
             await customAuthStateProvider.UpdateAuthenticationState(session);
-            await OnSinginIn.InvokeAsync();
+            StateHasChanged();
+            Navigation.NavigateTo("/");
 
         }
         else
         {
-            Console.WriteLine(json_response);
+            errorMsg = json_response;
         }
     }
 

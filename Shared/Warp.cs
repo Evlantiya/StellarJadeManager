@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace StellarJadeManager.Server;
+namespace StellarJadeManager.Shared;
 
 public partial class Warp
 {
-    public int Id { get; set; }
+    public string Id { get; set; } = null!;
 
-    public int Uid { get; set; }
+    public string Uid { get; set; } = null!;
 
     public int GachaId { get; set; }
 
@@ -31,5 +31,5 @@ public partial class Warp
 
     public virtual Banner Gacha { get; set; } = null!;
 
-    public virtual Profile UidNavigation { get; set; } = null!;
+    public virtual UserBannerInfo UserBannerInfo { get; set; } = null!;
 }

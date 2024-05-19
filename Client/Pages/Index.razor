@@ -1,33 +1,19 @@
 ﻿@page "/"
+@using StellarJadeManager.Client.Components.MainPage
 @inject HttpClient Http
 
-@if(isDataLoaded){
-    <Calendar patches="patches" OnSelectedDateChanged="SetSelectedDate"></Calendar>
-}else
-{
-    <MudProgressCircular Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Indeterminate="true" />
-}
-<Calculator patches="patches" currentGems="test" chances="chances" selectedDate="selectedDate"></Calculator>
+<Calendar patches="patches"></Calendar>
 
-@* <PatchCalendar currentGems="@test" OnSelectedDateChanged="@SetStellarJades">
-</PatchCalendar> *@
- 
- @* <p>@hren</p> *@
 
- @code{
-    public bool isDataLoaded = false;
-    public List<PatchDTO> patches;
-    public int test = 3200;
-    public DateTime selectedDate = DateTime.Today;
-    public int hren = 0;
+
+@code{
+    [CascadingParameter]
+    List<Profile> profiles { get; set; }
+    
+
     public Dictionary<int, double> chances = new();
-    public void SetStellarJades(int amount){
-        hren = amount;
-    }
-
-    public void SetSelectedDate(DateTime date){
-        selectedDate = date;
-    }
+    public List<PatchDTO> patches;
+    
 
     protected override async Task OnInitializedAsync(){
         //симуляция сервака с мл, коэфы регрессии
@@ -45,7 +31,6 @@
             }
         }   
         patches = await Http.GetFromJsonAsync<List<PatchDTO>>("/api/patches") ?? new();
-        isDataLoaded = true;
         StateHasChanged();
 
     }

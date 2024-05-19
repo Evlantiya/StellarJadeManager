@@ -1,8 +1,9 @@
+@using System.Text;
 @inject HttpClient Http
 
 <MudTextField T="DateTime" ReadOnly="@true" @bind-Value='selectedDate' Label="Выбранная дата"  />
-    <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Гемов за ивенты"  />
-    <MudTextField @bind-Value='currentGems' T="int" Label="Текущее количество гемов"  />
+    <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Гемов за ивенты"   />
+<MudTextField T="int" Label="Текущее количество гемов" ValueChanged="ChangeJadesAmount" />
     <MudSelect T="int" Label="Звезд в зеркале" AnchorOrigin="Origin.BottomCenter" @bind-Value="mirror_stars">
         @for(int i=0; i<13;i++){
             <MudSelectItem  T="int" Value="i*3" />
@@ -64,19 +65,54 @@
     </div>
 
 @code{
+
     [Parameter]
-    public int currentGems {get; set;}
+    public Profile profile { get; set; }
 
     [Parameter]
     public List<PatchDTO> patches {get; set;}
-    
-    [Parameter]
-    public DateTime selectedDate {get; set;}
 
     [Parameter]
     public Dictionary<int, double> chances {get; set;}
 
+    public int currentGems
+    {
+        get
+        {
+            return profile?.CurrentJades ?? 0;
+        }
+        set
+        {
+            if(profile != null)
+            {
+                profile.CurrentJades = value;
+            }
+        }
+    }
+
+    public DateTime selectedDate {get; set;}
+    public bool month_pass { get; set; } = false;
+    public int mirror_stars {get;set;} = 0;
+
+
+
     string warp_url = "";
+
+    public async Task ChangeJadesAmount(int amount)
+    {
+        profile.CurrentJades = amount;
+    }
+
+    public async Task UpdateProfile()
+    {
+        if (profile != null)
+        {
+            var json = JsonConvert.SerializeObject(profile);
+            var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await Http.PutAsync($"/api/profile/{profile.Id}", jsonContent);
+        }
+    }
+
     private async Task Test(){
 
         @* var content = new StringContent(warp_url, Encoding.UTF8, "text/plain"); *@
@@ -87,13 +123,13 @@
     {
         month_pass = value;
     }
-    public bool month_pass { get; set; } = false;
-    public int mirror_stars {get;set;} = 0;
     public int dailyIncom {get {
         return month_pass ? 150 : 60;
     }}
     public int stellarJadesAmountForEvents {get; set;} = 0;
     public int resultStellarJades => currentGems + stellarJadesAmountForEvents + mirror_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
+    
+    
     private int calculateEventStellarJadeBySelectedDate(){
         int result = 0;
         var dateRange = new EventDateRange(DateTime.Today, selectedDate);

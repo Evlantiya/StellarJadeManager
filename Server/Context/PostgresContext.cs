@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using StellarJadeManager.Shared;
 
 namespace StellarJadeManager.Server;
 
@@ -29,6 +30,9 @@ public partial class PostgresContext : DbContext
 
     public virtual DbSet<Warp> Warps { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseNpgsql("User Id=postgres.nyeujbavubnlpyjssdsa;Password=Rjnjdfcbz2002;Server=aws-0-eu-central-1.pooler.supabase.com;Port=5432;Database=postgres;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -136,8 +140,6 @@ public partial class PostgresContext : DbContext
 
             entity.HasIndex(e => e.Id, "profile_id_key").IsUnique();
 
-            entity.HasIndex(e => e.Uid, "profile_uid_key").IsUnique();
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CurrentJades).HasColumnName("current_jades");
             entity.Property(e => e.MoCStars).HasColumnName("MoC_stars");
@@ -149,9 +151,9 @@ public partial class PostgresContext : DbContext
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("selected_date");
             entity.Property(e => e.SupplyPass).HasColumnName("supply_pass");
-            //entity.Property(e => e.Uid)
-            //    .IsRequired()
-            //    .HasColumnName("uid");
+            entity.Property(e => e.Uid)
+                .HasColumnType("character varying")
+                .HasColumnName("uid");
             entity.Property(e => e.UserId).HasColumnName("user_id");
 
             entity.HasOne(d => d.User).WithMany(p => p.Profiles)
@@ -194,6 +196,8 @@ public partial class PostgresContext : DbContext
 
             entity.ToTable("user_banner_info");
 
+            entity.HasIndex(e => new { e.Uid, e.BannerTypeId }, "unique_uid_banner_id").IsUnique();
+
             entity.HasIndex(e => e.Id, "user_banner_info_id_key").IsUnique();
 
             entity.Property(e => e.Id).HasColumnName("id");
@@ -205,6 +209,9 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.GuaranteedEpic).HasColumnName("guaranteed_epic");
             entity.Property(e => e.GuaranteedLegendary).HasColumnName("guaranteed_legendary");
             entity.Property(e => e.ProfileId).HasColumnName("profile_id");
+            entity.Property(e => e.Uid)
+                .HasColumnType("character varying")
+                .HasColumnName("uid");
 
             entity.HasOne(d => d.Profile).WithMany(p => p.UserBannerInfos)
                 .HasForeignKey(d => d.ProfileId)
@@ -221,7 +228,7 @@ public partial class PostgresContext : DbContext
             entity.HasIndex(e => e.Id, "warp_id_key").IsUnique();
 
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
+                .HasColumnType("character varying")
                 .HasColumnName("id");
             entity.Property(e => e.Count).HasColumnName("count");
             entity.Property(e => e.GachaId).HasColumnName("gacha_id");
@@ -241,18 +248,20 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Time)
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("time");
-            entity.Property(e => e.Uid).HasColumnName("uid");
+            entity.Property(e => e.Uid)
+                .HasColumnType("character varying")
+                .HasColumnName("uid");
 
             entity.HasOne(d => d.Gacha).WithMany(p => p.Warps)
                 .HasForeignKey(d => d.GachaId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("warp_gacha_id_fkey");
 
-            entity.HasOne(d => d.UidNavigation).WithMany(p => p.Warps)
-                .HasPrincipalKey(p => p.Uid)
-                .HasForeignKey(d => d.Uid)
+            entity.HasOne(d => d.UserBannerInfo).WithMany(p => p.Warps)
+                .HasPrincipalKey(p => new { p.Uid, p.BannerTypeId })
+                .HasForeignKey(d => new { d.Uid, d.GachaType })
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("warp_uid_fkey");
+                .HasConstraintName("warp_uid_gacha_type_fkey");
         });
 
         OnModelCreatingPartial(modelBuilder);
