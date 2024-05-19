@@ -1,29 +1,29 @@
 /* /Components/MainPage/Calendar.razor.rz.scp.css */
-.day[b-su9cikr6t5]{
-    aspect-ratio:1/1;
+.day[b-su9cikr6t5] {
+    aspect-ratio: 1/1;
 }
 
-.day-disabled[b-su9cikr6t5]{
+.day-disabled[b-su9cikr6t5] {
     background-color: gray;
 }
 
-.calendar-container[b-su9cikr6t5]{
-    width:100%;
-    height:auto;
+.calendar-container[b-su9cikr6t5] {
+    width: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows:1fr;
-/*    border-width: 1px;*/
+    grid-template-rows: 1fr;
+    /*    border-width: 1px;*/
     /* border-color: var(--mud-palette-primary); */
-/*    border-color: rgba(39,44,52,1);
+    /*    border-color: rgba(39,44,52,1);
     box-shadow: 0px 0px 10px 5px #212121;*/
 }
 
-section.mud-carousel[b-su9cikr6t5]{
+section.mud-carousel[b-su9cikr6t5] {
     background-image: url(Images/1_6_Crown_of_the_Mundane_and_Divine.webp);
 }
 
-.selected-patch-info[b-su9cikr6t5]{
+.selected-patch-info[b-su9cikr6t5] {
     bottom: 0%;
     left: 50%;
     transform: translate(-50%,-20%);
