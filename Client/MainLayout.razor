@@ -101,7 +101,7 @@
     [CascadingParameter]
     private Task<AuthenticationState> AuthenticationStateTask { get; set; }
 
-    private List<Profile> _profiles;
+    private List<Shared.Profile> _profiles;
 
     public int currentGems {get;set;} = 3200;
     MudTheme theme = new MudTheme(){
@@ -157,7 +157,7 @@
 
             var response = await http.GetStringAsync("api/profile/list");
 
-            _profiles = JsonConvert.DeserializeObject<List<Profile>>(response);
+            _profiles = JsonConvert.DeserializeObject<List<Shared.Profile>>(response);
             StateHasChanged();
 
         }

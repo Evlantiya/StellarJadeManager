@@ -1,23 +1,30 @@
 @using System.Text;
 @inject HttpClient Http
 
-<MudTextField T="DateTime" ReadOnly="@true" @bind-Value='selectedDate' Label="Выбранная дата"  />
-    <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Гемов за ивенты"   />
-<MudTextField T="int" Label="Текущее количество гемов" ValueChanged="ChangeJadesAmount" />
-    <MudSelect T="int" Label="Звезд в зеркале" AnchorOrigin="Origin.BottomCenter" @bind-Value="mirror_stars">
-        @for(int i=0; i<13;i++){
-            <MudSelectItem  T="int" Value="i*3" />
-        }
-    </MudSelect>
-<MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="set_checkbox" Label="Пропуск снабженца" Color="MudBlazor.Color.Primary" />
-<MudDivider class=mt-10></MudDivider>
-@*TEST*@
-<MudInputString @bind-Value='warp_url'/>
-<MudButton OnClick="@Test">
-    <p>
-        test
-    </p>
-</MudButton>
+<div class="d-flex flex-column justify-start">
+
+    <MudTextField T="DateTime" ReadOnly="@true"  Label="Выбранная дата" Value="selectedDate" ValueChanged="UpdateSelectedDate" />
+        <MudTextField @bind-Value='stellarJadesAmountForEvents' T="int" Label="Гемов за ивенты"   />
+    <MudTextField T="int" Value="currentGems" ValueChanged="UpdateCurrentGems"  Label="Текущее количество гемов" />
+        <MudSelect T="int" Label="Звезд в зеркале" AnchorOrigin="Origin.BottomCenter" Value="MoC_stars" ValueChanged="UpdateMoC">
+            @for(int i=0; i<13;i++){
+                <MudSelectItem  T="int" Value="i*3" />
+            }
+        </MudSelect>
+        <MudSelect T="int" Label="Звезд в чистом вымысле" AnchorOrigin="Origin.BottomCenter" Value="PF_stars" ValueChanged="UpdatePF">
+            @for(int i=0; i<13;i++){
+                <MudSelectItem  T="int" Value="i*3" />
+            }
+        </MudSelect>
+    <MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="UpdateMonthPass" Label="Пропуск снабженца" Color="MudBlazor.Color.Primary" />
+    <MudDivider class=mt-10></MudDivider>
+    @*TEST*@
+    <MudInputString @bind-Value='warp_url'/>
+    <MudButton OnClick="@Test">
+        <p>
+            test
+        </p>
+    </MudButton>
     <div class="d-flex flex-row my-10">
         <div class="ml-16">
             <MudText
@@ -64,10 +71,8 @@
         </div>
     </div>
 
+</div>
 @code{
-
-    [Parameter]
-    public Profile profile { get; set; }
 
     [Parameter]
     public List<PatchDTO> patches {get; set;}
@@ -75,43 +80,78 @@
     [Parameter]
     public Dictionary<int, double> chances {get; set;}
 
-    public int currentGems
-    {
-        get
-        {
-            return profile?.CurrentJades ?? 0;
-        }
-        set
-        {
-            if(profile != null)
-            {
-                profile.CurrentJades = value;
-            }
-        }
+    [Parameter]
+    public int currentGems {get;set;}
+    [Parameter]
+    public DateTime selectedDate {get; set;}
+    [Parameter]
+    public bool month_pass { get; set; }
+    [Parameter]
+    public int MoC_stars {get;set;}
+    [Parameter]
+    public int PF_stars {get;set;}
+    [Parameter]
+    public EventCallback<ProfilePutRequestDTO> OnProfileDataChanged {get;set;}
+
+    public int dailyIncom {get {
+        return month_pass ? 150 : 60;
+    }}
+    public int stellarJadesAmountForEvents {get; set;} = 0;
+    public int resultStellarJades => currentGems + stellarJadesAmountForEvents + MoC_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
+
+
+    public async Task UpdateCurrentGems(int value){
+        currentGems = value;
+        await UpdateProfile(_currentGems:value);
+    }
+    public async Task UpdateSelectedDate(DateTime value){
+        selectedDate = value;
+        await UpdateProfile(_selectedDate:value);
+    }
+    public async Task UpdateMonthPass(bool value){
+        month_pass = value;
+        await UpdateProfile(_month_pass:value);
+    }
+    public async Task UpdateMoC(int value){
+        MoC_stars = value;
+        await UpdateProfile(_MoC_stars:value);
+    }
+    public async Task UpdatePF(int value){
+        PF_stars = value;
+        await UpdateProfile(_PF_stars:value);
     }
 
-    public DateTime selectedDate {get; set;}
-    public bool month_pass { get; set; } = false;
-    public int mirror_stars {get;set;} = 0;
+    public async Task UpdateProfile(int? _currentGems = null, DateTime? _selectedDate= null, bool? _month_pass= null, int? _MoC_stars= null, int? _PF_stars = null){
+        
+        @* if(_currentGems != null){
+            currentGems = _currentGems ?? 0;
+        }
+        if(_selectedDate != null){
+            selectedDate = _selectedDate ?? DateTime.Today;
+        }
+        if(_month_pass != null){
+            month_pass = _month_pass ?? false;
+        }
+        if(_MoC_stars != null){
+            MoC_stars = _MoC_stars ?? 0;
+        }
+        if(_PF_stars != null){
+            PF_stars = _PF_stars ?? 0;
+        } *@
 
-
+        
+        var data = new ProfilePutRequestDTO(){
+            CurrentJades=_currentGems,
+            SelectedDate = _selectedDate,
+            SupplyPass = _month_pass,
+            MoCStars = _MoC_stars,
+            PfStars = _PF_stars
+        };
+        await OnProfileDataChanged.InvokeAsync(data);
+    }
 
     string warp_url = "";
 
-    public async Task ChangeJadesAmount(int amount)
-    {
-        profile.CurrentJades = amount;
-    }
-
-    public async Task UpdateProfile()
-    {
-        if (profile != null)
-        {
-            var json = JsonConvert.SerializeObject(profile);
-            var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await Http.PutAsync($"/api/profile/{profile.Id}", jsonContent);
-        }
-    }
 
     private async Task Test(){
 
@@ -119,15 +159,10 @@
         var hren = await Http.PostAsJsonAsync<string>("/api/warp/parse", warp_url);
 
     }
-    public void set_checkbox(bool value)
+    @* public void set_checkbox(bool value)
     {
         month_pass = value;
-    }
-    public int dailyIncom {get {
-        return month_pass ? 150 : 60;
-    }}
-    public int stellarJadesAmountForEvents {get; set;} = 0;
-    public int resultStellarJades => currentGems + stellarJadesAmountForEvents + mirror_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
+    } *@
     
     
     private int calculateEventStellarJadeBySelectedDate(){

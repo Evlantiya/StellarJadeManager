@@ -4216,6 +4216,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "AutoMapper >= 13.0.1",
       "Blazor-ApexCharts >= 2.2.1",
       "Blazored.LocalStorage >= 4.5.0",
       "Blazored.SessionStorage >= 2.4.0",
@@ -4271,6 +4272,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "Blazor-ApexCharts": {
             "target": "Package",
             "version": "[2.2.1, )"

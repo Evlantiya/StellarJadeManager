@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Blazored.SessionStorage;
 using Microsoft.AspNetCore.Components.Authorization;
 using StellarJadeManager.Client.Authentication;
+using StellarJadeManager.Shared;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -16,7 +17,7 @@ builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddBlazoredSessionStorage();
 builder.Services.AddSupabase(builder.Configuration["SupabaseUrl"], builder.Configuration["SupabaseKey"]);
-
+builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddHttpClient("StellarJadeManager.ServerAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
 // Supply HttpClient instances that include access tokens when making requests to the server project

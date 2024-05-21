@@ -1,7 +1,9 @@
 ﻿@page "/"
 @using StellarJadeManager.Client.Components.MainPage
 @using System.Text
+
 @inject HttpClient Http
+@inject IMapper _mapper
 @inject AuthenticationStateProvider authStateProvider
 
 <Calendar
@@ -9,6 +11,16 @@
     OnSelectedDateChanged="UpdateSelectedDate"
     selectedDate="profiles?.First()?.SelectedDate??DateTime.Today"
 ></Calendar>
+<Calculator
+    patches="patches"
+    chances="chances"
+    currentGems="profiles?.First()?.CurrentJades??0"
+    selectedDate="profiles?.First()?.SelectedDate??DateTime.Today"
+    month_pass="profiles?.First()?.SupplyPass??false"
+    MoC_stars="profiles?.First()?.MoCStars??0"
+    PF_stars="profiles?.First()?.PfStars??0"
+    OnProfileDataChanged="UpdateProfileData"
+></Calculator>
 
 
 
@@ -16,12 +28,17 @@
     [CascadingParameter]
     private Task<AuthenticationState> AuthenticationStateTask { get; set; }
     [CascadingParameter]
-    List<Profile> profiles { get; set; }
-    
+    List<Shared.Profile> profiles { get; set; }
+
 
     public Dictionary<int, double> chances = new();
     public List<PatchDTO> patches;
-    
+
+    public async Task UpdateProfileData(ProfilePutRequestDTO profile){
+
+        _mapper.Map(profile, profiles[0]);
+        await UpdateProfile(profiles?.First()?.Id??-1, profile);
+    }
 
     public async Task UpdateSelectedDate(DateTime selectedDate){
         if(profiles==null || profiles.Count<1){
