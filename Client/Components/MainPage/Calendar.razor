@@ -1,11 +1,24 @@
 ﻿
 @if (patches != null)
 {
-    <MudCarousel Class="py-5" Style="width:50%;height:340px;" ShowArrows="true" ShowBullets="false" EnableSwipeGesture="@true" AutoCycle="false" TData="object" @bind-SelectedIndex="selectedIndex">
+    <MudCarousel Class="my-5" Style="width:50%; height:35vh;" ShowArrows="false" ShowBullets="false" EnableSwipeGesture="@true" AutoCycle="false" TData="object" @bind-SelectedIndex="selectedIndex">
         @foreach (var p in patches)
         {
-            <MudCarouselItem Transition="@Transition.Fade">
+            
+            <MudCarouselItem Transition="@Transition.Fade" Class="d-flex flex-column justify-center align-center" Style="height: 35vh;">
+                @*
                 <VersionBanner title="@p.Title" version="@p.Version"></VersionBanner>
+                *@
+                <div class="d-flex" style="height: 100%;">
+
+                <MudImage
+                    ObjectFit="@ObjectFit.ScaleDown"
+                    ObjectPosition="@ObjectPosition.Top" 
+                    Src="@($"images/{p.Version.Replace('.','_')}.webp")"
+                    onerror="this.src='images/1_0.webp';" 
+                    Alt="Mony the dog" Elevation="25" Class="mx-auto my-auto rounded-lg" Style="width:100%;height:100%;"
+                />
+                </div>
             </MudCarouselItem>
         }
     </MudCarousel>
@@ -13,7 +26,7 @@
         @foreach (var p in patches)
         {
             <MudTabPanel Text="@p.Version">
-                <div class="mt-4 mb-8 mx-auto calendar-container">
+                <div class="calendar-container">
                     @for (int i = 0; i < p.WeeksCount * 7; i++)
                     {
                         var currentDate = p.ReleaseDate.AddDays(i);
@@ -55,14 +68,18 @@
     [Parameter]
     public List<PatchDTO> patches { get; set; }
 
+    [Parameter]
+    public EventCallback<DateTime> OnSelectedDateChanged { get; set; }
+
     public int selectedIndex;
     public DateTime selectedDate { get; set; } = DateTime.Today;
 
     private async Task SetSelectedDate(DateTime date)
     {
-        if (date >= DateTime.Today)
+        if (date >= DateTime.Today && date != selectedDate)
         {
             selectedDate = date;
+            await OnSelectedDateChanged.InvokeAsync();
         }
 
         @* logger.LogInformation($"Button on calendar clicked wit date {date}"); *@

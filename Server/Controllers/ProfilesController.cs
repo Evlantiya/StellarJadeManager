@@ -37,7 +37,7 @@ namespace StellarJadeManager.Server.Controllers
             return profiles;
         }
 
-        // GET: api/Profiles/5
+        // GET: api/profiles/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Profile>> GetProfile(int id)
         {

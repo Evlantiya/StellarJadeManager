@@ -2,7 +2,7 @@
 @using StellarJadeManager.Client.Components.MainPage
 @inject HttpClient Http
 
-<Calendar patches="patches"></Calendar>
+<Calendar patches="patches" OnSelectedDateChanged="UpdateSelectedDate"></Calendar>
 
 
 
@@ -14,6 +14,18 @@
     public Dictionary<int, double> chances = new();
     public List<PatchDTO> patches;
     
+
+    public async Task UpdateSelectedDate(DateTime selectedDate){
+        if(profiles==null || profiles.Count<1){
+            return;
+        }
+        profiles[0].SelectedDate = selectedDate;
+        await UpdateProfile(profiles[0]);
+    }
+
+    public async Task UpdateProfile(Profile profile){
+        
+    }
 
     protected override async Task OnInitializedAsync(){
         //симуляция сервака с мл, коэфы регрессии
