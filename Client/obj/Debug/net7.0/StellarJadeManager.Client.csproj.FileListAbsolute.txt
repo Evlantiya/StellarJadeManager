@@ -1238,3 +1238,7 @@ D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\StellarJadeMana
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\ref\StellarJadeManager.Client.dll
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\MainPage\Calendar.razor.rz.scp.css
 D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\scopedcss\Components\MainPage\PatchCalendar.razor.rz.scp.css
+D:\StellarJadeManager\StellarJadeManager\Client\bin\Debug\net7.0\wwwroot\_framework\AutoMapper.dll
+D:\StellarJadeManager\StellarJadeManager\Client\bin\Debug\net7.0\wwwroot\_framework\AutoMapper.dll.gz
+D:\StellarJadeManager\StellarJadeManager\Client\bin\Debug\net7.0\AutoMapper.dll
+D:\StellarJadeManager\StellarJadeManager\Client\obj\Debug\net7.0\build-gz\3opsBgqx.gz

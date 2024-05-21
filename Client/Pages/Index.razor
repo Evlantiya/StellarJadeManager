@@ -1,12 +1,20 @@
 ﻿@page "/"
 @using StellarJadeManager.Client.Components.MainPage
+@using System.Text
 @inject HttpClient Http
+@inject AuthenticationStateProvider authStateProvider
 
-<Calendar patches="patches" OnSelectedDateChanged="UpdateSelectedDate"></Calendar>
+<Calendar
+    patches="patches"
+    OnSelectedDateChanged="UpdateSelectedDate"
+    selectedDate="profiles?.First()?.SelectedDate??DateTime.Today"
+></Calendar>
 
 
 
 @code{
+    [CascadingParameter]
+    private Task<AuthenticationState> AuthenticationStateTask { get; set; }
     [CascadingParameter]
     List<Profile> profiles { get; set; }
     
@@ -20,11 +28,24 @@
             return;
         }
         profiles[0].SelectedDate = selectedDate;
-        await UpdateProfile(profiles[0]);
+        await UpdateProfile(profiles[0].Id, new ProfilePutRequestDTO() { SelectedDate = selectedDate });
     }
 
-    public async Task UpdateProfile(Profile profile){
-        
+    public async Task UpdateProfile(int id, ProfilePutRequestDTO profile){
+        if(profile==null){
+            return;
+        }
+        var authState = await AuthenticationStateTask;
+        var user = authState.User;
+        if (user?.Identity.IsAuthenticated ?? false)
+        {
+            var json = JsonConvert.SerializeObject(profile);
+            var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await Http.PutAsync($"api/profile/{id}", jsonContent);
+            var json_response = await response.Content.ReadAsStringAsync();
+            @* StateHasChanged(); *@
+
+        }
     }
 
     protected override async Task OnInitializedAsync(){

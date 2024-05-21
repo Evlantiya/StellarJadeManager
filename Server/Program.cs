@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using StellarJadeManager.Server;
 using StellarJadeManager.Server.Services;
+using StellarJadeManager.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,8 @@ builder.Services.AddDbContext<PostgresContext>(options =>
 builder.Services.AddSingleton<IPatchRepository, LocalPatchRepositroy>();
 builder.Services.AddScoped<IWarpService, WarpService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddAutoMapper(typeof(MapperProfile));
+
 builder.Services.AddMemoryCache();
 builder.Services.AddCors();
 builder.Services.AddHttpClient();

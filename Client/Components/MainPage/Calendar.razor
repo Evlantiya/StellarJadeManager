@@ -69,17 +69,19 @@
     public List<PatchDTO> patches { get; set; }
 
     [Parameter]
+    public DateTime selectedDate { get; set; }
+
+    [Parameter]
     public EventCallback<DateTime> OnSelectedDateChanged { get; set; }
 
     public int selectedIndex;
-    public DateTime selectedDate { get; set; } = DateTime.Today;
 
     private async Task SetSelectedDate(DateTime date)
     {
         if (date >= DateTime.Today && date != selectedDate)
         {
             selectedDate = date;
-            await OnSelectedDateChanged.InvokeAsync();
+            await OnSelectedDateChanged.InvokeAsync(date);
         }
 
         @* logger.LogInformation($"Button on calendar clicked wit date {date}"); *@

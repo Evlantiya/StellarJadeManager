@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0J1r0/iLEUb2hvpfYWUVkXrc0lSd7zTdhOHMj7lJvk4Mwam1WKGOd61hiSQEmCqDDpP8eL6PJ+yT7mvcfHhd/w==",
+  "dgSpecHash": "akWOGZ04Rcr8m1OJsZkYjBRHyLqDheA2qbrLp8bssF0d3qtej0TFWMFj2A2IOZqZ5Y+kQJ3WlKD4Tz9tkg9I4Q==",
   "success": true,
   "projectFilePath": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\StellarJadeManager.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\serfe\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\blazor-apexcharts.2.2.1.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\blazored.localstorage\\4.5.0\\blazored.localstorage.4.5.0.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\blazored.sessionstorage\\2.4.0\\blazored.sessionstorage.2.4.0.nupkg.sha512",

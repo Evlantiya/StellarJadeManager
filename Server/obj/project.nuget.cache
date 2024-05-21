@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ay/Io/2ouvXoGRG28tnjUXflIR2XyDXn+xu28Anb53HjZtuv0JAXzC7j344n7uRHfvba3AxCUb/JmuCi1l2CLQ==",
+  "dgSpecHash": "ZN6x1FuT8VcX10HrwUQIp6VzGY3AcmVjW4gvL+ekDrwo/cdWxdVjVxoNp3oVKOFPjXIsK2/nAj+7grf8s4M0AQ==",
   "success": true,
   "projectFilePath": "D:\\StellarJadeManager\\StellarJadeManager\\Server\\StellarJadeManager.Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\serfe\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\blazor-apexcharts.2.2.1.nupkg.sha512",
