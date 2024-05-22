@@ -81,15 +81,19 @@
     public Dictionary<int, double> chances {get; set;}
 
     [Parameter]
-    public int currentGems {get;set;}
-    [Parameter]
-    public DateTime selectedDate {get; set;}
-    [Parameter]
-    public bool month_pass { get; set; }
-    [Parameter]
-    public int MoC_stars {get;set;}
-    [Parameter]
-    public int PF_stars {get;set;}
+    public Shared.Profile CurrentProfile { get; set; }
+
+
+    public int currentGems => CurrentProfile?.CurrentJades ?? 0;
+
+    public DateTime selectedDate => CurrentProfile?.SelectedDate ?? DateTime.Today;
+
+    public bool month_pass => CurrentProfile?.SupplyPass ?? false;
+
+    public int MoC_stars => CurrentProfile?.MoCStars ?? 0;
+
+    public int PF_stars => CurrentProfile?.PfStars ?? 0;
+
     [Parameter]
     public EventCallback<ProfilePutRequestDTO> OnProfileDataChanged {get;set;}
 
@@ -101,23 +105,24 @@
 
 
     public async Task UpdateCurrentGems(int value){
-        currentGems = value;
+        CurrentProfile.CurrentJades = value;
         await UpdateProfile(_currentGems:value);
     }
     public async Task UpdateSelectedDate(DateTime value){
-        selectedDate = value;
+        CurrentProfile.SelectedDate = value;
         await UpdateProfile(_selectedDate:value);
     }
     public async Task UpdateMonthPass(bool value){
-        month_pass = value;
+        CurrentProfile.SupplyPass = value;
         await UpdateProfile(_month_pass:value);
     }
     public async Task UpdateMoC(int value){
-        MoC_stars = value;
+
+        CurrentProfile.MoCStars = value;
         await UpdateProfile(_MoC_stars:value);
     }
     public async Task UpdatePF(int value){
-        PF_stars = value;
+        CurrentProfile.PfStars = value;
         await UpdateProfile(_PF_stars:value);
     }
 

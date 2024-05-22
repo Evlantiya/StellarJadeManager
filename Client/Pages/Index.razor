@@ -9,16 +9,12 @@
 <Calendar
     patches="patches"
     OnSelectedDateChanged="UpdateSelectedDate"
-    selectedDate="profiles?.First()?.SelectedDate??DateTime.Today"
+    currentProfile="profiles?.FirstOrDefault()??defaultProfile"
 ></Calendar>
 <Calculator
     patches="patches"
     chances="chances"
-    currentGems="profiles?.First()?.CurrentJades??0"
-    selectedDate="profiles?.First()?.SelectedDate??DateTime.Today"
-    month_pass="profiles?.First()?.SupplyPass??false"
-    MoC_stars="profiles?.First()?.MoCStars??0"
-    PF_stars="profiles?.First()?.PfStars??0"
+    CurrentProfile="profiles?.FirstOrDefault()??defaultProfile"
     OnProfileDataChanged="UpdateProfileData"
 ></Calculator>
 
@@ -30,21 +26,24 @@
     [CascadingParameter]
     List<Shared.Profile> profiles { get; set; }
 
+    Shared.Profile defaultProfile = new Shared.Profile();
+
 
     public Dictionary<int, double> chances = new();
     public List<PatchDTO> patches;
 
     public async Task UpdateProfileData(ProfilePutRequestDTO profile){
-
-        _mapper.Map(profile, profiles[0]);
-        await UpdateProfile(profiles?.First()?.Id??-1, profile);
+        if(profiles==null || profiles.Count<1){
+            return;
+        }
+        await UpdateProfile(profiles[0].Id, profile);
     }
 
     public async Task UpdateSelectedDate(DateTime selectedDate){
         if(profiles==null || profiles.Count<1){
             return;
         }
-        profiles[0].SelectedDate = selectedDate;
+        //profiles[0].SelectedDate = selectedDate;
         await UpdateProfile(profiles[0].Id, new ProfilePutRequestDTO() { SelectedDate = selectedDate });
     }
 

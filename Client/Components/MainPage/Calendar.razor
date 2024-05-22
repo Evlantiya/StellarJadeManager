@@ -69,7 +69,10 @@
     public List<PatchDTO> patches { get; set; }
 
     [Parameter]
-    public DateTime selectedDate { get; set; }
+    public Shared.Profile currentProfile { get; set; }
+
+
+    public DateTime selectedDate => currentProfile?.SelectedDate ?? DateTime.Today;
 
     [Parameter]
     public EventCallback<DateTime> OnSelectedDateChanged { get; set; }
@@ -78,9 +81,9 @@
 
     private async Task SetSelectedDate(DateTime date)
     {
-        if (date >= DateTime.Today && date != selectedDate)
+        if (currentProfile!=null && date >= DateTime.Today && date != selectedDate )
         {
-            selectedDate = date;
+            currentProfile.SelectedDate = date;
             await OnSelectedDateChanged.InvokeAsync(date);
         }
 
