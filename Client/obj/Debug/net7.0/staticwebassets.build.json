@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xlfILPF8zdSrQ5pd9goUUkeNM/JODaRYEFN62il72Ew=",
+  "Hash": "KKu+quofvnAsv2nYRzyYhRAyX9hhTsYB+5JFUP4QKbc=",
   "Source": "StellarJadeManager.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -136,6 +136,23 @@
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\automapper\\13.0.1\\lib\\net6.0\\AutoMapper.dll"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor-ApexCharts.dll",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazor-ApexCharts.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\lib\\net6.0\\Blazor-ApexCharts.dll"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\blazor.boot.json",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Computed",
@@ -168,23 +185,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.0\\build\\net7.0\\blazor.webassembly.js"
-    },
-    {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazor-ApexCharts.dll",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Blazor-ApexCharts.dll",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "runtime",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\blazor-apexcharts\\2.2.1\\lib\\net6.0\\Blazor-ApexCharts.dll"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
@@ -612,23 +612,6 @@
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.9.0\\lib\\netcoreapp3.1\\fr\\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\icudt.dat",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt.dat",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorWebAssemblyResource",
-      "AssetTraitValue": "native",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\runtimes\\browser-wasm\\native\\icudt.dat"
-    },
-    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\icudt_CJK.dat",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Computed",
@@ -678,6 +661,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\icudt.dat",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt.dat",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "native",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\serfe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\runtimes\\browser-wasm\\native\\icudt.dat"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\it\\Microsoft.TestPlatform.CommunicationUtilities.resources.dll",
@@ -10506,40 +10506,6 @@
       "OriginalItemSpec": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\StellarJadeManager.Client.bundle.scp.css"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\service-worker.js",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\",
-      "BasePath": "/",
-      "RelativePath": "service-worker.js",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorServiceWorker",
-      "AssetTraitValue": "ServiceWorkerJs",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "wwwroot\\service-worker.js"
-    },
-    {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\service-worker.published.js",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\",
-      "BasePath": "/",
-      "RelativePath": "service-worker.js",
-      "AssetKind": "Publish",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "BlazorServiceWorker",
-      "AssetTraitValue": "ServiceWorkerJs",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\service-worker.published.js"
-    },
-    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker-assets.js",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Computed",
@@ -10572,6 +10538,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "obj\\Debug\\net7.0\\service-worker-assets.js.build"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\service-worker.js",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\",
+      "BasePath": "/",
+      "RelativePath": "service-worker.js",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorServiceWorker",
+      "AssetTraitValue": "ServiceWorkerJs",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "wwwroot\\service-worker.js"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\service-worker.published.js",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\obj\\Debug\\net7.0\\service-worker\\",
+      "BasePath": "/",
+      "RelativePath": "service-worker.js",
+      "AssetKind": "Publish",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorServiceWorker",
+      "AssetTraitValue": "ServiceWorkerJs",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\service-worker.published.js"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\appsettings.Development.json",
@@ -10812,23 +10812,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\429_Mkht.jpg"
     },
     {
-      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\background.webp",
-      "SourceId": "StellarJadeManager.Client",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "Images/background.webp",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\background.webp"
-    },
-    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\background_blured.webp",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Discovered",
@@ -10844,6 +10827,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\background_blured.webp"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\background.webp",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/background.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\background.webp"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\emotes\\1_Arlan.png",

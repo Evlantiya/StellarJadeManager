@@ -1,0 +1,153 @@
+
+<div style="width:100%">
+
+<ApexChart TItem="Roll" Options="apexOptions" Height="700">
+                <ApexPointSeries  TItem="Roll"
+                    Items="RollData"
+                    Name="Шанс 5⭐ по номеру крутки"
+                    SeriesType="SeriesType.Area"
+                    XValue="e=> e.rollnum"
+                    YValue="e=>(decimal)e.chance"
+                    />
+                <ApexPointSeries  TItem="Roll"
+                    Items="RollData"
+                    Name="Шанс 5⭐"
+                    SeriesType="SeriesType.Area"
+                    XValue="e=>e.rollnum"
+                    YValue="e=>(decimal) e.cumulative_chance"/>
+
+        
+        </ApexChart>
+</div>
+
+<MudButton OnClick="test">TEST</MudButton>
+
+@code {
+
+    private ApexChartOptions<Roll> apexOptions {get; set;}
+    public List<Roll> RollData = new();
+    public void test(){
+        Console.WriteLine(0);
+    }
+
+    @* [Parameter]
+    public Dictionary<int, double> Chances {get;set;}
+
+    private int Index = -1; //default value cannot be 0 -> first selectedindex is 0.
+    public ChartOptions Options = new ChartOptions();
+    
+    public List<ChartSeries> Series = new List<ChartSeries>()
+    {
+        new ChartSeries() { Name = "Шансы", Data = ConstChances.Chances_per_rollnum.Values.ToArray() },
+        new ChartSeries() { Name = "Кумулятивныые шансы", Data = ConstChances.Cumulative_chances.Values.ToArray() }
+    };
+    public string[] XAxisLabels = ConstChances.Chances_per_rollnum.Keys.Select(key=>key.ToString()).ToArray(); *@
+
+    @* protected override async Task OnParametersSetAsync(){
+        if(Series.Count>0){
+            return;
+        }
+        XAxisLabels = Chances.Keys.Select(rollnum => rollnum.ToString()).ToArray();
+        var chancesByRollnum = Chances.Values.Select(val=>val*100).ToArray();
+        var s = chancesByRollnum.Sum();
+        var relative = chancesByRollnum.Select(chance => chance/s).ToArray();
+        var cumulativeChances = GetCumulativeSum(relative).Select(c=>c*100).ToArray();
+        Series.Add(new ChartSeries() { Name = "Шансы по номеру крутки", Data = chancesByRollnum });
+        Series.Add(new ChartSeries() { Name = "Шансы", Data = cumulativeChances });
+        StateHasChanged();
+
+    } *@
+
+    protected override async Task OnInitializedAsync(){
+        for(int i = 1; i < 91; i++){
+            RollData.Add(
+                new Roll{
+                    rollnum = i,
+                    chance=ConstChances.Chances_per_rollnum[i],
+                    cumulative_chance=ConstChances.Cumulative_chances[i]
+                }
+            );
+        }
+        apexOptions = new ApexChartOptions<Roll>{
+            
+            Theme = new Theme
+                {
+                    Mode = Mode.Dark,
+                    Palette = PaletteType.Palette1
+                },
+            Xaxis = new XAxis{
+                TickAmount=16,
+                Min=1,
+                Max=90,
+                Labels = new XAxisLabels{
+                    Rotate = -45.0,
+                }
+            },
+            Yaxis = new List<YAxis>{
+                new YAxis
+                {
+                    ForceNiceScale = false,
+                    Min=0,
+                    Max=100,
+                    Title = new AxisTitle{Text="Шанс 5⭐"},
+                    SeriesName="Шанс 5⭐",
+                    Labels = new YAxisLabels
+                    {
+                        @* Formatter = @"function (value) {if (value >= 1000000) {return (value / 1000000) + 'M';} else {return value.toString();}}", *@
+                        MinWidth = 40
+                    }
+                },
+                new YAxis
+                {
+                    ForceNiceScale = false,
+                    Min=0,
+                    Max=100,
+                    Opposite = true,
+                    Title = new AxisTitle{Text="Шанс 5⭐ по номеру крутки"},
+                    SeriesName="Шанс 5⭐ по номеру крутки",
+                    Labels = new YAxisLabels
+                    {
+                        MinWidth = 40
+                        @* Formatter = @"function (value) {return Number(value).toString()+'%';}" *@
+                    }
+                }
+            },
+            Chart = new Chart{
+                
+                Group = "pulls",
+                Toolbar = new Toolbar {Show=false},
+                Zoom = new Zoom {Enabled = false},
+                
+            },
+            Annotations = new Annotations{
+                Xaxis = new List<AnnotationsXAxis> { new AnnotationsXAxis{
+                        X=73
+                    }
+                }
+            }
+            
+            
+        };
+    }
+
+
+    public class Roll
+        {
+        public int rollnum { get; set; }
+        public double chance { get; set; }
+        public double cumulative_chance { get; set; }
+
+        }
+    public double[] GetCumulativeSum(double[] numbers)
+    {
+        double[] result = new double[numbers.Length];
+        double sum = 0;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            sum += numbers[i];
+            result[i] = sum;
+        }
+        return result;
+    }
+    
+}

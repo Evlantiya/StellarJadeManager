@@ -17,6 +17,7 @@
     CurrentProfile="profiles?.FirstOrDefault()??defaultProfile"
     OnProfileDataChanged="UpdateProfileData"
 ></Calculator>
+<Graphs></Graphs>
 
 
 
@@ -48,6 +49,9 @@
     }
 
     public async Task UpdateProfile(int id, ProfilePutRequestDTO profile){
+        chances = new(){
+            {1,2},{2,2}
+        };
         if(profile==null){
             return;
         }
@@ -66,8 +70,8 @@
 
     protected override async Task OnInitializedAsync(){
         //симуляция сервака с мл, коэфы регрессии
-        var const_a = 3623.0/850; 
-        var b = -497.0/8500;
+        var const_a = -3623.0/850; 
+        var b = 497.0/8500;
         for (int roll_num = 1;roll_num <= 90; roll_num++){
             if(roll_num == 90){
                 chances.Add(roll_num, 1);
