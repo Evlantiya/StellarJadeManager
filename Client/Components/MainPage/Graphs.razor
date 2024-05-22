@@ -93,7 +93,7 @@
                     SeriesName="Шанс 5⭐",
                     Labels = new YAxisLabels
                     {
-                        @* Formatter = @"function (value) {if (value >= 1000000) {return (value / 1000000) + 'M';} else {return value.toString();}}", *@
+                        Formatter = @"function (value) {return Number(value).toString()+'%';}",
                         MinWidth = 40
                     }
                 },
@@ -107,8 +107,8 @@
                     SeriesName="Шанс 5⭐ по номеру крутки",
                     Labels = new YAxisLabels
                     {
-                        MinWidth = 40
-                        @* Formatter = @"function (value) {return Number(value).toString()+'%';}" *@
+                        MinWidth = 40,
+                        Formatter = @"function (value) {return Number(value).toString()+'%';}"
                     }
                 }
             },

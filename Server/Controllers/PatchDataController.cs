@@ -25,9 +25,6 @@ public class PatchController: ControllerBase
     }
 
 
-
-    
-
     [HttpPost]
     public void post_test(int rollsAmount){
         logger.LogInformation(rollsAmount.ToString()); 

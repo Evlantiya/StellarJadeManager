@@ -17,6 +17,7 @@ public partial class PostgresContext : DbContext
     }
 
     public virtual DbSet<Banner> Banners { get; set; }
+    public virtual DbSet<BannerItem> BannerItems { get; set; }
 
     public virtual DbSet<Event> Events { get; set; }
 
@@ -29,10 +30,6 @@ public partial class PostgresContext : DbContext
     public virtual DbSet<UserBannerInfo> UserBannerInfos { get; set; }
 
     public virtual DbSet<Warp> Warps { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("User Id=postgres.nyeujbavubnlpyjssdsa;Password=Rjnjdfcbz2002;Server=aws-0-eu-central-1.pooler.supabase.com;Port=5432;Database=postgres;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -65,7 +62,6 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
-            entity.Property(e => e.CharacterId).HasColumnName("character_id");
             entity.Property(e => e.EndDate)
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("end_date");
@@ -79,6 +75,32 @@ public partial class PostgresContext : DbContext
                 .HasForeignKey(d => d.PatchId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("banner_patch_id_fkey");
+        });
+
+        modelBuilder.Entity<BannerItem>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("banner_pkey");
+
+            entity.ToTable("banner_item");
+
+            entity.HasIndex(e => e.Id, "banner_item_id_key").IsUnique();
+
+            entity.Property(e => e.Id)
+                .HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasColumnType("character varying")
+                .HasColumnName("name");
+            entity.Property(e => e.ItemId).HasColumnName("item_id");
+            entity.Property(e => e.ItemType)
+                .HasColumnType("character varying")
+                .HasColumnName("item_type");
+            entity.Property(e => e.BannerId).HasColumnName("banner_id");
+            entity.Property(e => e.RankType).HasColumnName("rank_type");
+
+            entity.HasOne(d => d.Banner).WithMany(p => p.BannerItems)
+                .HasForeignKey(d => d.BannerId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("banner_item_banner_id_fkey");
         });
 
         modelBuilder.Entity<Event>(entity =>
