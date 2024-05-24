@@ -1,0 +1,29 @@
+{
+    "id": 2007,
+    "items": [
+        {
+            "id": 1205,
+            "name": "Blade",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1206,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1008,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1105,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

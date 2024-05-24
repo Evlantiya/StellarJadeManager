@@ -1,0 +1,29 @@
+{
+    "id": 2025,
+    "items": [
+        {
+            "id": 1308,
+            "name": "Acheron",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1002,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1301,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1106,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

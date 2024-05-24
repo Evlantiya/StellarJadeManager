@@ -1,0 +1,29 @@
+{
+    "id": 2005,
+    "items": [
+        {
+            "id": 1006,
+            "name": "Silver Wolf",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1009,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1002,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1103,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

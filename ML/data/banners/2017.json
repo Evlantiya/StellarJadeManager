@@ -1,0 +1,29 @@
+{
+    "id": 2017,
+    "items": [
+        {
+            "id": 1303,
+            "name": "Ruan Mei",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1214,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1202,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1001,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

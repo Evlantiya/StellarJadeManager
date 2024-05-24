@@ -1,0 +1,29 @@
+{
+    "id": 2024,
+    "items": [
+        {
+            "id": 1204,
+            "name": "Jing Yuan",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1108,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1201,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1215,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-public enum BannerEnum
+public enum BannerTypeEnum
 {
     EVENT = 11,
     LIGHTCONE = 12,

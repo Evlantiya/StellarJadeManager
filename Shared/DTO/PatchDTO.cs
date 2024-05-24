@@ -16,14 +16,4 @@ public class PatchDTO{
         this.WeeksCount=weeksCount;
         this.Events = events;
     }
-
-    // public Patch(string version, string title, DateTime releaseDate, int weeksCount, List<Event> events, List<Banner> banners)
-    // {
-    //     this.Version=version;
-    //     this.Title=title;
-    //     this.ReleaseDate=releaseDate;
-    //     this.WeeksCount=weeksCount;
-    //     this.Events=events;
-    //     this.Banners=banners;
-    // }
 }

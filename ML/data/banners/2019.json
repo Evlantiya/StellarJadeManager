@@ -1,0 +1,29 @@
+{
+    "id": 2019,
+    "items": [
+        {
+            "id": 1305,
+            "name": "Dr. Ratio",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1105,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1206,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1109,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

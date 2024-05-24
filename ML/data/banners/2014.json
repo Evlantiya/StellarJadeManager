@@ -1,0 +1,29 @@
+{
+    "id": 2014,
+    "items": [
+        {
+            "id": 1217,
+            "name": "Huohuo",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1002,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1103,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1008,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

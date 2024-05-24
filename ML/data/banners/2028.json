@@ -1,0 +1,29 @@
+{
+    "id": 2028,
+    "items": [
+        {
+            "id": 1212,
+            "name": "Jingliu",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1110,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1103,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1111,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

@@ -136,8 +136,9 @@ public partial class PostgresContext : DbContext
 
             entity.ToTable("patch");
 
+            entity.HasIndex(e => e.Id, "patch_id_key").IsUnique();
+
             entity.Property(e => e.Id)
-                .ValueGeneratedNever()
                 .HasColumnName("id");
             entity.Property(e => e.EndDate)
                 .HasColumnType("timestamp without time zone")

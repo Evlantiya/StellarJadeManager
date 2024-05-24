@@ -1,0 +1,29 @@
+{
+    "id": 2021,
+    "items": [
+        {
+            "id": 1307,
+            "name": "Black Swan",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1210,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1202,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1312,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

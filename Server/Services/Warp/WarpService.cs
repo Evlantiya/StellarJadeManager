@@ -23,7 +23,7 @@ public class WarpService : IWarpService
 
         GetGachaLogResponse? warpPage;
         var warpsData = new List<WarpDTO>();
-        foreach (int banner in Enum.GetValues(typeof(BannerEnum)))
+        foreach (int banner in Enum.GetValues(typeof(BannerTypeEnum)))
         {
             var endId = "0";
             do{

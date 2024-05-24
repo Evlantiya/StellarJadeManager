@@ -1,0 +1,29 @@
+{
+    "id": 2009,
+    "items": [
+        {
+            "id": 1213,
+            "name": "Dan Heng: Imbibitor Lunae",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1009,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1001,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1207,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

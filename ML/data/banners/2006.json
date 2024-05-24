@@ -1,0 +1,29 @@
+{
+    "id": 2006,
+    "items": [
+        {
+            "id": 1203,
+            "name": "Luocha",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1207,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1106,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1201,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}

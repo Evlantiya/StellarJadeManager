@@ -1,0 +1,29 @@
+{
+    "id": 3005,
+    "items": [
+        {
+            "id": 23007,
+            "name": "",
+            "type": "Light cone",
+            "rarity": 5
+        },
+        {
+            "id": 21004,
+            "name": "",
+            "type": "Light cone",
+            "rarity": 4
+        },
+        {
+            "id": 21017,
+            "name": "",
+            "type": "Light cone",
+            "rarity": 4
+        },
+        {
+            "id": 21013,
+            "name": "",
+            "type": "Light cone",
+            "rarity": 4
+        }
+    ]
+}

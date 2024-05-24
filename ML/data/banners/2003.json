@@ -1,0 +1,29 @@
+{
+    "id": 2003,
+    "items": [
+        {
+            "id": 1102,
+            "name": "Seele",
+            "type": "Character",
+            "rarity": 5
+        },
+        {
+            "id": 1109,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1105,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        },
+        {
+            "id": 1106,
+            "name": "",
+            "type": "Character",
+            "rarity": 4
+        }
+    ]
+}
