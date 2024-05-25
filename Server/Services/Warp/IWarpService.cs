@@ -1,4 +1,6 @@
+using StellarJadeManager.Shared;
+
 public interface IWarpService
 {
-    public Task<bool> TryParseWarpHistoryAsync(string warpUrl);
+    public Task<List<Warp>> GetWarpHistoryAsync(string warpUrl, Profile? profile = null);
 }

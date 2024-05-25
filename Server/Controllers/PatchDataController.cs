@@ -30,19 +30,19 @@ public class PatchController: ControllerBase
         return patchRepository.GetRelevant().ToList(); 
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Add()
-    {
-        try
-        {
-            await hren();
-            return Ok();
-        }
-        catch(Exception ex)
-        {
-            return BadRequest(ex.Message);
-        }
-    }
+    // [HttpPost]
+    // public async Task<IActionResult> Add()
+    // {
+    //     try
+    //     {
+    //         await hren();
+    //         return Ok();
+    //     }
+    //     catch(Exception ex)
+    //     {
+    //         return BadRequest(ex.Message);
+    //     }
+    // }
 
     [NonAction]
     public async Task hren()

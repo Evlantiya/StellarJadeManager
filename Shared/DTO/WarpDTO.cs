@@ -1,5 +1,6 @@
 public class WarpDTO
 {
+    public string id;
     public string uid;
     public string gacha_id;
     public string gacha_type;
@@ -10,5 +11,4 @@ public class WarpDTO
     public string lang;
     public string item_type;
     public string rank_type;
-    public string id;
 }

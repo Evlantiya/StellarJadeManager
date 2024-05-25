@@ -21,6 +21,25 @@ namespace StellarJadeManager.Shared
                 .ForMember(dest => dest.Id, opt => opt.Ignore())
                 .ForMember(dest => dest.Banners, opt => opt.Ignore())
                 .ForMember(dest => dest.Events, opt => opt.Ignore());
+
+            CreateMap<WarpDTO, Warp>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.id))
+                .ForMember(dest => dest.Uid, opt => opt.MapFrom(src => src.uid))
+                .ForMember(dest => dest.GachaId, opt => opt.MapFrom(src => Convert.ToInt32(src.gacha_id)))
+                .ForMember(dest => dest.GachaType, opt => opt.MapFrom(src => Convert.ToInt32(src.gacha_type)))
+                .ForMember(dest => dest.ItemId, opt => opt.MapFrom(src => Convert.ToInt32(src.item_id)))
+                .ForMember(dest => dest.Count, opt => opt.MapFrom(src => Convert.ToInt32(src.count)))
+                .ForMember(dest => dest.Time, opt => opt.MapFrom(src => Convert.ToDateTime(src.time)))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name))
+                .ForMember(dest => dest.Lang, opt => opt.MapFrom(src => src.lang))
+                .ForMember(dest => dest.ItemType, opt => opt.MapFrom(src => src.item_type))
+                .ForMember(dest => dest.RankType, opt => opt.MapFrom(src => Convert.ToInt32(src.rank_type)))
+                .ForMember(dest => dest.IsGuaranteed, opt => opt.Ignore())
+                .ForMember(dest => dest.Gacha, opt => opt.Ignore())
+                .ForMember(dest => dest.UserBannerInfo, opt => opt.Ignore())
+                ;
+
+
         }
     }
 }
