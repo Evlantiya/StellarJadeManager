@@ -5,15 +5,15 @@ public class PatchDTO{
     public string Title {get; private set;}
     public DateTime ReleaseDate {get; private set;}
     public int WeeksCount {get; private set;}
-    public List<EventDTO> Events {get; private set;}
-    // public List<Banner> Banners {get; private set;} = new();
+    public List<EventDTO> Events {get; private set; }
+
 
     public PatchDTO(string version, string title, DateTime releaseDate, int weeksCount, List<EventDTO> events)
     {
-        this.Version=version;
-        this.Title=title;
-        this.ReleaseDate=releaseDate;
-        this.WeeksCount=weeksCount;
+        this.Version = version;
+        this.Title = title;
+        this.ReleaseDate = releaseDate;
+        this.WeeksCount = weeksCount;
         this.Events = events;
     }
 }

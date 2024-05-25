@@ -47,11 +47,17 @@ public class PatchController: ControllerBase
     [NonAction]
     public async Task hren()
     {
-        var patchesDTO = patchRepository.GetAll().Where(p => p.Version != "2.3" && p.Version != "2.4").ToList();
-        var patches = _mapper.Map<List<PatchDTO>,List<Patch>>(patchesDTO);
+        // var patchesDTO = patchRepository.GetAll().Where(p => p.Version != "2.3" && p.Version != "2.4").ToList();
+        // var patches = _mapper.Map<List<PatchDTO>,List<Patch>>(patchesDTO);
 
-        await _context.Patches.AddRangeAsync(patches);
-        await _context.SaveChangesAsync();
+        // foreach(var patchDTO in patchesDTO)
+        // {
+        //     patchDTO.
+        // }
+
+
+        // await _context.Patches.AddRangeAsync(patches);
+        // await _context.SaveChangesAsync();
 
     }
 

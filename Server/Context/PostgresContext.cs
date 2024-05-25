@@ -17,9 +17,12 @@ public partial class PostgresContext : DbContext
     }
 
     public virtual DbSet<Banner> Banners { get; set; }
+
     public virtual DbSet<BannerItem> BannerItems { get; set; }
 
     public virtual DbSet<Event> Events { get; set; }
+
+    public virtual DbSet<Item> Items { get; set; }
 
     public virtual DbSet<Patch> Patches { get; set; }
 
@@ -62,13 +65,7 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Id)
                 .ValueGeneratedNever()
                 .HasColumnName("id");
-            entity.Property(e => e.EndDate)
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("end_date");
             entity.Property(e => e.PatchId).HasColumnName("patch_id");
-            entity.Property(e => e.StartDate)
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("start_date");
             entity.Property(e => e.TypeId).HasColumnName("type_id");
 
             entity.HasOne(d => d.Patch).WithMany(p => p.Banners)
@@ -79,28 +76,25 @@ public partial class PostgresContext : DbContext
 
         modelBuilder.Entity<BannerItem>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("banner_pkey");
+            entity.HasKey(e => e.Id).HasName("banner_item_pkey");
 
             entity.ToTable("banner_item");
 
             entity.HasIndex(e => e.Id, "banner_item_id_key").IsUnique();
 
-            entity.Property(e => e.Id)
-                .HasColumnName("id");
-            entity.Property(e => e.Name)
-                .HasColumnType("character varying")
-                .HasColumnName("name");
-            entity.Property(e => e.ItemId).HasColumnName("item_id");
-            entity.Property(e => e.ItemType)
-                .HasColumnType("character varying")
-                .HasColumnName("item_type");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.BannerId).HasColumnName("banner_id");
-            entity.Property(e => e.RankType).HasColumnName("rank_type");
+            entity.Property(e => e.ItemId).HasColumnName("item_id");
 
             entity.HasOne(d => d.Banner).WithMany(p => p.BannerItems)
                 .HasForeignKey(d => d.BannerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("banner_item_banner_id_fkey");
+
+            entity.HasOne(d => d.Item).WithMany(p => p.BannerItems)
+                .HasForeignKey(d => d.ItemId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("banner_item_item_id_fkey");
         });
 
         modelBuilder.Entity<Event>(entity =>
@@ -130,6 +124,28 @@ public partial class PostgresContext : DbContext
                 .HasConstraintName("event_patch_id_fkey");
         });
 
+        modelBuilder.Entity<Item>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("items_pkey");
+
+            entity.ToTable("items");
+
+            entity.HasIndex(e => e.Id, "items_id_key").IsUnique();
+
+            entity.HasIndex(e => e.Name, "items_name_key").IsUnique();
+
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever()
+                .HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasColumnType("character varying")
+                .HasColumnName("name");
+            entity.Property(e => e.Rarity).HasColumnName("rarity");
+            entity.Property(e => e.Type)
+                .HasColumnType("character varying")
+                .HasColumnName("type");
+        });
+
         modelBuilder.Entity<Patch>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("patch_pkey");
@@ -138,8 +154,7 @@ public partial class PostgresContext : DbContext
 
             entity.HasIndex(e => e.Id, "patch_id_key").IsUnique();
 
-            entity.Property(e => e.Id)
-                .HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.EndDate)
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("end_date");

@@ -3,17 +3,8 @@ using System.Collections.Generic;
 
 namespace StellarJadeManager.Shared;
 
-public  class User
+public partial class User
 {
-    public User(string name, string email, string salt, string hash)
-    {
-        Name = name;
-        Email = email;
-        Salt = salt;
-        Hash = hash;
-        LastActive= DateTime.Now;
-    }
-
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
@@ -27,4 +18,13 @@ public  class User
     public string Hash { get; set; } = null!;
 
     public virtual ICollection<Profile> Profiles { get; set; } = new List<Profile>();
+
+    public User(string name, string email, string salt, string hash)
+    {
+        Name = name;
+        Email = email;
+        Salt = salt;
+        Hash = hash;
+        LastActive= DateTime.Now;
+    }
 }
