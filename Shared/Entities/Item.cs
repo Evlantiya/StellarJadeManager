@@ -14,4 +14,6 @@ public partial class Item
     public short Rarity { get; set; }
 
     public virtual ICollection<BannerItem> BannerItems { get; set; } = new List<BannerItem>();
+
+    public virtual ICollection<Warp> Warps { get; set; } = new List<Warp>();
 }

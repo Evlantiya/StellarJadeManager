@@ -34,8 +34,10 @@ namespace StellarJadeManager.Shared
                 .ForMember(dest => dest.Lang, opt => opt.MapFrom(src => src.lang))
                 .ForMember(dest => dest.ItemType, opt => opt.MapFrom(src => src.item_type))
                 .ForMember(dest => dest.RankType, opt => opt.MapFrom(src => Convert.ToInt32(src.rank_type)))
-                .ForMember(dest => dest.IsGuaranteed, opt => opt.Ignore())
+                .ForMember(dest => dest.Guarantee, opt => opt.Ignore())
+                .ForMember(dest => dest.Pity, opt => opt.Ignore())
                 .ForMember(dest => dest.Gacha, opt => opt.Ignore())
+                .ForMember(dest => dest.Item, opt => opt.Ignore())
                 .ForMember(dest => dest.UserBannerInfo, opt => opt.Ignore())
                 ;
 

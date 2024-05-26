@@ -268,10 +268,12 @@ public partial class PostgresContext : DbContext
             entity.Property(e => e.Id)
                 .HasColumnType("character varying")
                 .HasColumnName("id");
+
             entity.Property(e => e.Count).HasColumnName("count");
             entity.Property(e => e.GachaId).HasColumnName("gacha_id");
             entity.Property(e => e.GachaType).HasColumnName("gacha_type");
-            entity.Property(e => e.IsGuaranteed).HasColumnName("is_guaranteed");
+            entity.Property(e => e.Guarantee).HasColumnName("guarantee");
+            entity.Property(e => e.Pity).HasColumnName("pity");
             entity.Property(e => e.ItemId).HasColumnName("item_id");
             entity.Property(e => e.ItemType)
                 .HasColumnType("character varying")
@@ -294,6 +296,11 @@ public partial class PostgresContext : DbContext
                 .HasForeignKey(d => d.GachaId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("warp_gacha_id_fkey");
+
+            entity.HasOne(d => d.Item).WithMany(p => p.Warps)
+                .HasForeignKey(d => d.ItemId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("warp_item_id_fkey");
 
             entity.HasOne(d => d.UserBannerInfo).WithMany(p => p.Warps)
                 .HasPrincipalKey(p => new { p.Uid, p.BannerTypeId })
