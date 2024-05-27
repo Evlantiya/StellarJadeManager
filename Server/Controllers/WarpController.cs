@@ -26,6 +26,27 @@ public class WarpController: ControllerBase
         _db = db;
     }
 
+    [HttpGet("userBannerInfo/list")]
+    public async Task<IActionResult> GetUserBannerInfoListByClaimsIdOrDefault()
+    {
+        var bannerInfos = UserBannerInfo.CreateDefaultBannerInfos();
+        if ( !User?.Identity?.IsAuthenticated ?? true){
+            return Ok(bannerInfos);
+        }
+        var userId = Convert.ToInt32(User.FindFirstValue("Id"));
+        var user = await _db.Users.Include(u=>u.Profiles).FirstOrDefaultAsync(u=>u.Id == userId);
+        var profile = user?.Profiles.FirstOrDefault();
+        if (profile.UserBannerInfos == null || profile.UserBannerInfos.Count == 0){
+            foreach(var b in bannerInfos){
+                b.ProfileId = profile.Id;
+            }
+            return Ok(bannerInfos);
+        }
+        return Ok(profile.UserBannerInfos);
+        
+
+    }
+
     // [Route("/parse")]
     [HttpPost("parse")]
     public async Task<IActionResult> ParseGachaLog([FromBody] string warpUrl)

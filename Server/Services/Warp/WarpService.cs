@@ -1,6 +1,7 @@
 using System;
 using System.Web;
 using Newtonsoft.Json;
+using NuGet.Packaging;
 using StellarJadeManager.Server;
 using StellarJadeManager.Shared;
 
@@ -18,8 +19,8 @@ public class WarpService : IWarpService
         _db = db;
     }
 
-    //refactor
-    public async Task<List<Warp>> GetWarpHistoryAsync(string warpUrl, Profile? profile = null)
+    //God forgive me. Refactor this bullshit. I wanna KILL MYSELF :)
+    public async Task<List<UserBannerInfo>> GetWarpHistoryAsync(string warpUrl, Profile? profile = null)
     {
         CheckUrl(warpUrl);
 
@@ -28,7 +29,7 @@ public class WarpService : IWarpService
         foreach (var info in bannerInfos)
         {
             GetGachaLogResponse? warpPage;
-            var lastWarpId = info.Warps.LastOrDefault()?.Uid ?? "0";
+            var lastWarpId = info.Warps.LastOrDefault()?.Id ?? "0";
             var warpDTOList = new List<WarpDTO>();
             var endId = "0";
             do
@@ -56,6 +57,7 @@ public class WarpService : IWarpService
 
 
             var warps = _mapper.Map<List<WarpDTO>, List<Warp>>(warpDTOList);
+            warps.Reverse();
 
             var epicPity = info?.CurrentEpicPity ?? 0;
             var isEpicGuaranteed = info?.GuaranteedEpic ?? false;
@@ -63,7 +65,7 @@ public class WarpService : IWarpService
             var legendaryPity = info?.CurrentLegendaryPity ?? 0;
             var isLegendaryGuaranteed = info?.GuaranteedLegendary ?? false;
 
-            foreach (var warp in warps.OrderBy(w => w.Time))
+            foreach (var warp in warps)
             {
                 epicPity += 1;
                 legendaryPity += 1;
@@ -86,8 +88,29 @@ public class WarpService : IWarpService
                 }
             }
 
+            info.CurrentEpicPity = epicPity;
+            info.CurrentLegendaryPity = legendaryPity;
+
+            info.GuaranteedEpic = isEpicGuaranteed;
+            info.GuaranteedLegendary = isLegendaryGuaranteed;
+
+            info.Warps.AddRange(warps);
+            info.Profile = profile;
+            //xd
+            if(warps.Count > 0){
+                info.Uid = warps.First().Uid;
+                if( profile != null ){
+                    if(profile.UserBannerInfos.Count == 0){
+                        profile.UserBannerInfos = bannerInfos;
+                        await _db.UserBannerInfos.AddRangeAsync(bannerInfos);
+                    }
+                    await _db.Warps.AddRangeAsync(warps);
+                    await _db.SaveChangesAsync();
+
+                }
+            }
         }
-        return null;
+        return bannerInfos.ToList();
 
     }
 

@@ -24,4 +24,15 @@ public partial class UserBannerInfo
     public virtual Profile Profile { get; set; } = null!;
 
     public virtual ICollection<Warp> Warps { get; set; } = new List<Warp>();
+
+
+    public static List<UserBannerInfo> CreateDefaultBannerInfos(){
+        return new List<UserBannerInfo> 
+        {
+            new UserBannerInfo(){ BannerTypeId=(int)BannerTypeEnum.EVENT },
+            new UserBannerInfo(){ BannerTypeId=(int)BannerTypeEnum.LIGHTCONE },
+            new UserBannerInfo(){ BannerTypeId=(int)BannerTypeEnum.STANDART },
+            new UserBannerInfo(){ BannerTypeId=(int)BannerTypeEnum.DEPARTURE }
+        };
+    }
 }
