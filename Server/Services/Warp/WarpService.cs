@@ -1,5 +1,6 @@
 using System;
 using System.Web;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using NuGet.Packaging;
 using StellarJadeManager.Server;
@@ -19,7 +20,7 @@ public class WarpService : IWarpService
         _db = db;
     }
 
-    //God forgive me. Refactor this bullshit. I wanna KILL MYSELF :)
+    //God forgive me. Refactor this bullshit. I wanna KILL MYSELF :) ASYNC FOR ALL BANNERS
     public async Task<List<UserBannerInfo>> GetWarpHistoryAsync(string warpUrl, Profile? profile = null)
     {
         CheckUrl(warpUrl);
@@ -28,6 +29,10 @@ public class WarpService : IWarpService
 
         foreach (var info in bannerInfos)
         {
+            bool isDefaultBanner = 
+                info.BannerTypeId == (int)BannerTypeEnum.STANDART ||
+                info.BannerTypeId == (int)BannerTypeEnum.DEPARTURE;
+
             GetGachaLogResponse? warpPage;
             var lastWarpId = info.Warps.LastOrDefault()?.Id ?? "0";
             var warpDTOList = new List<WarpDTO>();
@@ -73,15 +78,19 @@ public class WarpService : IWarpService
                 {
 
                     warp.Item = await _db.Items.FindAsync(warp.ItemId);
-                    warp.Gacha = await _db.Banners.FindAsync(warp.GachaId);
+                    warp.Gacha = await _db.Banners.Include(g => g.BannerItems).FirstOrDefaultAsync(gacha => gacha.Id == warp.GachaId);
 
                     if(warp.RankType == 4){
-                        SetGuaranteeType(ref isEpicGuaranteed, warp);
+                        if(!isDefaultBanner){
+                            SetGuaranteeType(ref isEpicGuaranteed, warp);
+                        }
                         warp.Pity = epicPity;
                         epicPity = 0;
                     }
                     else if(warp.RankType == 5){
-                        SetGuaranteeType(ref isLegendaryGuaranteed, warp);
+                        if(!isDefaultBanner){
+                            SetGuaranteeType(ref isLegendaryGuaranteed, warp);
+                        }
                         warp.Pity = legendaryPity;
                         legendaryPity = 0;
                     }
@@ -95,6 +104,7 @@ public class WarpService : IWarpService
             info.GuaranteedLegendary = isLegendaryGuaranteed;
 
             info.Warps.AddRange(warps);
+            
             info.Profile = profile;
             //xd
             if(warps.Count > 0){
