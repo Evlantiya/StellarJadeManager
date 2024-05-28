@@ -12,116 +12,176 @@ public class WarpService : IWarpService
     private readonly PostgresContext _db;
     private readonly AutoMapper.IMapper _mapper;
 
+    private readonly ILogger<WarpService> _logger;
 
-    public WarpService(HttpClient httpClient, AutoMapper.IMapper mapper, PostgresContext db)
+    private List<Banner> _allBanners;
+
+
+    public WarpService(HttpClient httpClient, AutoMapper.IMapper mapper, PostgresContext db, ILogger<WarpService> logger)
     {
         _httpClient = httpClient;
         _mapper = mapper;
         _db = db;
+        _logger = logger;
+
+        _allBanners = _db.Banners.Include( b=> b.BannerItems).ToList();
     }
 
-    //God forgive me. Refactor this bullshit. I wanna KILL MYSELF :) ASYNC FOR ALL BANNERS
+    //God forgive me. Refactor this bullshit. I wanna KILL MYSELF :) ASYNC FOR ALL BANNERS. 
+    //UPDATE NVM DDOS PROTECTION BLOCKS REQUEST
     public async Task<List<UserBannerInfo>> GetWarpHistoryAsync(string warpUrl, Profile? profile = null)
     {
         CheckUrl(warpUrl);
-
+        await _db.Entry(profile).Collection(p=>p.UserBannerInfos).LoadAsync();
         var bannerInfos = GetProfileBannerInfos(profile);
 
+        // var parseTaskList = new List<Task>();
+        //если распаралеливать дерьмо, то hoyo api выдает visit too frequently
         foreach (var info in bannerInfos)
         {
-            bool isDefaultBanner = 
-                info.BannerTypeId == (int)BannerTypeEnum.STANDART ||
-                info.BannerTypeId == (int)BannerTypeEnum.DEPARTURE;
+            if(profile !=null && profile.UserBannerInfos.Count!=0){
+                await _db.Entry(info).Collection(p=>p.Warps).LoadAsync();
+            }
+            await ParseBannerHistory(warpUrl, info);
+        }
+        // await Task.WhenAll(parseTaskList);
 
-            GetGachaLogResponse? warpPage;
-            var lastWarpId = info.Warps.LastOrDefault()?.Id ?? "0";
-            var warpDTOList = new List<WarpDTO>();
-            var endId = "0";
-            do
+
+        // var all_warps = bannerInfos.SelectMany(banner => banner.Warps);
+        // var b_id = all_warps.Select(war => war.GachaId).Distinct().ToList();
+
+        // foreach(var id in b_id){
+        //     var warpWithItem = all_warps.Where(w => w.GachaId == id);
+        // }
+        // var trashItemIdList = all_warps
+        // .Where(warp => warp.RankType == 3)
+        // .Select(warp=>warp.ItemId)
+        // .Distinct()
+        // .ToList();
+        // List<Item> hren = new();
+        // foreach(var id in trashItemIdList){
+        //     var warpWithItem = all_warps.First(w => w.ItemId == id);
+
+        //     var item = new Item(){
+        //         Id = id,
+        //         Name = warpWithItem.Name,
+        //         Type = warpWithItem.ItemType,
+        //         Rarity = (short)warpWithItem.RankType
+        //     };
+        //     hren.Add(item);
+        // }
+        // await _db.Items.AddRangeAsync(hren);
+        // await _db.SaveChangesAsync();
+        
+
+        if(profile != null && bannerInfos.Any(banner => banner.Warps.Count > 0))
+        {
+            var all_warps = bannerInfos.SelectMany(banner => banner.Warps);
+            if (profile.UserBannerInfos.Count == 0)
             {
-                var query = $"&page=1&size=20&gacha_type={info.BannerTypeId}&end_id={endId}";
-                var hren = warpUrl + query;
-                var test = await _httpClient.GetStringAsync(hren);
-                warpPage = JsonConvert.DeserializeObject<GetGachaLogResponse>(test);
-
-                // warpPage = await _httpClient.GetFromJsonAsync<GetGachaLogResponse>(hren);
-                List<WarpDTO> warpsDTO = warpPage?.data?.list ?? new List<WarpDTO>();
-
-                if (warpsDTO.FindLastIndex(w => w.uid == lastWarpId) != -1)
-                {
-                    var index = warpsDTO.FindLastIndex(w => w.uid == lastWarpId);
-                    warpsDTO.RemoveRange(index, warpsDTO.Count - index);
-                    warpDTOList.AddRange(warpsDTO);
-                    break;
+                profile.Uid = all_warps.First().Uid;
+                foreach(var banner in bannerInfos){
+                    banner.Uid = all_warps.First().Uid;
                 }
-
-                warpDTOList.AddRange(warpsDTO);
-                endId = warpsDTO.LastOrDefault()?.id ?? "0";
+                profile.UserBannerInfos = bannerInfos;
+                await _db.UserBannerInfos.AddRangeAsync(bannerInfos);
             }
-            while (warpPage != null && warpPage.data.list.Count > 0);
+            await _db.Warps.AddRangeAsync(bannerInfos.SelectMany(banner => banner.Warps));
+            await _db.SaveChangesAsync();
 
-
-            var warps = _mapper.Map<List<WarpDTO>, List<Warp>>(warpDTOList);
-            warps.Reverse();
-
-            var epicPity = info?.CurrentEpicPity ?? 0;
-            var isEpicGuaranteed = info?.GuaranteedEpic ?? false;
-
-            var legendaryPity = info?.CurrentLegendaryPity ?? 0;
-            var isLegendaryGuaranteed = info?.GuaranteedLegendary ?? false;
-
-            foreach (var warp in warps)
-            {
-                epicPity += 1;
-                legendaryPity += 1;
-                if (warp.RankType == 4 || warp.RankType == 5)
-                {
-
-                    warp.Item = await _db.Items.FindAsync(warp.ItemId);
-                    warp.Gacha = await _db.Banners.Include(g => g.BannerItems).FirstOrDefaultAsync(gacha => gacha.Id == warp.GachaId);
-
-                    if(warp.RankType == 4){
-                        if(!isDefaultBanner){
-                            SetGuaranteeType(ref isEpicGuaranteed, warp);
-                        }
-                        warp.Pity = epicPity;
-                        epicPity = 0;
-                    }
-                    else if(warp.RankType == 5){
-                        if(!isDefaultBanner){
-                            SetGuaranteeType(ref isLegendaryGuaranteed, warp);
-                        }
-                        warp.Pity = legendaryPity;
-                        legendaryPity = 0;
-                    }
-                }
-            }
-
-            info.CurrentEpicPity = epicPity;
-            info.CurrentLegendaryPity = legendaryPity;
-
-            info.GuaranteedEpic = isEpicGuaranteed;
-            info.GuaranteedLegendary = isLegendaryGuaranteed;
-
-            info.Warps.AddRange(warps);
-            
-            info.Profile = profile;
-            //xd
-            if(warps.Count > 0){
-                info.Uid = warps.First().Uid;
-                if( profile != null ){
-                    if(profile.UserBannerInfos.Count == 0){
-                        profile.UserBannerInfos = bannerInfos;
-                        await _db.UserBannerInfos.AddRangeAsync(bannerInfos);
-                    }
-                    await _db.Warps.AddRangeAsync(warps);
-                    await _db.SaveChangesAsync();
-
-                }
-            }
         }
         return bannerInfos.ToList();
 
+    }
+
+    private async Task ParseBannerHistory(string warpUrl, UserBannerInfo? info)
+    {
+        
+        List<Warp> warps = await GetBannerWarps(warpUrl, info);
+
+        var epicPity = info?.CurrentEpicPity ?? 0;
+        var isEpicGuaranteed = info?.GuaranteedEpic ?? false;
+
+        var legendaryPity = info?.CurrentLegendaryPity ?? 0;
+        var isLegendaryGuaranteed = info?.GuaranteedLegendary ?? false;
+        bool isDefaultBanner =
+                        info.BannerTypeId == (int)BannerTypeEnum.STANDART ||
+                        info.BannerTypeId == (int)BannerTypeEnum.DEPARTURE;
+
+        foreach (var warp in warps)
+        {
+            epicPity += 1;
+            legendaryPity += 1;
+            if (warp.RankType == 4 || warp.RankType == 5)
+            {
+
+                // warp.Item = await _db.Items.FindAsync(warp.ItemId);
+                warp.Gacha = _allBanners.FirstOrDefault(gacha => gacha.Id == warp.GachaId);
+
+                if (warp.RankType == 4)
+                {
+                    if (!isDefaultBanner)
+                    {
+                        SetGuaranteeType(ref isEpicGuaranteed, warp);
+                    }
+                    warp.Pity = epicPity;
+                    epicPity = 0;
+                }
+                else if (warp.RankType == 5)
+                {
+                    if (!isDefaultBanner)
+                    {
+                        SetGuaranteeType(ref isLegendaryGuaranteed, warp);
+                    }
+                    warp.Pity = legendaryPity;
+                    legendaryPity = 0;
+                }
+            }
+        }
+
+        info.CurrentEpicPity = epicPity;
+        info.CurrentLegendaryPity = legendaryPity;
+
+        info.GuaranteedEpic = isEpicGuaranteed;
+        info.GuaranteedLegendary = isLegendaryGuaranteed;
+
+        info.Warps.AddRange(warps);
+    }
+
+    private async Task<List<Warp>> GetBannerWarps(string warpUrl, UserBannerInfo? info)
+    {
+        GetGachaLogResponse? warpPage;
+        var lastWarpId = info.Warps.LastOrDefault()?.Id ?? "0";
+        var warpDTOList = new List<WarpDTO>();
+        var endId = "0";
+        do
+        {
+            var query = $"&page=1&size=20&gacha_type={info.BannerTypeId}&end_id={endId}";
+            var hren = warpUrl + query;
+            var test = await _httpClient.GetStringAsync(hren);
+            _logger.LogInformation($"HOYOAPI RESPONSE \n{test}");
+            warpPage = JsonConvert.DeserializeObject<GetGachaLogResponse>(test);
+
+            // warpPage = await _httpClient.GetFromJsonAsync<GetGachaLogResponse>(hren);
+            List<WarpDTO> warpsDTO = warpPage?.data?.list ?? new List<WarpDTO>();
+
+            if (warpsDTO.FindLastIndex(w => w.uid == lastWarpId) != -1)
+            {
+                var index = warpsDTO.FindLastIndex(w => w.uid == lastWarpId);
+                warpsDTO.RemoveRange(index, warpsDTO.Count - index);
+                warpDTOList.AddRange(warpsDTO);
+                break;
+            }
+
+            warpDTOList.AddRange(warpsDTO);
+            endId = warpsDTO.LastOrDefault()?.id ?? "0";
+        }
+        while (warpPage != null && warpPage.data.list.Count > 0);
+
+
+        var warps = _mapper.Map<List<WarpDTO>, List<Warp>>(warpDTOList);
+        warps.Reverse();
+        return warps;
     }
 
     private void SetGuaranteeType(ref bool isGuaranteed, Warp? warp)
@@ -149,10 +209,10 @@ public class WarpService : IWarpService
         {
             bannerInfos = new List<UserBannerInfo>()
         {
-            new UserBannerInfo(){ ProfileId = profile?.Id ?? 0 ,BannerTypeId=1 },
-            new UserBannerInfo(){ ProfileId = profile?.Id ?? 0 ,BannerTypeId=2 },
-            new UserBannerInfo(){ ProfileId = profile?.Id ?? 0 ,BannerTypeId=11 },
-            new UserBannerInfo(){ ProfileId = profile?.Id ?? 0 ,BannerTypeId=12 }
+            new UserBannerInfo(){ Profile = profile,ProfileId = profile?.Id ?? 0 ,BannerTypeId=1 },
+            new UserBannerInfo(){ Profile = profile,ProfileId = profile?.Id ?? 0 ,BannerTypeId=2 },
+            new UserBannerInfo(){ Profile = profile,ProfileId = profile?.Id ?? 0 ,BannerTypeId=11 },
+            new UserBannerInfo(){ Profile = profile,ProfileId = profile?.Id ?? 0 ,BannerTypeId=12 }
         };
         }
         else
