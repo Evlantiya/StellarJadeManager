@@ -32,61 +32,33 @@ public class WarpService : IWarpService
     public async Task<List<UserBannerInfo>> GetWarpHistoryAsync(string warpUrl, Profile? profile = null)
     {
         CheckUrl(warpUrl);
-        await _db.Entry(profile).Collection(p=>p.UserBannerInfos).LoadAsync();
         var bannerInfos = GetProfileBannerInfos(profile);
 
         // var parseTaskList = new List<Task>();
         //если распаралеливать дерьмо, то hoyo api выдает visit too frequently
+        var newWarps = new List<Warp>();
         foreach (var info in bannerInfos)
         {
-            if(profile !=null && profile.UserBannerInfos.Count!=0){
-                await _db.Entry(info).Collection(p=>p.Warps).LoadAsync();
-            }
-            await ParseBannerHistory(warpUrl, info);
+            // if(profile !=null && profile.UserBannerInfos.Count!=0){
+            //     await _db.Entry(info).Collection(p=>p.Warps).LoadAsync();
+            // }
+            var banerWaprList = await ParseBannerHistory(warpUrl, info);
+            newWarps.AddRange(banerWaprList);
         }
-        // await Task.WhenAll(parseTaskList);
-
-
-        // var all_warps = bannerInfos.SelectMany(banner => banner.Warps);
-        // var b_id = all_warps.Select(war => war.GachaId).Distinct().ToList();
-
-        // foreach(var id in b_id){
-        //     var warpWithItem = all_warps.Where(w => w.GachaId == id);
-        // }
-        // var trashItemIdList = all_warps
-        // .Where(warp => warp.RankType == 3)
-        // .Select(warp=>warp.ItemId)
-        // .Distinct()
-        // .ToList();
-        // List<Item> hren = new();
-        // foreach(var id in trashItemIdList){
-        //     var warpWithItem = all_warps.First(w => w.ItemId == id);
-
-        //     var item = new Item(){
-        //         Id = id,
-        //         Name = warpWithItem.Name,
-        //         Type = warpWithItem.ItemType,
-        //         Rarity = (short)warpWithItem.RankType
-        //     };
-        //     hren.Add(item);
-        // }
-        // await _db.Items.AddRangeAsync(hren);
-        // await _db.SaveChangesAsync();
         
-
-        if(profile != null && bannerInfos.Any(banner => banner.Warps.Count > 0))
+        if(profile != null && newWarps.Count > 0)
         {
-            var all_warps = bannerInfos.SelectMany(banner => banner.Warps);
+            // var all_warps = bannerInfos.SelectMany(banner => banner.Warps);
             if (profile.UserBannerInfos.Count == 0)
             {
-                profile.Uid = all_warps.First().Uid;
+                profile.Uid = newWarps.First().Uid;
                 foreach(var banner in bannerInfos){
-                    banner.Uid = all_warps.First().Uid;
+                    banner.Uid = newWarps.First().Uid;
                 }
                 profile.UserBannerInfos = bannerInfos;
                 await _db.UserBannerInfos.AddRangeAsync(bannerInfos);
             }
-            await _db.Warps.AddRangeAsync(bannerInfos.SelectMany(banner => banner.Warps));
+            await _db.Warps.AddRangeAsync(newWarps);
             await _db.SaveChangesAsync();
 
         }
@@ -94,7 +66,7 @@ public class WarpService : IWarpService
 
     }
 
-    private async Task ParseBannerHistory(string warpUrl, UserBannerInfo? info)
+    private async Task<List<Warp>> ParseBannerHistory(string warpUrl, UserBannerInfo? info)
     {
         
         List<Warp> warps = await GetBannerWarps(warpUrl, info);
@@ -146,6 +118,7 @@ public class WarpService : IWarpService
         info.GuaranteedLegendary = isLegendaryGuaranteed;
 
         info.Warps.AddRange(warps);
+        return warps;
     }
 
     private async Task<List<Warp>> GetBannerWarps(string warpUrl, UserBannerInfo? info)
@@ -165,9 +138,9 @@ public class WarpService : IWarpService
             // warpPage = await _httpClient.GetFromJsonAsync<GetGachaLogResponse>(hren);
             List<WarpDTO> warpsDTO = warpPage?.data?.list ?? new List<WarpDTO>();
 
-            if (warpsDTO.FindLastIndex(w => w.uid == lastWarpId) != -1)
+            var index = warpsDTO.FindLastIndex(w => w.id == lastWarpId);
+            if (index != -1)
             {
-                var index = warpsDTO.FindLastIndex(w => w.uid == lastWarpId);
                 warpsDTO.RemoveRange(index, warpsDTO.Count - index);
                 warpDTOList.AddRange(warpsDTO);
                 break;

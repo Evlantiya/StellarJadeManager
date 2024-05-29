@@ -56,6 +56,12 @@ public class WarpController: ControllerBase
             var userId = Convert.ToInt32(User.FindFirstValue("Id"));
             var user = await _db.Users.Include(u=>u.Profiles).FirstOrDefaultAsync(u=>u.Id == userId);
             profile = user?.Profiles.FirstOrDefault() ?? null;
+            if(profile != null){
+                await _db.Entry(profile).Collection(p=>p.UserBannerInfos).LoadAsync();
+                foreach(var bannerInfo in profile.UserBannerInfos){
+                    await _db.Entry(bannerInfo).Collection(info=>info.Warps).LoadAsync();
+                }
+            }
         }
 
         try{
