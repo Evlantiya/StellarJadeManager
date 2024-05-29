@@ -27,7 +27,7 @@ public class WarpService : IWarpService
         _allBanners = _db.Banners.Include( b=> b.BannerItems).ToList();
     }
 
-    //God forgive me. Refactor this bullshit. I wanna KILL MYSELF :) ASYNC FOR ALL BANNERS. 
+    //God forgive me. Refactor this bullshit.
     //UPDATE NVM DDOS PROTECTION BLOCKS REQUEST
     public async Task<List<UserBannerInfo>> GetWarpHistoryAsync(string warpUrl, Profile? profile = null)
     {
