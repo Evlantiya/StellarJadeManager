@@ -3301,11 +3301,11 @@
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-jqghCKeGtI+vDLOziFVl7i84M3Ai3MivP5GPwClDCj8=",
+      "hash": "sha256-SSnpcAzK9LpE84CmNccJeOVzrAIecERoogcMHCr7MN8=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-aygbg\/V\/2yLzOFerVi3mxCXNUUHEtIckJCsykMyY2fU=",
+      "hash": "sha256-ikqh+Ylb6Fdvd1kLPSowzZfTCFkqxu3xaVODSnwYors=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -3313,7 +3313,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-kT0p4tyinzcb\/42Ed+Ux63EE5IfTai3pkNJSSQ2GPxU=",
+      "hash": "sha256-fl27uu1kxxg7w2utoefRueU6CtubpKsltHajMZrtaLc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -3341,5 +3341,5 @@
       "url": "_content\/Blazor-ApexCharts\/js\/blazor-apexcharts.js"
     }
   ],
-  "version": "dwPweqPE"
+  "version": "4x6Kjtrm"
 };

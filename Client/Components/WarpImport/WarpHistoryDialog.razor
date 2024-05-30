@@ -1,0 +1,15 @@
+<MudDialog>
+    <DialogContent>
+        <p>
+            test @Test
+        </p>
+    </DialogContent>
+</MudDialog>
+
+@code{
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    [Parameter]
+    public UserBannerInfo BannerInfo {get;set;}
+    [Parameter]
+    public string Test {get;set;}
+}

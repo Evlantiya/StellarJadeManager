@@ -1,3 +1,5 @@
+@inject IDialogService Dialog
+
 @* <MudCard>
     <div class="relative">
         <MudCardMedia Image="@ImageSrc" Height="@Height" Style="background-position: 0 30%;" />
@@ -17,8 +19,12 @@
 <MudPaper Height="600px" Elevation="10" Outlined="true" Class="relative">
     <div class="banner-image @(isLightCone?"lc":"")" style="background-image: url(@ImageSrc);"></div>
     <MudPaper Class="banner-info banner-name pa-2">
+        <div class="d-flex flex-column">
         <MudText Typo="Typo.h6">Banner</MudText>
         <MudText Typo="Typo.subtitle2">Earthly Escapade</MudText>
+        </div>
+        <MudSpacer/>
+        <MudIconButton Icon="@Icons.Material.Filled.MenuOpen" aria-label="history" OnClick="OpenHistory"></MudIconButton>
     </MudPaper>
 
     <MudGrid Class="hueta" Spacing="5" Justify="Justify.SpaceAround">
@@ -105,6 +111,7 @@
 
     .banner-name{
         width:100%;
+        display:flex;
         top:0;
         left:0;
     }
@@ -150,9 +157,17 @@
     [Parameter]
     public bool isLightCone {get;set;}
     [Parameter]
-    public int id {get;set;}
+    public UserBannerInfo BannerInfo {get;set;}
 
     private int Height => 500 * (isLightCone? 2 : 1);
+
+
+    DialogOptions fullScreen = new DialogOptions() { FullScreen = true, CloseButton = true };
+
+    public async Task OpenHistory(){
+        var parameters = new DialogParameters<WarpHistoryDialog> {{ x => x.BannerInfo, BannerInfo }, {x=>x.Test, ImageSrc} };
+        var dialog = await Dialog.ShowAsync<WarpHistoryDialog>("История прыжков", parameters, fullScreen);
+    }
 
 
 }
