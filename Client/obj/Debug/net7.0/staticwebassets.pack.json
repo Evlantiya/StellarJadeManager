@@ -1673,6 +1673,14 @@
       "PackagePath": "staticwebassets\\Images\\emotes\\Yukong.png"
     },
     {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.png",
+      "PackagePath": "staticwebassets\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.webp",
+      "PackagePath": "staticwebassets\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.webp"
+    },
+    {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\a-secret-vow.png",
       "PackagePath": "staticwebassets\\Images\\lightcones\\a-secret-vow.png"
     },

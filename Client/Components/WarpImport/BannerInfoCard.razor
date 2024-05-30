@@ -1,6 +1,6 @@
-<MudCard>
+@* <MudCard>
     <div class="relative">
-        <MudCardMedia Image="/Images/characters-full/sparkle.png" Height="300" Style="background-position: 0 30%;" />
+        <MudCardMedia Image="@ImageSrc" Height="@Height" Style="background-position: 0 30%;" />
         <MudButton Style="position:absolute; right:10px; top:50%">TEST</MudButton>
     </div>
     <MudCardContent>
@@ -12,10 +12,39 @@
         <MudButton Variant="Variant.Text" Color="MudBlazor.Color.Primary">Share</MudButton>
         <MudButton Variant="Variant.Text" Color="MudBlazor.Color.Primary">Learn More</MudButton>
     </MudCardActions>
-</MudCard>
+</MudCard> *@
 
+<MudPaper Height="500px">
+    <div class="banner-image @(isLightCone?"lc":"")" style="background-image: url(@ImageSrc);"></div>
+</MudPaper>
+
+<style>
+    .banner-image {
+        width: 100%; /* Ширина контейнера */
+        height: 100%; /* Высота контейнера */
+        @* background-image: url(@ImageSrc); /* Путь к вашему изображению */ *@
+        background-size: cover; /* Масштабирует изображение так, чтобы оно полностью покрывало фоновую область */
+        background-position: center; /* Центрирует изображение в контейнере */
+        background-repeat: no-repeat; /* Запрещает повторение изображения */
+    }
+    .lc {
+        background-size: cover; /* Масштабирует изображение так, чтобы оно полностью покрывало фоновую область */
+        @* background-position: 50% 35%; /* Центрирует изображение в контейнере */
+        background-repeat: no-repeat; /* Запрещает повторение изображения */ *@
+</style>
 
 
 @code{
+
+    [Parameter]
+    public string ImageSrc {get;set;}
+
+    [Parameter]
+    public bool isLightCone {get;set;}
+    [Parameter]
+    public int id {get;set;}
+
+    private int Height => 500 * (isLightCone? 2 : 1);
+
 
 }

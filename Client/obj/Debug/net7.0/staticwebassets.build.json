@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6EG5aOyPJ6v5EMTn+tU96OCvQzc2vGOxzl37jAN25N4=",
+  "Hash": "/irMQBYx/4laEIDJ2g64uvhaGvP+eTlj8RYMP3OVGlo=",
   "Source": "StellarJadeManager.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -18443,6 +18443,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\lightcones\\landaus-choice.png"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.png",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.png"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.webp",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.webp"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\loop.png",
