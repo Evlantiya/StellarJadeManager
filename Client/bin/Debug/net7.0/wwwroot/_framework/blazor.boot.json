@@ -238,14 +238,14 @@
       "netstandard.dll": "sha256-kj5cBXzwPYC+HD+P8+6VybY34JtEzjXjMIHXEI3hIiM=",
       "System.Private.CoreLib.dll": "sha256-Awk1lCiFfH7r9AAZfBtGqS8rhv6UJ5lUu3yF6HDH3tQ=",
       "StellarJadeManager.Shared.dll": "sha256-hwGbBX5Zt+\/hfQ25Q8L0r8gE4bNcQ09Y9YhNuvTbjws=",
-      "StellarJadeManager.Client.dll": "sha256-zETeC2OAurpk+Zk\/Th69ErFEvxtidT6zivma0DgDmmo="
+      "StellarJadeManager.Client.dll": "sha256-tQt4bcagGAj3YHir9kJG1b\/f8Mc0+HvcERjX4\/35apk="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "StellarJadeManager.Shared.pdb": "sha256-yW+rd5kE2up9Ytvk5JF3HfnIq24PiWITqoaSFaXeTAY=",
-      "StellarJadeManager.Client.pdb": "sha256-6+b8LH7g1puKzAnYsri4KW+V4ZweqF\/h0t4STni1YP8="
+      "StellarJadeManager.Client.pdb": "sha256-qy1bjmmMg5vbeys9Uh0ykQqnyvFrHOgJQEtfip6Evv4="
     },
     "runtime": {
       "dotnet.7.0.0.9ofio3rncj.js": "sha256-2jNLve8W0sST0LAebgAc1IwSnGhkbjOKO8QPWWiJssI=",

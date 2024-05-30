@@ -14,8 +14,77 @@
     </MudCardActions>
 </MudCard> *@
 
-<MudPaper Height="500px">
+<MudPaper Height="600px" Elevation="10" Outlined="true" Class="relative">
     <div class="banner-image @(isLightCone?"lc":"")" style="background-image: url(@ImageSrc);"></div>
+    <MudPaper Class="banner-info banner-name pa-2">
+        <MudText Typo="Typo.h6">Banner</MudText>
+        <MudText Typo="Typo.subtitle2">Earthly Escapade</MudText>
+    </MudPaper>
+
+    <MudGrid Class="hueta" Spacing="5" Justify="Justify.SpaceAround">
+        <MudItem Class="banner-pity" xs="4" sm="4" md="4" lg="4">
+            <div class="d-flex leg">
+            <MudText Typo="Typo.h4">✔</MudText>
+            <MudSpacer/>
+            <MudText Typo="Typo.h4">0</MudText>
+            <MudText Typo="Typo.subtitle2">/90</MudText>
+        </div>
+        </MudItem>
+        <MudItem Class="banner-pity" xs="4" sm="4" md="4" lg="4">
+            <div class="d-flex epic">
+            <MudText Typo="Typo.h4">x</MudText>
+            <MudSpacer/>
+            <MudText Typo="Typo.h4">0</MudText>
+            <MudText Typo="Typo.subtitle2">/10</MudText>
+        </div>
+        </MudItem>
+        <MudItem Class="banner-pity" xs="5" sm="5" md="5" lg="5">
+            <div class="d-flex">
+
+            <MudText Typo="Typo.body1">Winrate</MudText>
+            <MudSpacer/>
+            <MudText Class="leg" Typo="Typo.body1">58%</MudText>
+            </div>
+            <div class="d-flex">
+            <MudText Typo="Typo.body1">Медианна</MudText>
+            <MudSpacer/>
+            <MudText Class="leg" Typo="Typo.body1">77</MudText>
+            </div>
+        </MudItem>
+        <MudItem Class="banner-pity" xs="5" sm="5" md="5" lg="5">
+            <div class="d-flex">
+
+            <MudText Typo="Typo.body1">Winrate</MudText>
+            <MudSpacer/>
+            <MudText Class="epic" Typo="Typo.body1">58%</MudText>
+            </div>
+            <div class="d-flex">
+            <MudText Typo="Typo.body1">Медианна</MudText>
+            <MudSpacer/>
+            <MudText Class="epic" Typo="Typo.body1">7</MudText>
+            </div>
+        </MudItem>
+    </MudGrid>
+
+
+    @* <MudPaper Class="banner-info banner-pity pa-4">
+        <div class="d-flex">
+            <MudText Typo="Typo.h4">✔</MudText>
+            <MudSpacer/>
+            <MudText Typo="Typo.h4">0</MudText>
+            <MudText Typo="Typo.subtitle2">/90</MudText>
+        </div>
+        <MudDivider/>
+        <div class="d-flex">
+            <MudText Typo="Typo.h4">X</MudText>
+            <MudSpacer/>
+            <MudText Typo="Typo.h4">0</MudText>
+            <MudText Typo="Typo.subtitle2">/10</MudText>
+        </div>
+        
+    </MudPaper> *@
+
+    @* <MudChip Variant="Variant.Text" Color="MudBlazor.Color.Primary" Class="banner-info">0/90</MudChip> *@
 </MudPaper>
 
 <style>
@@ -23,6 +92,7 @@
         width: 100%; /* Ширина контейнера */
         height: 100%; /* Высота контейнера */
         @* background-image: url(@ImageSrc); /* Путь к вашему изображению */ *@
+        filter: brightness(0.75);
         background-size: cover; /* Масштабирует изображение так, чтобы оно полностью покрывало фоновую область */
         background-position: center; /* Центрирует изображение в контейнере */
         background-repeat: no-repeat; /* Запрещает повторение изображения */
@@ -31,6 +101,44 @@
         background-size: cover; /* Масштабирует изображение так, чтобы оно полностью покрывало фоновую область */
         @* background-position: 50% 35%; /* Центрирует изображение в контейнере */
         background-repeat: no-repeat; /* Запрещает повторение изображения */ *@
+    }
+
+    .banner-name{
+        width:100%;
+        top:0;
+        left:0;
+    }
+    .banner-pity{
+        background-color: rgba(10,10,10,0.85);
+        border-radius: 2rem;
+        box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.85);
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .leg{
+        text-shadow: 1px 1px 5px var(--mud-palette-primary);
+        color: var(--mud-palette-primary);
+    }
+    .epic{
+        text-shadow: 1px 1px 5px rgb(176, 135, 255);
+        color: rgb(176, 135, 255);
+    }
+
+    .banner-info{
+        position:absolute;
+        background-color: rgba(10,10,10,0.85);
+        box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.85);
+    }
+
+    .hueta{
+        position:absolute;
+        margin:0;
+        margin-bottom: 5px;
+        bottom: 0;
+        left:0;
+        width:100%;
+    }
 </style>
 
 

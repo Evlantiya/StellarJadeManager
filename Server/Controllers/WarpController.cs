@@ -30,20 +30,24 @@ public class WarpController: ControllerBase
     public async Task<IActionResult> GetUserBannerInfoListByClaimsIdOrDefault()
     {
         var bannerInfos = UserBannerInfo.CreateDefaultBannerInfos();
+
         if ( !User?.Identity?.IsAuthenticated ?? true){
             return Ok(bannerInfos);
         }
+
         var userId = Convert.ToInt32(User.FindFirstValue("Id"));
         var user = await _db.Users.Include(u=>u.Profiles).FirstOrDefaultAsync(u=>u.Id == userId);
         var profile = user?.Profiles.FirstOrDefault();
-        if (profile.UserBannerInfos == null || profile.UserBannerInfos.Count == 0){
-            foreach(var b in bannerInfos){
-                b.ProfileId = profile.Id;
-            }
+
+        if(profile == null){
+            return BadRequest();
+        }
+        var hren = _db.UserBannerInfos.Include(b=>b.Warps).Where(b=>b.ProfileId == profile.Id).ToList();
+        if(hren == null || hren.Count == 0)
+        {
             return Ok(bannerInfos);
         }
-        return Ok(profile.UserBannerInfos);
-        
+        return Ok(hren);
 
     }
 
