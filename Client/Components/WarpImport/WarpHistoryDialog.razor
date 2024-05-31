@@ -33,11 +33,18 @@
         RowStyleFunc="@_rowStyleFunc"
         >
             <Columns>
-                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.Time" Title="Время" />
-                <PropertyColumn Style="position:sticky;top:0;" CellStyleFunc="@_cellStyleFunc" Property="warp => warp.Pity" Title="Pity"/>
-                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.Name" Title="Имя"/>
-                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.RankType"Title="Редоксть" />
-                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.ItemType" Title="Тип" />
+                <PropertyColumn Property="warp => warp.Time" Title="Время" />
+                <PropertyColumn CellStyleFunc="@_cellStyleFunc" Property="warp => warp.Pity" Title="Pity"/>
+                <PropertyColumn Property="warp => warp.Guarantee" Title=""/>
+                <PropertyColumn Property="warp => warp.Name" Title="Имя"/>
+                <PropertyColumn Property="warp => warp.RankType"Title="Редкость" />
+                <PropertyColumn Property="warp => warp.ItemType" Title="Тип" />
+                <TemplateColumn CellClass="d-flex justify-end">
+                    <CellTemplate>
+                    
+                        @($"{context.Item.Pity} {context.Item.Guarantee}")
+                    </CellTemplate>
+                </TemplateColumn>
             </Columns>
             @* <PagerContent>
                 <MudDataGridPager  T="Warp" />
@@ -72,7 +79,7 @@
             legendaryFilterOn = value;
             if (value) _raritySet.Add(5);
             else _raritySet.Remove(5);
-            ResetFilterIfNoneSelected();
+            @* ResetFilterIfNoneSelected(); *@
         }
     }
     public bool EpicFilter
@@ -83,7 +90,7 @@
             epicFilterOn = value;
             if (value) _raritySet.Add(4);
             else _raritySet.Remove(4);
-            ResetFilterIfNoneSelected();
+            @* ResetFilterIfNoneSelected(); *@
         }
     }
     public bool CommonFilter
@@ -94,7 +101,7 @@
             commonFilterOn = value;
             if (value) _raritySet.Add(3);
             else _raritySet.Remove(3);
-            ResetFilterIfNoneSelected();
+            @* ResetFilterIfNoneSelected(); *@
         }
     }
 
@@ -110,7 +117,7 @@
 
     private Func<Warp, string> _cellStyleFunc => x =>
     {
-        string style = "";
+        string style = "text-align:end;";
 
         if(x.RankType == 5){
             style += $"color:{GetColor(x?.Pity??1,90)};";
