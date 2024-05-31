@@ -1,7 +1,6 @@
-<MudDialog>
+<MudDialog Style="overflow-y: auto;max-height: 100dvh;scrollbar-gutter: stable;">
     <DialogContent>
-
-
+        <div style="position:sticky;top:0;z-index:10" >
         <MudButton OnClick="Test">TEST</MudButton>
         <MudToggleIconButton
             @bind-Toggled="@LegendaryFilter"
@@ -25,19 +24,21 @@
                 <MudButton OnClick="@(e=>SetSelectedBannerId(id))" Variant="SelectedBannerId == id ? Variant.Filled : Variant.Outlined">@id</MudButton>
             }
         </div>
-
+        </div>
+        <MudContainer Fixed Class="my-4 mb-10">
         <MudDataGrid T="Warp" SortMode="SortMode.None" Items="@BannerInfo.Warps.Where(WarpFilter).Reverse()">
             <Columns>
-                <PropertyColumn Property="warp => warp.Time" Title="Время" />
-                <PropertyColumn Property="warp => warp.Pity" Title="Pity"/>
-                <PropertyColumn Property="warp => warp.Name" Title="Имя"/>
-                <PropertyColumn Property="warp => warp.RankType"Title="Редоксть" />
-                <PropertyColumn Property="warp => warp.ItemType" Title="Тип" />
+                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.Time" Title="Время" />
+                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.Pity" Title="Pity"/>
+                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.Name" Title="Имя"/>
+                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.RankType"Title="Редоксть" />
+                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.ItemType" Title="Тип" />
             </Columns>
-            <PagerContent>
-                <MudDataGridPager T="Warp" />
-            </PagerContent>
+            @* <PagerContent>
+                <MudDataGridPager  T="Warp" />
+            </PagerContent> *@
         </MudDataGrid>
+        </MudContainer>
     </DialogContent>
 </MudDialog>
 
