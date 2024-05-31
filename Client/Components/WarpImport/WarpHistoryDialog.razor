@@ -1,13 +1,32 @@
 <MudDialog>
     <DialogContent>
+
+
         <MudButton OnClick="Test">TEST</MudButton>
-        <MudToggleIconButton @bind-Toggled="@LegendaryFilter"
-                     Icon="@Icons.Material.Filled.StarOutline" Color="@MudBlazor.Color.Primary" 
-                     ToggledIcon="@Icons.Material.Filled.Star" ToggledColor="@MudBlazor.Color.Primary" />
-        <MudToggleIconButton @bind-Toggled="@EpicFilter"
-                     Icon="@Icons.Material.Filled.StarOutline" Color="@MudBlazor.Color.Tertiary" 
-                     ToggledIcon="@Icons.Material.Filled.Star" ToggledColor="@MudBlazor.Color.Tertiary" />
-        <MudDataGrid T="Warp" SortMode="SortMode.None" Items="@BannerInfo.Warps.Where(rarityPredicate).Reverse()">
+        <MudToggleIconButton
+            @bind-Toggled="@LegendaryFilter"
+            Icon="@Icons.Material.Filled.StarOutline" Color="@MudBlazor.Color.Primary" 
+            ToggledIcon="@Icons.Material.Filled.Star" ToggledColor="@MudBlazor.Color.Primary"
+        />
+
+        <MudToggleIconButton 
+            @bind-Toggled="@EpicFilter"
+            Icon="@Icons.Material.Filled.StarOutline" Color="@MudBlazor.Color.Tertiary" 
+            ToggledIcon="@Icons.Material.Filled.Star" ToggledColor="@MudBlazor.Color.Tertiary" 
+        />
+
+        <MudToggleIconButton @bind-Toggled="@CommonFilter"
+            Icon="@Icons.Material.Filled.StarOutline"  
+            ToggledIcon="@Icons.Material.Filled.Star" Style="color:rgb(82, 147, 250)" 
+        />
+
+        <div class="d-flex justify-center align-start">
+            @foreach(var id in BannerIdList){
+                <MudButton OnClick="@(e=>SetSelectedBannerId(id))" Variant="SelectedBannerId == id ? Variant.Filled : Variant.Outlined">@id</MudButton>
+            }
+        </div>
+
+        <MudDataGrid T="Warp" SortMode="SortMode.None" Items="@BannerInfo.Warps.Where(WarpFilter).Reverse()">
             <Columns>
                 <PropertyColumn Property="warp => warp.Time" Title="Время" />
                 <PropertyColumn Property="warp => warp.Pity" Title="Pity"/>
@@ -47,6 +66,7 @@
             legendaryFilterOn = value;
             if (value) _raritySet.Add(5);
             else _raritySet.Remove(5);
+            ResetFilterIfNoneSelected();
         }
     }
     public bool EpicFilter
@@ -57,6 +77,7 @@
             epicFilterOn = value;
             if (value) _raritySet.Add(4);
             else _raritySet.Remove(4);
+            ResetFilterIfNoneSelected();
         }
     }
     public bool CommonFilter
@@ -67,15 +88,45 @@
             commonFilterOn = value;
             if (value) _raritySet.Add(3);
             else _raritySet.Remove(3);
+            ResetFilterIfNoneSelected();
         }
     }
 
+    public int? SelectedBannerId {get;set;} = null;
+    public List<int> BannerIdList;
+
+
     public HashSet<int> RaritySet => _raritySet;
 
+    Func<Warp, bool> WarpFilter;
     Func<Warp, bool> rarityPredicate;
+    Func<Warp, bool> bannerIdPredicate;
 
     protected override async Task OnInitializedAsync()
     {
         rarityPredicate = x => RaritySet.Contains(x.RankType);
+        bannerIdPredicate = x => SelectedBannerId == null ? true : x.GachaId==SelectedBannerId;
+        WarpFilter = CombinePredicates(rarityPredicate,bannerIdPredicate);
+        BannerIdList = BannerInfo.Warps.DistinctBy(w=>w.GachaId).Select(w=>w.GachaId).OrderDescending().ToList();
+    }
+
+    public void ResetFilterIfNoneSelected(){
+        if (RaritySet.Count == 0){
+            EpicFilter=true;
+            LegendaryFilter=true;
+        }
+    }
+
+    private Func<T, bool> CombinePredicates<T>(params Func<T, bool>[] predicates)
+    {
+        return x => predicates.All(predicate => predicate(x));
+    }
+    private void SetSelectedBannerId(int id){
+        if(SelectedBannerId == id){
+            SelectedBannerId = null;
+        }
+        else{
+            SelectedBannerId = id;
+        }
     }
 }
