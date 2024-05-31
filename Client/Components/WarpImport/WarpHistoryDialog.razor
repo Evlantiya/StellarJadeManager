@@ -1,6 +1,7 @@
 <MudDialog Style="overflow-y: auto;max-height: 100dvh;scrollbar-gutter: stable;">
     <DialogContent>
-        <div style="position:sticky;top:0;z-index:10" >
+        <MudContainer Fixed Class="my-4 mb-10">
+        <div style="position:sticky;top:0;z-index:10;display:flex;width:fit-content;" >
         <MudButton OnClick="Test">TEST</MudButton>
         <MudToggleIconButton
             @bind-Toggled="@LegendaryFilter"
@@ -19,17 +20,21 @@
             ToggledIcon="@Icons.Material.Filled.Star" Style="color:rgb(82, 147, 250)" 
         />
 
-        <div class="d-flex justify-center align-start">
+        <div class="d-flex justify-center align-start flex-wrap">
             @foreach(var id in BannerIdList){
                 <MudButton OnClick="@(e=>SetSelectedBannerId(id))" Variant="SelectedBannerId == id ? Variant.Filled : Variant.Outlined">@id</MudButton>
             }
         </div>
         </div>
-        <MudContainer Fixed Class="my-4 mb-10">
-        <MudDataGrid T="Warp" SortMode="SortMode.None" Items="@BannerInfo.Warps.Where(WarpFilter).Reverse()">
+        <MudDataGrid 
+        T="Warp" 
+        SortMode="SortMode.None" 
+        Items="@BannerInfo.Warps.Where(WarpFilter).Reverse()"
+        RowStyleFunc="@_rowStyleFunc"
+        >
             <Columns>
                 <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.Time" Title="Время" />
-                <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.Pity" Title="Pity"/>
+                <PropertyColumn Style="position:sticky;top:0;" CellStyleFunc="@_cellStyleFunc" Property="warp => warp.Pity" Title="Pity"/>
                 <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.Name" Title="Имя"/>
                 <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.RankType"Title="Редоксть" />
                 <PropertyColumn Style="position:sticky;top:0;" Property="warp => warp.ItemType" Title="Тип" />
@@ -102,6 +107,75 @@
     Func<Warp, bool> WarpFilter;
     Func<Warp, bool> rarityPredicate;
     Func<Warp, bool> bannerIdPredicate;
+
+    private Func<Warp, string> _cellStyleFunc => x =>
+    {
+        string style = "";
+
+        if(x.RankType == 5){
+            style += $"color:{GetColor(x?.Pity??1,90)};";
+        }
+        if(x.RankType == 4){
+            style += $"color:{GetColor(x?.Pity??1,10)};";
+        }
+
+        return style;
+    };
+    private Func<Warp, int, string> _rowStyleFunc => (x, i) =>
+    {
+        string style = "";
+
+        if(x.RankType == 5){
+            style += "background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(251, 205, 116, 0.4) 40%, rgba(0, 0, 0, 0));";
+        }
+        if(x.RankType == 4){
+            style += "background-image:linear-gradient(to right, rgba(0, 0, 0, 0), rgba(176, 135, 255, 0.4) 40%, rgba(0, 0, 0, 0));";
+        }
+
+        return style;
+    };
+
+    private string GetColor(int value, int endValue)
+    {
+        // Рассчитываем красный и зеленый компоненты цвета
+        @* int red = (int)(255 * ((double)value / endValue));
+        int green = (int)(255 * (1 - ((double)value / endValue)));
+        return $"rgb({red}, {green}, 0)"; *@
+        if (value < 1) value = 1;
+        if (value > endValue) value = endValue;
+
+        // Зеленый цвет
+        byte r1 = 0;
+        byte g1 = 255;
+        byte b1 = 0;
+
+        // Желтый цвет
+        byte r2 = 255;
+        byte g2 = 255;
+        byte b2 = 0;
+
+        // Красный цвет
+        byte r3 = 255;
+        byte g3 = 0;
+        byte b3 = 0;
+
+        byte r, g, b;
+
+        if (value <= (endValue/2)) // От зеленого к желтому
+        {
+            r = (byte)((r2 - r1) * (value - 1) / ((endValue/2) - 1) + r1);
+            g = (byte)((g2 - g1) * (value - 1) / ((endValue/2) - 1) + g1);
+            b = b1; // b2 и b1 равны, поэтому можно использовать b1
+        }
+        else // От желтого к красному
+        {
+            r = r2; // r3 и r2 равны, поэтому можно использовать r2
+            g = (byte)((g3 - g2) * (value - (endValue/2)-1) / (endValue - (endValue/2)-1) + g2);
+            b = (byte)((b3 - b2) * (value - (endValue/2)-1) / (endValue - (endValue/2)-1) + b2);
+        }
+
+        return $"rgb({r}, {g}, {b})";
+    }
 
     protected override async Task OnInitializedAsync()
     {
