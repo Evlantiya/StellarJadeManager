@@ -1,23 +1,8 @@
 @inject IDialogService Dialog
 
-@* <MudCard>
-    <div class="relative">
-        <MudCardMedia Image="@ImageSrc" Height="@Height" Style="background-position: 0 30%;" />
-        <MudButton Style="position:absolute; right:10px; top:50%">TEST</MudButton>
-    </div>
-    <MudCardContent>
-        <MudText Typo="Typo.h5">Old Paint</MudText>
-        <MudText Typo="Typo.body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </MudText>
-        <MudText Typo="Typo.body2">This photo was taken in a small village in Istra Croatia.</MudText>
-    </MudCardContent>
-    <MudCardActions>
-        <MudButton Variant="Variant.Text" Color="MudBlazor.Color.Primary">Share</MudButton>
-        <MudButton Variant="Variant.Text" Color="MudBlazor.Color.Primary">Learn More</MudButton>
-    </MudCardActions>
-</MudCard> *@
 
 <MudPaper Height="600px" Elevation="10" Outlined="true" Class="relative">
-    <div class="banner-image @(isLightCone?"lc":"")" style="background-image: url(@ImageSrc);"></div>
+    <div class="banner-image @(Height == 1000?"lc":"")" style="background-image: url(@ImageSrc);"></div>
     <MudPaper Class="banner-info banner-name pa-2">
         <div class="d-flex flex-column">
         <MudText Typo="Typo.h6">Banner</MudText>
@@ -30,67 +15,53 @@
     <MudGrid Class="hueta" Spacing="5" Justify="Justify.SpaceAround">
         <MudItem Class="banner-pity" xs="4" sm="4" md="4" lg="4">
             <div class="d-flex leg">
-            <MudText Typo="Typo.h4">✔</MudText>
-            <MudSpacer/>
-            <MudText Typo="Typo.h4">0</MudText>
-            <MudText Typo="Typo.subtitle2">/90</MudText>
-        </div>
+                <MudText Typo="Typo.h4">@(BannerInfo.GuaranteedLegendary?"✔":"x")</MudText>
+                <MudSpacer/>
+                <MudText Typo="Typo.h4">@BannerInfo?.CurrentLegendaryPity</MudText>
+                <MudText Typo="Typo.subtitle2">/@(_bannerMaxPity[BannerInfo.BannerTypeId])</MudText>
+            </div>
         </MudItem>
         <MudItem Class="banner-pity" xs="4" sm="4" md="4" lg="4">
             <div class="d-flex epic">
-            <MudText Typo="Typo.h4">x</MudText>
-            <MudSpacer/>
-            <MudText Typo="Typo.h4">0</MudText>
-            <MudText Typo="Typo.subtitle2">/10</MudText>
-        </div>
-        </MudItem>
-        <MudItem Class="banner-pity" xs="5" sm="5" md="5" lg="5">
-            <div class="d-flex">
-
-            <MudText Typo="Typo.body1">Winrate</MudText>
-            <MudSpacer/>
-            <MudText Class="leg" Typo="Typo.body1">58%</MudText>
-            </div>
-            <div class="d-flex">
-            <MudText Typo="Typo.body1">Медианна</MudText>
-            <MudSpacer/>
-            <MudText Class="leg" Typo="Typo.body1">77</MudText>
+                <MudText Typo="Typo.h4">@(BannerInfo.GuaranteedEpic ? "✔":"x")</MudText>
+                <MudSpacer/>
+                <MudText Typo="Typo.h4">@BannerInfo?.CurrentEpicPity</MudText>
+                <MudText Typo="Typo.subtitle2">/10</MudText>
             </div>
         </MudItem>
         <MudItem Class="banner-pity" xs="5" sm="5" md="5" lg="5">
-            <div class="d-flex">
 
-            <MudText Typo="Typo.body1">Winrate</MudText>
-            <MudSpacer/>
-            <MudText Class="epic" Typo="Typo.body1">58%</MudText>
-            </div>
+            @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
+            {
+                <div class="d-flex">
+                    <MudText Typo="Typo.body1">Winrate</MudText>
+                    <MudSpacer/>
+                    <MudText Class="leg" Typo="Typo.body1">@((Math.Round(BannerInfo.CalculateWinrate(5), 1)).ToString("0.0"))%</MudText>
+                </div>
+            }
             <div class="d-flex">
-            <MudText Typo="Typo.body1">Медианна</MudText>
-            <MudSpacer/>
-            <MudText Class="epic" Typo="Typo.body1">7</MudText>
+                <MudText Typo="Typo.body1">Медианна</MudText>
+                <MudSpacer/>
+                <MudText Class="leg" Typo="Typo.body1">@(BannerInfo.CalculateMedianPity(5))</MudText>
+            </div>
+        </MudItem>
+        <MudItem Class="banner-pity" xs="5" sm="5" md="5" lg="5">
+            @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
+            {
+                <div class="d-flex">
+                    
+                    <MudText Typo="Typo.body1">Winrate</MudText>
+                    <MudSpacer/>
+                    <MudText Class="epic" Typo="Typo.body1">@((Math.Round(BannerInfo.CalculateWinrate(4), 1)).ToString("0.0"))%</MudText>
+                </div>
+            }
+            <div class="d-flex">
+                <MudText Typo="Typo.body1">Медианна</MudText>
+                <MudSpacer/>
+                <MudText Class="epic" Typo="Typo.body1">@(BannerInfo.CalculateMedianPity(4))</MudText>
             </div>
         </MudItem>
     </MudGrid>
-
-
-    @* <MudPaper Class="banner-info banner-pity pa-4">
-        <div class="d-flex">
-            <MudText Typo="Typo.h4">✔</MudText>
-            <MudSpacer/>
-            <MudText Typo="Typo.h4">0</MudText>
-            <MudText Typo="Typo.subtitle2">/90</MudText>
-        </div>
-        <MudDivider/>
-        <div class="d-flex">
-            <MudText Typo="Typo.h4">X</MudText>
-            <MudSpacer/>
-            <MudText Typo="Typo.h4">0</MudText>
-            <MudText Typo="Typo.subtitle2">/10</MudText>
-        </div>
-        
-    </MudPaper> *@
-
-    @* <MudChip Variant="Variant.Text" Color="MudBlazor.Color.Primary" Class="banner-info">0/90</MudChip> *@
 </MudPaper>
 
 <style>
@@ -153,18 +124,24 @@
 
     [Parameter]
     public string ImageSrc {get;set;}
-
-    [Parameter]
-    public bool isLightCone {get;set;}
     [Parameter]
     public UserBannerInfo BannerInfo {get;set;}
 
-    private int Height => 500 * (isLightCone? 2 : 1);
+    private int Height => 500 * ( (BannerInfo?.BannerTypeId ?? -1) == (int)BannerTypeEnum.LIGHTCONE ? 2 : 1);
+
+    private Dictionary<int, string> _bannerMaxPity = new Dictionary<int, string>(){
+        {11, "90"},
+        {1, "90"},
+        {12, "80"},
+        {2, "50"}
+    };
 
 
     DialogOptions fullScreen = new DialogOptions() { FullScreen = true, CloseButton = true };
 
     public async Task OpenHistory(){
+        var hren_w = BannerInfo.CalculateWinrate(5);
+        var hren_m = BannerInfo.CalculateMedianPity(5);
         var parameters = new DialogParameters<WarpHistoryDialog> {{ x => x.BannerInfo, BannerInfo }, {x=>x.Test, ImageSrc} };
         var dialog = await Dialog.ShowAsync<WarpHistoryDialog>("История прыжков", parameters, fullScreen);
     }

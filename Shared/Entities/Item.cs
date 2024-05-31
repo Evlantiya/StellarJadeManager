@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace StellarJadeManager.Shared;
 
@@ -13,7 +14,8 @@ public partial class Item
 
     public short Rarity { get; set; }
 
+    [JsonIgnore]
     public virtual ICollection<BannerItem> BannerItems { get; set; } = new List<BannerItem>();
-
+    [JsonIgnore]
     public virtual ICollection<Warp> Warps { get; set; } = new List<Warp>();
 }

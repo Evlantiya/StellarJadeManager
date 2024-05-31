@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace StellarJadeManager.Shared;
 
@@ -23,6 +24,7 @@ public partial class Profile
 
     public string? Uid { get; set; }
 
+    [JsonIgnore]
     public virtual User User { get; set; } = null!;
 
     public virtual ICollection<UserBannerInfo> UserBannerInfos { get; set; } = new List<UserBannerInfo>();

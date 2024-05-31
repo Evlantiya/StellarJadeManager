@@ -36,7 +36,13 @@ namespace StellarJadeManager.Server.Controllers
             {
                 return NotFound();
             }
-            var profiles = await _db.Profiles.Where(profile => profile.UserId == id).ToListAsync();
+            var profiles = await _db.Profiles
+                .Where(profile => profile.UserId == id)
+                .Include(profile => profile.UserBannerInfos)
+                .ThenInclude(bannerInfo => bannerInfo.Warps)
+                .ThenInclude(Warp => Warp.Item)
+                .AsNoTracking()
+                .ToListAsync();
             return profiles;
         }
 

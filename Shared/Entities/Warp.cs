@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace StellarJadeManager.Shared;
 
@@ -73,10 +74,12 @@ public partial class Warp
     /// <summary>
     /// EF Core navigation property for banner in which warp was made.
     /// </summary>
+    [JsonIgnore]
     public virtual Banner Gacha { get; set; } = null!;
 
     /// <summary>
     /// EF Core navigation property for BannerInfo of user that did warp.
     /// </summary>
+    [JsonIgnore]
     public virtual UserBannerInfo UserBannerInfo { get; set; } = null!;
 }

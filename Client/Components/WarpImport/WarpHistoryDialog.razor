@@ -1,8 +1,14 @@
 <MudDialog>
     <DialogContent>
-        <p>
-            test @Test
-        </p>
+        <MudDataGrid Items="@BannerInfo.Warps">
+        <Columns>
+            <PropertyColumn Property="warp => warp.Time" Title="Время" />
+            <PropertyColumn Property="warp => warp.Pity" Title="Pity"/>
+            <PropertyColumn Property="warp => warp.Name" Title="Имя"/>
+            <PropertyColumn Property="warp => warp.RankType"Title="Редоксть" />
+            <PropertyColumn Property="warp => warp.ItemType" Title="Тип" />
+        </Columns>
+</MudDataGrid>
     </DialogContent>
 </MudDialog>
 

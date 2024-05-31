@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace StellarJadeManager.Shared;
 
@@ -17,5 +18,7 @@ public partial class Event
 
     public DateTime? EndDate { get; set; }
 
+    
+    [JsonIgnore]
     public virtual Patch Patch { get; set; } = null!;
 }

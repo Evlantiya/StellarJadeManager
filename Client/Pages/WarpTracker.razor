@@ -5,85 +5,50 @@
 <MudContainer Fixed>
     <MudGrid Spacing="2" Justify="Justify.Center" Style="width:100%; max-width:1280px">
         <MudItem xs="12" sm="12" md="8" lg="8">
-            <BannerInfoCard ImageSrc="/Images/characters-full/sparkle.png"></BannerInfoCard>
+            <BannerInfoCard
+                BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.EVENT)"
+                ImageSrc="/Images/characters-full/sparkle.png">
+            </BannerInfoCard>
         </MudItem>
         <MudItem xs="12" sm="12" md="4" lg="4">
-            <BannerInfoCard isLightCone="true" ImageSrc="/Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.png"></BannerInfoCard>
+            <BannerInfoCard 
+                BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.LIGHTCONE)"
+                ImageSrc="/Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.png">
+            </BannerInfoCard>
         </MudItem>
         <MudItem xs="12" sm="12" md="6" lg="6">
-            <BannerInfoCard ImageSrc="/Images/characters-full/welt.png"></BannerInfoCard>
+            <BannerInfoCard 
+                BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.STANDART)"
+                ImageSrc="/Images/characters-full/welt.png">
+            </BannerInfoCard>
         </MudItem>
         <MudItem xs="12" sm="12" md="6" lg="6">
-            <BannerInfoCard ImageSrc="/Images/characters-full/trailblazer.png"></BannerInfoCard>
+            <BannerInfoCard 
+                BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.DEPARTURE)"
+                ImageSrc="/Images/characters-full/trailblazer.png">
+            </BannerInfoCard>
         </MudItem>
     </MudGrid>
 </MudContainer>
-@* <div class="parent">
-    <div class="div1">
-        <BannerInfoCard ImageSrc="/Images/characters-full/sparkle.png"></BannerInfoCard>
-         </div>
-    <div class="div2"><BannerInfoCard ImageSrc="/Images/characters-full/sparkle.png" ></BannerInfoCard> </div>
-    <div class="div3"><BannerInfoCard ImageSrc="/Images/characters-full/sparkle.png"></BannerInfoCard> </div>
-    <div class="div4"> <BannerInfoCard ImageSrc="/Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.webp"></BannerInfoCard></div>
-</div>  *@
-@* <MudContainer Fixed Class="parent">
-    <div class="div1">
-        <BannerInfoCard ImageSrc="/Images/characters-full/sparkle.png"></BannerInfoCard>
-    </div>
-    <div class="div2">
-        <BannerInfoCard isLightCone="true" ImageSrc="/Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.png"></BannerInfoCard>
-    </div>
-    <div class="div3">
-        <BannerInfoCard ImageSrc="/Images/characters-full/sparkle.png"></BannerInfoCard>
-    </div>
-    <div class="div4">
-        <BannerInfoCard ImageSrc="/Images/characters-full/sparkle.png"></BannerInfoCard>
-    </div>
-</MudContainer> 
-
-<style>
-    .parent {
-        width:100%;
-        height: 1000px;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-        grid-column-gap: 10px;
-        grid-row-gap: 10px; 
-    }
-    .div1 { 
-      
-        grid-area:  1 / 1 / 4 / 9;
-     }
-    .div2 { grid-area: 1 / 9 / 7 / 13; }
-    .div3 { grid-area: 4 / 1 / 7 / 5; }
-    .div4 { grid-area:  4 / 5 / 7 / 9; } 
-
-    @@media (max-width:1280px) {
-            .parent {
-                display: grid;
-                grid-template-columns: repeat(8, 1fr);
-                grid-template-rows: repeat(12, 1fr);
-                grid-column-gap: 10px;
-                grid-row-gap: 10px;
-        }
-
-        .div1 { grid-area: 1 / 1 / 5 / 9; }
-        .div2 { grid-area: 5 / 1 / 13 / 5; }
-        .div3 { grid-area: 5 / 5 / 9 / 9; }
-        .div4 { grid-area: 9 / 5 / 13 / 9; }
-
-    }
-
-
-
-
-    .hren-content{
-        width:100%;
-        height: 500px;
-    }
-</style> *@
 
 @code {
+
+    [CascadingParameter]
+    List<Shared.Profile> profiles { get; set; }
+
+    private List<UserBannerInfo> defaultInfos = UserBannerInfo.CreateDefaultBannerInfos();
+    
+    public List<UserBannerInfo> CurrentBannerInfos => GetCurrentBannerInfos() ;
+
+
+    private List<UserBannerInfo> GetCurrentBannerInfos()
+    {
+        if( (profiles?.Count ?? 0) == 0 || (profiles?[0]?.UserBannerInfos?.Count ?? 0) == 0 ){
+            return defaultInfos;
+        }
+        else{
+            return profiles[0].UserBannerInfos.ToList();
+        }
+    }
     
 }

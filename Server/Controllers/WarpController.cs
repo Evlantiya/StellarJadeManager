@@ -45,7 +45,7 @@ public class WarpController: ControllerBase
         var hren = _db.UserBannerInfos.Include(b=>b.Warps).Where(b=>b.ProfileId == profile.Id).ToList();
         if(hren == null || hren.Count == 0)
         {
-            return Ok(bannerInfos);
+            return NotFound();
         }
         return Ok(hren);
 
