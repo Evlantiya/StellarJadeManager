@@ -142,7 +142,7 @@
     public async Task OpenHistory(){
         var hren_w = BannerInfo.CalculateWinrate(5);
         var hren_m = BannerInfo.CalculateMedianPity(5);
-        var parameters = new DialogParameters<WarpHistoryDialog> {{ x => x.BannerInfo, BannerInfo }, {x=>x.Test, ImageSrc} };
+        var parameters = new DialogParameters<WarpHistoryDialog> {{ x => x.BannerInfo, BannerInfo }};
         var dialog = await Dialog.ShowAsync<WarpHistoryDialog>("История прыжков", parameters, fullScreen);
     }
 

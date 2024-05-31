@@ -1,21 +1,81 @@
 <MudDialog>
     <DialogContent>
-        <MudDataGrid Items="@BannerInfo.Warps">
-        <Columns>
-            <PropertyColumn Property="warp => warp.Time" Title="Время" />
-            <PropertyColumn Property="warp => warp.Pity" Title="Pity"/>
-            <PropertyColumn Property="warp => warp.Name" Title="Имя"/>
-            <PropertyColumn Property="warp => warp.RankType"Title="Редоксть" />
-            <PropertyColumn Property="warp => warp.ItemType" Title="Тип" />
-        </Columns>
-</MudDataGrid>
+        <MudButton OnClick="Test">TEST</MudButton>
+        <MudToggleIconButton @bind-Toggled="@LegendaryFilter"
+                     Icon="@Icons.Material.Filled.StarOutline" Color="@MudBlazor.Color.Primary" 
+                     ToggledIcon="@Icons.Material.Filled.Star" ToggledColor="@MudBlazor.Color.Primary" />
+        <MudToggleIconButton @bind-Toggled="@EpicFilter"
+                     Icon="@Icons.Material.Filled.StarOutline" Color="@MudBlazor.Color.Tertiary" 
+                     ToggledIcon="@Icons.Material.Filled.Star" ToggledColor="@MudBlazor.Color.Tertiary" />
+        <MudDataGrid T="Warp" SortMode="SortMode.None" Items="@BannerInfo.Warps.Where(rarityPredicate).Reverse()">
+            <Columns>
+                <PropertyColumn Property="warp => warp.Time" Title="Время" />
+                <PropertyColumn Property="warp => warp.Pity" Title="Pity"/>
+                <PropertyColumn Property="warp => warp.Name" Title="Имя"/>
+                <PropertyColumn Property="warp => warp.RankType"Title="Редоксть" />
+                <PropertyColumn Property="warp => warp.ItemType" Title="Тип" />
+            </Columns>
+            <PagerContent>
+                <MudDataGridPager T="Warp" />
+            </PagerContent>
+        </MudDataGrid>
     </DialogContent>
 </MudDialog>
 
 @code{
-    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+    [CascadingParameter]
+     MudDialogInstance MudDialog { get; set; }
+
     [Parameter]
     public UserBannerInfo BannerInfo {get;set;}
-    [Parameter]
-    public string Test {get;set;}
+
+    public void Test(){
+        Console.WriteLine("test");
+    }
+
+    private HashSet<int> _raritySet = new HashSet<int>(){4,5};
+    
+    private bool legendaryFilterOn = true;
+    private bool epicFilterOn = true;
+    private bool commonFilterOn = false;
+
+    public bool LegendaryFilter
+    {
+        get => legendaryFilterOn;
+        set
+        {
+            legendaryFilterOn = value;
+            if (value) _raritySet.Add(5);
+            else _raritySet.Remove(5);
+        }
+    }
+    public bool EpicFilter
+    {
+        get => epicFilterOn;
+        set
+        {
+            epicFilterOn = value;
+            if (value) _raritySet.Add(4);
+            else _raritySet.Remove(4);
+        }
+    }
+    public bool CommonFilter
+    {
+        get => commonFilterOn;
+        set
+        {
+            commonFilterOn = value;
+            if (value) _raritySet.Add(3);
+            else _raritySet.Remove(3);
+        }
+    }
+
+    public HashSet<int> RaritySet => _raritySet;
+
+    Func<Warp, bool> rarityPredicate;
+
+    protected override async Task OnInitializedAsync()
+    {
+        rarityPredicate = x => RaritySet.Contains(x.RankType);
+    }
 }
