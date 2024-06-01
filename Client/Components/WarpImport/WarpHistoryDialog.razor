@@ -22,15 +22,26 @@
 
         <div class="d-flex justify-center align-start flex-wrap">
             @foreach(var id in BannerIdList){
-                <MudButton OnClick="@(e=>SetSelectedBannerId(id))" Variant="SelectedBannerId == id ? Variant.Filled : Variant.Outlined">@id</MudButton>
+                <MudButton 
+                OnClick="@(e=>SetSelectedBannerId(id))"
+                Variant="SelectedBannerId == id ? Variant.Outlined : Variant.Filled"
+                Class="pa-0"
+                 >
+                 <MudImage
+                    ObjectFit="@ObjectFit.ScaleDown"
+                    ObjectPosition="@ObjectPosition.Top" 
+                    Src="@(GetImageURLById("banner-ticket",id))"
+                    onerror="this.src='images/1_0.webp';" 
+                    Alt="@id.ToString()" Elevation="25" Class="@GetTicketOffClass(id)"/>
+                 </MudButton>
             }
         </div>
         </div>
         <MudDataGrid 
-        T="Warp" 
-        SortMode="SortMode.None" 
-        Items="@BannerInfo.Warps.Where(WarpFilter).Reverse()"
-        RowStyleFunc="@_rowStyleFunc"
+            T="Warp" 
+            SortMode="SortMode.None" 
+            Items="@BannerInfo.Warps.Where(WarpFilter).Reverse()"
+            RowStyleFunc="@_rowStyleFunc"
         >
             <Columns>
                 <PropertyColumn Property="warp => warp.Time" Title="Время" />
@@ -53,6 +64,18 @@
         </MudContainer>
     </DialogContent>
 </MudDialog>
+
+<style>
+    .ticket{
+        width:7rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .ticket-off{
+        filter: brightness(0.5);
+    }
+</style>
 
 @code{
     [CascadingParameter]
@@ -210,5 +233,14 @@
         else{
             SelectedBannerId = id;
         }
+    }
+
+    private string GetImageURLById(string folder, int id)
+    {
+        return $"images/{folder}/{id}.png";
+    }
+
+    private string GetTicketOffClass(int id){
+        return (SelectedBannerId == null || SelectedBannerId == id) ? "ticket":"ticket ticket-off"; 
     }
 }
