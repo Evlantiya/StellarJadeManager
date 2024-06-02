@@ -21,7 +21,7 @@
 
 
 <MudLayout>
-    <MudAppBar>
+    <MudAppBar Style="backdrop-filter: blur(4px)">
         @*
 
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="MudBlazor.Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
@@ -127,11 +127,13 @@
             @* Tertiary = "#b187ff", *@
             TextPrimary = Colors.Grey.Lighten4,
             TextSecondary = Colors.Amber.Darken2,
-            Background = Colors.Grey.Darken3,
-            AppbarBackground = Colors.Grey.Darken4,
+            @* Background = Colors.Grey.Darken3, *@
+            Background = "rgb(30,30,30)",
+            @* AppbarBackground = Colors.Grey.Darken4, *@
+            AppbarBackground = "rgba(10,10,10,.8)",
             DrawerBackground = Colors.Grey.Darken4,
             DrawerText = Colors.Grey.Lighten4,
-            Surface = Colors.Grey.Darken4,
+            Surface = "rgba(20,20,20,1)",
         },
     };
 

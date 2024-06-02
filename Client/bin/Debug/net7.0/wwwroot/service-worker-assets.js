@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-2YQ2+5GEPNU++hucbRDQ0eTLU\/v9fhFMCknIPYZ7Z\/Q=",
+      "hash": "sha256-dO31OwAgPWYU6gy9u9BDNpNkQIlZGmMfyifcrteIB\/4=",
       "url": "css\/app.css"
     },
     {
@@ -2093,7 +2093,7 @@
       "url": "Images\/warp.webp"
     },
     {
-      "hash": "sha256-yjzj4Mg04MArkjt\/G3g0W6Gb0q5W68NxF0gZxKtSwaA=",
+      "hash": "sha256-SUHnRgccOpaK1en8x1eHB5YcshZtuQ1Lkk7WLgmSjc4=",
       "url": "index.html"
     },
     {
@@ -3317,11 +3317,11 @@
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-7uITmsZzyv17TKbD8HFbQJofyaMRzFN4Ds3dkSEi8+E=",
+      "hash": "sha256-tfLR4mqeezp\/AFnbnnFhzLUQ7Hmg1xuwjxkpzQoGnmk=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-k2sICETp0KalJWZrcOEnc0nAhDv6A0L6gWaidLMg1KM=",
+      "hash": "sha256-53Dq56P6H\/vdhZAw6iFxZxnJv72vWT7bgAjdjVqqZAs=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -3329,7 +3329,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-8Edayh970pFrAnHuzaQLsuqNdy8b7XxdQ5LDOt5rBVM=",
+      "hash": "sha256-d+MgadPbZzsUy5Wt6AKP1fUh6He8GB0+eQZLwq6m3rc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -3357,5 +3357,5 @@
       "url": "_content\/Blazor-ApexCharts\/js\/blazor-apexcharts.js"
     }
   ],
-  "version": "SMBz1w5Z"
+  "version": "yyv+6rWz"
 };
