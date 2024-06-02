@@ -9,81 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = StellarJadeManager.Client
 build_property.RootNamespace = StellarJadeManager.Client
-build_property.ProjectDir = d:\StellarJadeManager\StellarJadeManager\Client\
+build_property.ProjectDir = D:\StellarJadeManager\StellarJadeManager\Client\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\StellarJadeManager\StellarJadeManager\Client
+build_property.MSBuildProjectDirectory = D:\StellarJadeManager\StellarJadeManager\Client
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/App.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/LogIn/Login.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/LogIn/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMb2dJblxMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/LogIn/LogInDialog.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/LogIn/LogInDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMb2dJblxMb2dJbkRpYWxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/LogIn/Registration.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/LogIn/Registration.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMb2dJblxSZWdpc3RyYXRpb24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/LogIn/RegistrationDialog.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/LogIn/RegistrationDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMb2dJblxSZWdpc3RyYXRpb25EaWFsb2cucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/Calculator.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/Calculator.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluUGFnZVxDYWxjdWxhdG9yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/Graphs.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/Graphs.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluUGFnZVxHcmFwaHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/VersionBanner.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/VersionBanner.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluUGFnZVxWZXJzaW9uQmFubmVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/WarpImport/BannerInfoCard.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/WarpImport/BannerInfoCard.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xXYXJwSW1wb3J0XEJhbm5lckluZm9DYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/WarpImport/WarpHistoryDialog.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/WarpImport/WarpHistoryDialog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xXYXJwSW1wb3J0XFdhcnBIaXN0b3J5RGlhbG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/MainLayout.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Pages/Auth.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Pages/Auth.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Pages/Index.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Pages/ProfilePage.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Pages/ProfilePage.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Pages/WarpTracker.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Pages/WarpTracker.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2FycFRyYWNrZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/_Imports.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/Calendar.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/Calendar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluUGFnZVxDYWxlbmRhci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-su9cikr6t5
 
-[d:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/PatchCalendar.razor]
+[D:/StellarJadeManager/StellarJadeManager/Client/Components/MainPage/PatchCalendar.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xNYWluUGFnZVxQYXRjaENhbGVuZGFyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-dd915bkyrl

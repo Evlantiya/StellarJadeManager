@@ -12,12 +12,21 @@
         <MudIconButton Icon="@Icons.Material.Filled.MenuOpen" aria-label="history" OnClick="OpenHistory"></MudIconButton>
     </MudPaper>
     <div class="d-flex flex-column align-center" style="position: absolute;bottom: 10px;left: 10px;">
-        <div class="banner-pity flex-column justify-center">
-            <div class="d-flex leg">
-                @* <MudText Typo="Typo.h4">@(BannerInfo.GuaranteedLegendary?"✔":"x")</MudText> *@
-                
-                <MudText Typo="Typo.h4">@BannerInfo?.CurrentLegendaryPity</MudText>
-                <MudText Typo="Typo.subtitle2">/@(_bannerMaxPity[BannerInfo.BannerTypeId])</MudText>
+        <div class="banner-pity flex-column justify-center align-end ">
+            <div class="d-flex justify-space-around gap-x-2 align-center leg">
+                @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
+                {
+                    @if(BannerInfo.GuaranteedLegendary){
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Title="Guarantee" />
+                    }
+                    else{
+                        <MudIcon Icon="@Icons.Material.Filled.Casino" Title="50/50" />
+                    }
+                }
+                <div class="d-flex">
+                    <MudText Typo="Typo.h4">@BannerInfo?.CurrentLegendaryPity</MudText>
+                    <MudText Typo="Typo.subtitle2">/@(_bannerMaxPity[BannerInfo.BannerTypeId])</MudText>
+                </div>
             </div>
             <MudDivider Class="my-1"/>
             <div class="d-flex gap-x-5 ">
@@ -38,12 +47,21 @@
                 </div>
             </div>
         </div>
-        <div class="banner-pity flex-column justify-center">
-            <div class="d-flex epic">
-                @* <MudText Typo="Typo.h4">@(BannerInfo.GuaranteedLegendary?"✔":"x")</MudText> *@
-                
-                <MudText Typo="Typo.h4">@BannerInfo?.CurrentEpicPity</MudText>
-                <MudText Typo="Typo.subtitle2">/10</MudText>
+        <div class="banner-pity flex-column justify-center align-end">
+            <div class="d-flex justify-space-around gap-x-2 align-center epic">
+                @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
+                {
+                    @if(BannerInfo.GuaranteedEpic){
+                        <MudIcon Icon="@Icons.Material.Filled.Check" Title="Guarantee" />
+                    }
+                    else{
+                        <MudIcon Icon="@Icons.Material.Filled.Casino" Title="50/50" />
+                    }
+                }
+                <div class="d-flex">
+                    <MudText Typo="Typo.h4">@BannerInfo?.CurrentEpicPity</MudText>
+                    <MudText Typo="Typo.subtitle2">/10</MudText>
+                </div>
             </div>
             <MudDivider Class="my-1"/>
             <div class="d-flex gap-x-5 ">
