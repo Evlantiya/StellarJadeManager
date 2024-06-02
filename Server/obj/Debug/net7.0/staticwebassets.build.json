@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pYaeez0/Vp93JpeQTcv4Ow05brg4VjTOkXQEaBUrxUI=",
+  "Hash": "pLNHym7R2XKU7YAZsKg96Jve9sWlLHX1YIKesGDF3NU=",
   "Source": "StellarJadeManager.Server",
   "BasePath": "_content/StellarJadeManager.Server",
   "Mode": "Default",
@@ -17641,6 +17641,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\emotes\\Yukong.png"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\G.png",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/G.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\G.png"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\hren.py",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -17656,6 +17673,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\hren.py"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\L.png",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/L.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\L.png"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\20000.png",
@@ -19069,6 +19103,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\lightcones\\its-showtime.png"
     },
     {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.png",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.png"
+    },
+    {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\nowhere-to-run.png",
       "SourceId": "StellarJadeManager.Client",
       "SourceType": "Project",
@@ -19373,6 +19424,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\stellarJade.webp"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\W.png",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/W.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\W.png"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\warp.webp",

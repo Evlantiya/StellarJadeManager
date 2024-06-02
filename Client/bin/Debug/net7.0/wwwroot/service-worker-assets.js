@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-ZUrRfFy3zGia+7qimSOkhWn9Fz4Uv3bnPUnY8hm5Igo=",
+      "hash": "sha256-2YQ2+5GEPNU++hucbRDQ0eTLU\/v9fhFMCknIPYZ7Z\/Q=",
       "url": "css\/app.css"
     },
     {
@@ -1665,8 +1665,16 @@
       "url": "Images\/emotes\/Yukong.png"
     },
     {
+      "hash": "sha256-grhJ\/RtmAv1Sx7VK7iHGMyH6dvxx\/WOnlk1xJRkHmnY=",
+      "url": "Images\/G.png"
+    },
+    {
       "hash": "sha256-Tw29E+VltsnAqFVgNacL8fFaFi7Qm+NDywM1C\/nvFsU=",
       "url": "Images\/hren.py"
+    },
+    {
+      "hash": "sha256-UYKJqex9fDcxytTCjXUXTKJjoIFLkTq56tYEof6uplE=",
+      "url": "Images\/L.png"
     },
     {
       "hash": "sha256-xvQKOMCK+bigKftuujGU7LPvYEYFI1Df6hH7S9FH8CI=",
@@ -2001,6 +2009,10 @@
       "url": "Images\/lightcones\/its-showtime.png"
     },
     {
+      "hash": "sha256-gv9R6Y5y\/1\/Ow63y1wems79h9u9wxXAfqx8nAdnYMwU=",
+      "url": "Images\/lightcones\/Light_Cone_Earthly_Escapade_Artwork.png"
+    },
+    {
       "hash": "sha256-mlmJ5pXnmgg95ao5i3MYNb97lAdtj69GENue6FveV2w=",
       "url": "Images\/lightcones\/nowhere-to-run.png"
     },
@@ -2073,11 +2085,15 @@
       "url": "Images\/stellarJade.webp"
     },
     {
+      "hash": "sha256-URhvYIgDe8njUEWtQ\/tKIR7fMD4hRANU5lnRsowWjJE=",
+      "url": "Images\/W.png"
+    },
+    {
       "hash": "sha256-ipv3AhN4NWZci3ulDp\/3nWOiQi6kHyDCBNSWAJ7cFcQ=",
       "url": "Images\/warp.webp"
     },
     {
-      "hash": "sha256-pDXigYFSpVSONmouk2kZMkAOPvMv76lLVAFfgT6YtI0=",
+      "hash": "sha256-yjzj4Mg04MArkjt\/G3g0W6Gb0q5W68NxF0gZxKtSwaA=",
       "url": "index.html"
     },
     {
@@ -3301,11 +3317,11 @@
       "url": "_framework\/StellarJadeManager.Shared.pdb"
     },
     {
-      "hash": "sha256-6Z9L1UIXWU6wB\/8x6Psl8OzRgXivHdHGjXeAyof7eBs=",
+      "hash": "sha256-7uITmsZzyv17TKbD8HFbQJofyaMRzFN4Ds3dkSEi8+E=",
       "url": "_framework\/StellarJadeManager.Client.dll"
     },
     {
-      "hash": "sha256-5Myir2T5glv\/sUX9PFesrw+3Lrf2aVj+TKvs6J1M3mY=",
+      "hash": "sha256-k2sICETp0KalJWZrcOEnc0nAhDv6A0L6gWaidLMg1KM=",
       "url": "_framework\/StellarJadeManager.Client.pdb"
     },
     {
@@ -3313,7 +3329,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-3ncs3SfM2reWu59BDumjgyyoTZxEDR\/9NiuO4xEKI3o=",
+      "hash": "sha256-8Edayh970pFrAnHuzaQLsuqNdy8b7XxdQ5LDOt5rBVM=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -3341,5 +3357,5 @@
       "url": "_content\/Blazor-ApexCharts\/js\/blazor-apexcharts.js"
     }
   ],
-  "version": "742vzSjb"
+  "version": "SMBz1w5Z"
 };

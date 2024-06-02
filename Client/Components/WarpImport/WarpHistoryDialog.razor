@@ -1,24 +1,21 @@
 <MudDialog Style="overflow-y: auto;max-height: 100dvh;scrollbar-gutter: stable;">
     <DialogContent>
-        <MudContainer Fixed Class="my-4 mb-10">
+        <MudContainer Class="my-4 mb-10">
         <div style="position:sticky;top:0;z-index:10;display:flex;width:fit-content;" >
         <MudButton OnClick="Test">TEST</MudButton>
         <MudToggleIconButton
             @bind-Toggled="@LegendaryFilter"
-            Icon="@Icons.Material.Filled.StarOutline" Color="@MudBlazor.Color.Primary" 
-            ToggledIcon="@Icons.Material.Filled.Star" ToggledColor="@MudBlazor.Color.Primary"
-        />
+            Icon="@Icons.Material.Filled.StarOutline" Style="color:var(--legendary-rarity-color)" 
+            ToggledIcon="@Icons.Material.Filled.Star" />
 
         <MudToggleIconButton 
             @bind-Toggled="@EpicFilter"
-            Icon="@Icons.Material.Filled.StarOutline" Color="@MudBlazor.Color.Tertiary" 
-            ToggledIcon="@Icons.Material.Filled.Star" ToggledColor="@MudBlazor.Color.Tertiary" 
-        />
+            Icon="@Icons.Material.Filled.StarOutline" Style="color:var(--epic-rarity-color)"
+            ToggledIcon="@Icons.Material.Filled.Star" />
 
         <MudToggleIconButton @bind-Toggled="@CommonFilter"
             Icon="@Icons.Material.Filled.StarOutline"  
-            ToggledIcon="@Icons.Material.Filled.Star" Style="color:rgb(82, 147, 250)" 
-        />
+            ToggledIcon="@Icons.Material.Filled.Star" Style="color:var(--common-rarity-color)" />
 
         <div class="d-flex justify-center align-start flex-wrap">
             @foreach(var id in BannerIdList){
@@ -31,7 +28,6 @@
                     ObjectFit="@ObjectFit.ScaleDown"
                     ObjectPosition="@ObjectPosition.Top" 
                     Src="@(GetImageURLById("banner-ticket",id))"
-                    onerror="this.src='images/1_0.webp';" 
                     Alt="@id.ToString()" Elevation="25" Class="@GetTicketOffClass(id)"/>
                  </MudButton>
             }
@@ -44,18 +40,39 @@
             RowStyleFunc="@_rowStyleFunc"
         >
             <Columns>
-                <PropertyColumn Property="warp => warp.Time" Title="Время" />
-                <PropertyColumn CellStyleFunc="@_cellStyleFunc" Property="warp => warp.Pity" Title="Pity"/>
-                <PropertyColumn Property="warp => warp.Guarantee" Title=""/>
-                <PropertyColumn Property="warp => warp.Name" Title="Имя"/>
-                <PropertyColumn Property="warp => warp.RankType"Title="Редкость" />
-                <PropertyColumn Property="warp => warp.ItemType" Title="Тип" />
-                <TemplateColumn CellClass="d-flex justify-end">
+                <TemplateColumn CellStyleFunc="@_cellStyleFunc" Title="Pity">
                     <CellTemplate>
-                    
-                        @($"{context.Item.Pity} {context.Item.Guarantee}")
+                    <div class="d-flex justify-end align-center flex-wrap">
+                        @($"{context.Item.Pity} ")
+                        @if(context.Item.Guarantee != null){
+                            <img src="@(GuaranteeImagesDict.GetValueOrDefault(context.Item.Guarantee))" style="height:2rem;width:2rem;">
+                        }
+                    </div>
                     </CellTemplate>
                 </TemplateColumn>
+                <TemplateColumn Title="Имя">
+                    <CellTemplate>
+                    <div class="d-flex justify-start align-center flex-wrap" style="width:fit-content;">
+                        <img class="mr-2" src="@(GetImageURLById(context.Item.ItemId < 20000?"characters-mini":"lightcones",context.Item.ItemId))" style="height:3rem;width:3rem;">
+                        @($" {context.Item.Name}")
+                    </div>
+                    </CellTemplate>
+                </TemplateColumn>
+                @* <TemplateColumn Title="Редкость">
+                    <CellTemplate>
+                        <MudRating ReadOnly="true" SelectedValue="context.Item.RankType" style="" />
+                    </CellTemplate>
+                </TemplateColumn>     *@
+                <TemplateColumn Title="Баннер">
+                    <CellTemplate>
+                        <MudImage
+                        ObjectFit="@ObjectFit.ScaleDown"
+                        ObjectPosition="@ObjectPosition.Top" 
+                        Src="@(GetImageURLById("banner-ticket",context.Item.GachaId))"
+                        Alt="@context.Item.GachaId.ToString()" Elevation="25" Class="ticket"/>
+                    </CellTemplate>
+                </TemplateColumn> 
+                <PropertyColumn Property="warp => warp.Time" Title="Время" />
             </Columns>
             @* <PagerContent>
                 <MudDataGridPager  T="Warp" />
@@ -64,6 +81,7 @@
         </MudContainer>
     </DialogContent>
 </MudDialog>
+
 
 <style>
     .ticket{
@@ -131,6 +149,12 @@
     public int? SelectedBannerId {get;set;} = null;
     public List<int> BannerIdList;
 
+    private Dictionary<string, string> GuaranteeImagesDict = new Dictionary<string, string>()
+    {
+        {"Win", "images/W.png"},
+        {"Loss", "images/L.png"},
+        {"Guarantee", "images/G.png"}
+    };
 
     public HashSet<int> RaritySet => _raritySet;
 

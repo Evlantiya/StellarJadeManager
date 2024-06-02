@@ -61,6 +61,18 @@
       "PackagePath": "staticwebassets\\Images\\429_Mkht.jpg"
     },
     {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\G.png",
+      "PackagePath": "staticwebassets\\Images\\G.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\L.png",
+      "PackagePath": "staticwebassets\\Images\\L.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\W.png",
+      "PackagePath": "staticwebassets\\Images\\W.png"
+    },
+    {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\background.webp",
       "PackagePath": "staticwebassets\\Images\\background.webp"
     },
@@ -1967,6 +1979,10 @@
     {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\23027.png",
       "PackagePath": "staticwebassets\\Images\\lightcones\\23027.png"
+    },
+    {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.png",
+      "PackagePath": "staticwebassets\\Images\\lightcones\\Light_Cone_Earthly_Escapade_Artwork.png"
     },
     {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\lightcones\\before-the-tutorial-mission-starts.png",
