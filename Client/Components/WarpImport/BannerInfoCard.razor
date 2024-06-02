@@ -11,57 +11,71 @@
         <MudSpacer/>
         <MudIconButton Icon="@Icons.Material.Filled.MenuOpen" aria-label="history" OnClick="OpenHistory"></MudIconButton>
     </MudPaper>
-
-    <MudGrid Class="hueta" Spacing="5" Justify="Justify.SpaceAround">
-        <MudItem Class="banner-pity" xs="4" sm="4" md="4" lg="4">
+    <div class="d-flex flex-column align-center" style="position: absolute;bottom: 10px;left: 10px;">
+        <div class="banner-pity flex-column justify-center">
             <div class="d-flex leg">
-                <MudText Typo="Typo.h4">@(BannerInfo.GuaranteedLegendary?"✔":"x")</MudText>
-                <MudSpacer/>
+                @* <MudText Typo="Typo.h4">@(BannerInfo.GuaranteedLegendary?"✔":"x")</MudText> *@
+                
                 <MudText Typo="Typo.h4">@BannerInfo?.CurrentLegendaryPity</MudText>
                 <MudText Typo="Typo.subtitle2">/@(_bannerMaxPity[BannerInfo.BannerTypeId])</MudText>
             </div>
-        </MudItem>
-        <MudItem Class="banner-pity" xs="4" sm="4" md="4" lg="4">
+            <MudDivider Class="my-1"/>
+            <div class="d-flex gap-x-5 ">
+                <div class="d-flex flex-column align-start">
+                    @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
+                    {
+                        <MudText Typo="Typo.body1">Winrate</MudText>
+                    }   
+                    <MudText Typo="Typo.body1">Медианна</MudText>
+                </div>
+                <div class="d-flex flex-column align-end">
+                    @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
+                    {
+                        <MudText Class="leg" Typo="Typo.body1">@((Math.Round(BannerInfo.CalculateWinrate(5), 1)).ToString("0.0"))%</MudText>
+                    }
+                    
+                    <MudText Class="leg" Typo="Typo.body1">@(BannerInfo.CalculateMedianPity(5))</MudText>
+                </div>
+            </div>
+        </div>
+        <div class="banner-pity flex-column justify-center">
             <div class="d-flex epic">
-                <MudText Typo="Typo.h4">@(BannerInfo.GuaranteedEpic ? "✔":"x")</MudText>
-                <MudSpacer/>
+                @* <MudText Typo="Typo.h4">@(BannerInfo.GuaranteedLegendary?"✔":"x")</MudText> *@
+                
                 <MudText Typo="Typo.h4">@BannerInfo?.CurrentEpicPity</MudText>
                 <MudText Typo="Typo.subtitle2">/10</MudText>
             </div>
-        </MudItem>
-        <MudItem Class="banner-pity" xs="5" sm="5" md="5" lg="5">
-
-            @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
-            {
-                <div class="d-flex">
-                    <MudText Typo="Typo.body1">Winrate</MudText>
-                    <MudSpacer/>
-                    <MudText Class="leg" Typo="Typo.body1">@((Math.Round(BannerInfo.CalculateWinrate(5), 1)).ToString("0.0"))%</MudText>
+            <MudDivider Class="my-1"/>
+            <div class="d-flex gap-x-5 ">
+                <div class="d-flex flex-column align-start">
+                    @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
+                    {
+                        <MudText Typo="Typo.body1">Winrate</MudText>
+                    }   
+                    <MudText Typo="Typo.body1">Медианна</MudText>
                 </div>
-            }
-            <div class="d-flex">
-                <MudText Typo="Typo.body1">Медианна</MudText>
-                <MudSpacer/>
-                <MudText Class="leg" Typo="Typo.body1">@(BannerInfo.CalculateMedianPity(5))</MudText>
-            </div>
-        </MudItem>
-        <MudItem Class="banner-pity" xs="5" sm="5" md="5" lg="5">
-            @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
-            {
-                <div class="d-flex">
+                <div class="d-flex flex-column align-end">
+                    @if (BannerInfo?.BannerTypeId == 11 || BannerInfo?.BannerTypeId == 12)
+                    {
+                        <MudText Class="epic" Typo="Typo.body1">@((Math.Round(BannerInfo.CalculateWinrate(4), 1)).ToString("0.0"))%</MudText>
+                    }
                     
-                    <MudText Typo="Typo.body1">Winrate</MudText>
-                    <MudSpacer/>
-                    <MudText Class="epic" Typo="Typo.body1">@((Math.Round(BannerInfo.CalculateWinrate(4), 1)).ToString("0.0"))%</MudText>
+                    <MudText Class="epic" Typo="Typo.body1">@(BannerInfo.CalculateMedianPity(4))</MudText>
                 </div>
-            }
-            <div class="d-flex">
-                <MudText Typo="Typo.body1">Медианна</MudText>
-                <MudSpacer/>
-                <MudText Class="epic" Typo="Typo.body1">@(BannerInfo.CalculateMedianPity(4))</MudText>
             </div>
+        </div>
+    </div>
+
+    @* <MudGrid Class="hueta" Spacing="5" Justify="Justify.SpaceAround">
+        <MudItem Class="banner-pity" xs="4" sm="4" md="4" lg="4">
         </MudItem>
-    </MudGrid>
+        <MudItem Class="banner-pity" xs="3" sm="3" md="3" lg="3">
+        </MudItem>
+        <MudItem Class="banner-pity" xs="4" sm="4" md="4" lg="4">
+        </MudItem>
+        <MudItem Class="banner-pity" xs="3" sm="3" md="3" lg="3">
+        </MudItem>
+    </MudGrid> *@
 </MudPaper>
 
 <style>
@@ -69,7 +83,7 @@
         width: 100%; /* Ширина контейнера */
         height: 100%; /* Высота контейнера */
         @* background-image: url(@ImageSrc); /* Путь к вашему изображению */ *@
-        filter: brightness(0.75);
+        filter: brightness(0.9);
         background-size: cover; /* Масштабирует изображение так, чтобы оно полностью покрывало фоновую область */
         background-position: center; /* Центрирует изображение в контейнере */
         background-repeat: no-repeat; /* Запрещает повторение изображения */
@@ -81,32 +95,51 @@
     }
 
     .banner-name{
+        backdrop-filter: blur(5px);
         width:100%;
         display:flex;
         top:0;
         left:0;
     }
     .banner-pity{
+        backdrop-filter: blur(5px);
         background-color: rgba(10,10,10,0.85);
-        border-radius: 2rem;
-        box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.85);
+        
+        @* border: 1px solid; *@
+        @* border-color: var(--legendary-rarity-color); *@
+        border-radius: 5px;
         margin-top: 5px;
         margin-bottom: 5px;
+        width: fit-content;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 25px 5px rgb(10,10,10);
     }
-
+@* 
+    .banner-pity:has(.leg){
+    }
+    .banner-pity:has(.epic){
+        box-shadow: 0 0 25px -10px var(--epic-rarity-color);
+    } *@
     .leg{
-        text-shadow: 1px 1px 5px var(--mud-palette-primary);
-        color: var(--mud-palette-primary);
+        text-shadow: 1px 1px 5px var(--legendary-rarity-color);
+        color: var(--legendary-rarity-color);
+        width:fit-content;
+        
     }
     .epic{
-        text-shadow: 1px 1px 5px rgb(176, 135, 255);
-        color: rgb(176, 135, 255);
+        text-shadow: 1px 1px 5px var(--epic-rarity-color);
+        color: var(--epic-rarity-color);
+        width:fit-content;
     }
 
     .banner-info{
         position:absolute;
         background-color: rgba(10,10,10,0.85);
         box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.85);
+        
     }
 
     .hueta{
