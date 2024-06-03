@@ -6,18 +6,19 @@
 @inject IMapper _mapper
 @inject AuthenticationStateProvider authStateProvider
 
-<MudContainer Class="d-flex flex-wrap justify-space-around align-start my-5 ">
+<MudContainer Fixed Class="d-flex flex-wrap justify-space-around align-start my-5 ">
     <Calendar
         patches="patches"
         OnSelectedDateChanged="UpdateSelectedDate"
         currentProfile="profiles?.FirstOrDefault()??defaultProfile"
     ></Calendar>
     <Calculator
+        @ref="calc"
         patches="patches"
         chances="chances"
         CurrentProfile="profiles?.FirstOrDefault()??defaultProfile"
         OnProfileDataChanged="UpdateProfileData"
-        OnResultStellarJadesAmountChanged="UpdateGraphs"></Calculator>
+    ></Calculator>
 </MudContainer>
 <Graphs @ref="graphs"></Graphs>
 
@@ -25,6 +26,7 @@
 
 @code{
     private Graphs graphs;
+    private Calculator calc;
 
     [CascadingParameter]
     private Task<AuthenticationState> AuthenticationStateTask { get; set; }
@@ -52,10 +54,10 @@
         await UpdateProfile(profiles[0].Id, new ProfilePutRequestDTO() { SelectedDate = selectedDate });
     }
 
-    public async Task UpdateGraphs(int value)
-    {
-        await graphs.UpdateRollnumMarkerAsync(value);
-    }
+    //public async Task UpdateGraphs(int value)
+    //{
+    //    await graphs.UpdateRollnumMarkerAsync(value);
+    //}
 
 
     public async Task UpdateProfile(int id, ProfilePutRequestDTO profile){

@@ -91,12 +91,12 @@
     [Parameter]
     public EventCallback<ProfilePutRequestDTO> OnProfileDataChanged {get;set;}
 
-    [Parameter]
-    public EventCallback<int> OnResultStellarJadesAmountChanged { get; set; }
+    //[Parameter]
+    //public EventCallback<int> OnResultStellarJadesAmountChanged { get; set; }
 
     public int dailyIncom {get {
-        return month_pass ? 150 : 60;
-    }}
+            return month_pass ? 150 : 60;
+        }}
     public int stellarJadesAmountForEvents {get; set;} = 0;
     public int resultStellarJades => currentGems + stellarJadesAmountForEvents + MoC_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
 
@@ -122,6 +122,10 @@
         CurrentProfile.PfStars = value;
         await UpdateProfile(_PF_stars:value);
     }
+    //i wanna kms
+    //public async Task FireOnResultStellarJadesAmountChangedEvenAsync(){
+    //    await OnResultStellarJadesAmountChanged.InvokeAsync(resultStellarJades);
+    //}
 
     public async Task UpdateProfile(int? _currentGems = null, DateTime? _selectedDate= null, bool? _month_pass= null, int? _MoC_stars= null, int? _PF_stars = null){
         
@@ -150,7 +154,7 @@
             PfStars = _PF_stars
         };
         await OnProfileDataChanged.InvokeAsync(data);
-        await OnResultStellarJadesAmountChanged.InvokeAsync(resultStellarJades);
+        //await OnResultStellarJadesAmountChanged.InvokeAsync(resultStellarJades);
     }
 
     string warp_url = "";
