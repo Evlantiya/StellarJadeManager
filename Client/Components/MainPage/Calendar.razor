@@ -1,14 +1,13 @@
 ﻿
 @if (patches != null)
 {
-    <MudCarousel Class="my-5" Style="width:50%; height:35vh;" ShowArrows="false" ShowBullets="false" EnableSwipeGesture="@true" AutoCycle="false" TData="object" @bind-SelectedIndex="selectedIndex">
+    
+    @* <MudCarousel Class="my-5" Style="width:50%; height:35vh;" ShowArrows="false" ShowBullets="false" EnableSwipeGesture="@true" AutoCycle="false" TData="object" @bind-SelectedIndex="selectedIndex">
         @foreach (var p in patches)
         {
             
             <MudCarouselItem Transition="@Transition.Fade" Class="d-flex flex-column justify-center align-center" Style="height: 35vh;">
-                @*
-                <VersionBanner title="@p.Title" version="@p.Version"></VersionBanner>
-                *@
+                
                 <div class="d-flex" style="height: 100%;">
 
                 <MudImage
@@ -21,7 +20,7 @@
                 </div>
             </MudCarouselItem>
         }
-    </MudCarousel>
+    </MudCarousel> *@
     <MudTabs Elevation="4" Rounded="true" Outlined="true" @bind-ActivePanelIndex="selectedIndex">
         @foreach (var p in patches)
         {

@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\Images\\L.png"
     },
     {
+      "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\StellarJadeBig.webp",
+      "PackagePath": "staticwebassets\\Images\\StellarJadeBig.webp"
+    },
+    {
       "Id": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\W.png",
       "PackagePath": "staticwebassets\\Images\\W.png"
     },

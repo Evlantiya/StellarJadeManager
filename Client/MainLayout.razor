@@ -26,7 +26,7 @@
 
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="MudBlazor.Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
         *@
-        <MudText  Color="MudBlazor.Color.Primary">Stellar Jade Manager</MudText>
+        <MudLink Href="/" Color="MudBlazor.Color.Primary" Underline="Underline.None">Stellar Jade Manager</MudLink>
         <MudSpacer/>
         
         @* <MudTextField Style="width:100px" Class="mx-2" FullWidth="false" @bind-Value='currentGems' T="int" Variant="Variant.Outlined"/> *@
@@ -36,11 +36,12 @@
             <NotAuthorized>
                 <MudLink Href="/auth" Underline="Underline.None">Регистрация/Войти</MudLink>
                 <MudLink Href="/warp" Underline="Underline.None">История круток</MudLink>
+                <MudLink Href="/calculator" Underline="Underline.None">Калькулятор</MudLink>
             </NotAuthorized>
             <Authorized>
                 <MudButtonGroup Color="MudBlazor.Color.Primary" Variant="Variant.Outlined">
                     <MudButton>
-                        <MudLink Href="/" Underline="Underline.None">Калькулятор</MudLink>
+                        <MudLink Href="/calculator" Underline="Underline.None">Калькулятор</MudLink>
                         <MudSpacer />
                         <MudIcon Icon="@Icons.Material.Filled.Calculate" Size="MudBlazor.Size.Large"  Class="ml-2"></MudIcon>
                     </MudButton>
@@ -90,7 +91,7 @@
     *@
     <MudMainContent>
             <CascadingValue Value="_profiles">
-            <MudContainer MaxWidth="@MaxWidth.Large" Color="MudBlazor.Color.Primary" Class="my-4 px-0 py-4 d-flex justify-center flex-column align-center ">
+            <MudContainer Fixed Class="my-4 px-0 py-4 d-flex justify-center flex-column align-center ">
                 @Body
             </MudContainer>
         </CascadingValue>

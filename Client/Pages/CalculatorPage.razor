@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@page "/calculator"
 @using StellarJadeManager.Client.Components.MainPage
 @using System.Text
 
@@ -6,17 +6,19 @@
 @inject IMapper _mapper
 @inject AuthenticationStateProvider authStateProvider
 
-<Calendar
-    patches="patches"
-    OnSelectedDateChanged="UpdateSelectedDate"
-    currentProfile="profiles?.FirstOrDefault()??defaultProfile"
-></Calendar>
-<Calculator
-    patches="patches"
-    chances="chances"
-    CurrentProfile="profiles?.FirstOrDefault()??defaultProfile"
-    OnProfileDataChanged="UpdateProfileData"
-></Calculator>
+<MudContainer Class="d-flex flex-wrap justify-space-around align-start my-5 ">
+    <Calendar
+        patches="patches"
+        OnSelectedDateChanged="UpdateSelectedDate"
+        currentProfile="profiles?.FirstOrDefault()??defaultProfile"
+    ></Calendar>
+    <Calculator
+        patches="patches"
+        chances="chances"
+        CurrentProfile="profiles?.FirstOrDefault()??defaultProfile"
+        OnProfileDataChanged="UpdateProfileData"
+    ></Calculator>
+</MudContainer>
 <Graphs></Graphs>
 
 

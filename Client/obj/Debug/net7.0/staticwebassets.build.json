@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NFZnISxP6nL/Iga5+1P2UcA2PhyQtjj9pAIe7DPJlwk=",
+  "Hash": "hA6g75Lbbjt/NfYpUs/gYlvPYUIAGM3TYsIHwkr2w+g=",
   "Source": "StellarJadeManager.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -19463,6 +19463,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\stellarJade.webp"
+    },
+    {
+      "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\StellarJadeBig.webp",
+      "SourceId": "StellarJadeManager.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Images/StellarJadeBig.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\StellarJadeBig.webp"
     },
     {
       "Identity": "D:\\StellarJadeManager\\StellarJadeManager\\Client\\wwwroot\\Images\\W.png",

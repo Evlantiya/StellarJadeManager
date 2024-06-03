@@ -1,35 +1,32 @@
 ﻿@using StellarJadeManager.Client.Components.WarpImport
 @page "/warp"
 
-
-<MudContainer Fixed>
-    <MudGrid Spacing="2" Justify="Justify.Center" Style="width:100%; max-width:1280px">
-        <MudItem xs="12" sm="12" md="8" lg="8">
-            <BannerInfoCard
-                BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.EVENT)"
-                ImageSrc="/Images/characters-full/1306.png">
-            </BannerInfoCard>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="4" lg="4">
-            <BannerInfoCard 
-                BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.LIGHTCONE)"
-                ImageSrc="/Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.png">
-            </BannerInfoCard>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="6" lg="6">
-            <BannerInfoCard 
-                BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.STANDART)"
-                ImageSrc="/Images/characters-full/1004.png">
-            </BannerInfoCard>
-        </MudItem>
-        <MudItem xs="12" sm="12" md="6" lg="6">
-            <BannerInfoCard 
-                BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.DEPARTURE)"
-                ImageSrc="/Images/characters-full/trailblazer.png">
-            </BannerInfoCard>
-        </MudItem>
-    </MudGrid>
-</MudContainer>
+<MudGrid Spacing="2" Justify="Justify.Center" Style="width:100%; max-width:1280px">
+    <MudItem xs="12" sm="12" md="8" lg="8">
+        <BannerInfoCard
+            BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.EVENT)"
+            ImageSrc="/Images/characters-full/1306.png">
+        </BannerInfoCard>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="4" lg="4">
+        <BannerInfoCard 
+            BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.LIGHTCONE)"
+            ImageSrc="/Images/lightcones/Light_Cone_Earthly_Escapade_Artwork.png">
+        </BannerInfoCard>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="6" lg="6">
+        <BannerInfoCard 
+            BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.STANDART)"
+            ImageSrc="/Images/characters-full/1004.png">
+        </BannerInfoCard>
+    </MudItem>
+    <MudItem xs="12" sm="12" md="6" lg="6">
+        <BannerInfoCard 
+            BannerInfo="@CurrentBannerInfos.First(b => b.BannerTypeId == (int)BannerTypeEnum.DEPARTURE)"
+            ImageSrc="/Images/characters-full/trailblazer.png">
+        </BannerInfoCard>
+    </MudItem>
+</MudGrid>
 
 @code {
 
