@@ -18,13 +18,7 @@
         </MudSelect>
     <MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="UpdateMonthPass" Label="Пропуск снабженца" Color="MudBlazor.Color.Primary" />
     <MudDivider class=mt-10></MudDivider>
-    @*TEST*@
-    @* <MudInputString @bind-Value='warp_url'/>
-    <MudButton OnClick="@Test">
-        <p>
-            test
-        </p>
-    </MudButton> *@
+
     <div class="d-flex flex-row my-10">
         <div class="ml-16">
             <MudText
@@ -97,6 +91,9 @@
     [Parameter]
     public EventCallback<ProfilePutRequestDTO> OnProfileDataChanged {get;set;}
 
+    [Parameter]
+    public EventCallback<int> OnResultStellarJadesAmountChanged { get; set; }
+
     public int dailyIncom {get {
         return month_pass ? 150 : 60;
     }}
@@ -144,7 +141,7 @@
             PF_stars = _PF_stars ?? 0;
         } *@
 
-        
+
         var data = new ProfilePutRequestDTO(){
             CurrentJades=_currentGems,
             SelectedDate = _selectedDate,
@@ -153,6 +150,7 @@
             PfStars = _PF_stars
         };
         await OnProfileDataChanged.InvokeAsync(data);
+        await OnResultStellarJadesAmountChanged.InvokeAsync(resultStellarJades);
     }
 
     string warp_url = "";

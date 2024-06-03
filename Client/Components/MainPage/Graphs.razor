@@ -1,62 +1,38 @@
 
-<div style="width:100%">
+<MudContainer Style="width:95%">
 
-<ApexChart TItem="Roll" Options="apexOptions" Height="700">
+<ApexChart @ref="apexChart" TItem="Roll" Options="apexOptions" Height="700">
                 <ApexPointSeries  TItem="Roll"
                     Items="RollData"
                     Name="Шанс 5⭐ по номеру крутки"
                     SeriesType="SeriesType.Area"
                     XValue="e=> e.rollnum"
-                    YValue="e=>(decimal)e.chance"
-                    />
+                    YValue="e=>(decimal)e.chance"/>
                 <ApexPointSeries  TItem="Roll"
                     Items="RollData"
                     Name="Шанс 5⭐"
                     SeriesType="SeriesType.Area"
                     XValue="e=>e.rollnum"
                     YValue="e=>(decimal) e.cumulative_chance"/>
-
-        
         </ApexChart>
-</div>
+</MudContainer>
 
 <MudButton OnClick="test">TEST</MudButton>
 
 @code {
 
+    private ApexChart<Roll> apexChart;
     private ApexChartOptions<Roll> apexOptions {get; set;}
     public List<Roll> RollData = new();
     public void test(){
         Console.WriteLine(0);
     }
 
-    @* [Parameter]
-    public Dictionary<int, double> Chances {get;set;}
-
-    private int Index = -1; //default value cannot be 0 -> first selectedindex is 0.
-    public ChartOptions Options = new ChartOptions();
-    
-    public List<ChartSeries> Series = new List<ChartSeries>()
+    public async Task UpdateRollnumMarkerAsync(int rollNum)
     {
-        new ChartSeries() { Name = "Шансы", Data = ConstChances.Chances_per_rollnum.Values.ToArray() },
-        new ChartSeries() { Name = "Кумулятивныые шансы", Data = ConstChances.Cumulative_chances.Values.ToArray() }
-    };
-    public string[] XAxisLabels = ConstChances.Chances_per_rollnum.Keys.Select(key=>key.ToString()).ToArray(); *@
-
-    @* protected override async Task OnParametersSetAsync(){
-        if(Series.Count>0){
-            return;
-        }
-        XAxisLabels = Chances.Keys.Select(rollnum => rollnum.ToString()).ToArray();
-        var chancesByRollnum = Chances.Values.Select(val=>val*100).ToArray();
-        var s = chancesByRollnum.Sum();
-        var relative = chancesByRollnum.Select(chance => chance/s).ToArray();
-        var cumulativeChances = GetCumulativeSum(relative).Select(c=>c*100).ToArray();
-        Series.Add(new ChartSeries() { Name = "Шансы по номеру крутки", Data = chancesByRollnum });
-        Series.Add(new ChartSeries() { Name = "Шансы", Data = cumulativeChances });
-        StateHasChanged();
-
-    } *@
+        apexOptions.Markers.Discrete.FirstOrDefault().DataPointIndex = rollNum-1;
+        await apexChart.UpdateOptionsAsync(false, false, false);
+    }
 
     protected override async Task OnInitializedAsync(){
         for(int i = 1; i < 91; i++){
@@ -124,7 +100,19 @@
                         X=73
                     }
                 }
-            }
+            },
+            Markers = new Markers
+            {
+                Discrete = new List<MarkersDiscrete>() {
+                    new MarkersDiscrete {
+                        SeriesIndex = 1,
+                        DataPointIndex = 1,
+                        Size = 10,
+                        FillColor = "var(--legendary-rarity-color)"
+                    }
+                }
+            },
+            Colors = new List<string> { "var(--mud-palette-primary)","var(--legendary-rarity-color)" }
             
             
         };

@@ -17,13 +17,15 @@
         chances="chances"
         CurrentProfile="profiles?.FirstOrDefault()??defaultProfile"
         OnProfileDataChanged="UpdateProfileData"
-    ></Calculator>
+        OnResultStellarJadesAmountChanged="UpdateGraphs"></Calculator>
 </MudContainer>
-<Graphs></Graphs>
+<Graphs @ref="graphs"></Graphs>
 
 
 
 @code{
+    private Graphs graphs;
+
     [CascadingParameter]
     private Task<AuthenticationState> AuthenticationStateTask { get; set; }
     [CascadingParameter]
@@ -49,6 +51,12 @@
         //profiles[0].SelectedDate = selectedDate;
         await UpdateProfile(profiles[0].Id, new ProfilePutRequestDTO() { SelectedDate = selectedDate });
     }
+
+    public async Task UpdateGraphs(int value)
+    {
+        await graphs.UpdateRollnumMarkerAsync(value);
+    }
+
 
     public async Task UpdateProfile(int id, ProfilePutRequestDTO profile){
         chances = new(){
