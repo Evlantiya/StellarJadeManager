@@ -1,1 +1,55 @@
 @page "/"
+
+
+<MudText Typo="@Typo.h3" Color="MudBlazor.Color.Primary">Stellar Jade Manager</MudText>
+<MudText Typo="@Typo.h4">Добро пожаловать!</MudText>
+<div class="d-flex flex-wrap justify-space-around align-center my-5" style="height:400px;width:80%">
+<MudDivider Class="my-10"/>
+
+<div style="height:100%">
+<MudImage
+    Src="images/2_2.webp"
+    ObjectFit="@ObjectFit.Cover"
+    Style="max-height: 100%;width: auto;aspect-ratio:2;"
+    Fluid
+    Class="rounded-lg" />
+</div>
+
+<MudCarousel  Style="height:100%;aspect-ratio:1" ShowArrows="false" ShowBullets="true" EnableSwipeGesture="true" AutoCycle="true" TData="object">
+    <MudCarouselItem Transition="Transition.Fade">
+        <MudImage Src="images/characters-full/1315.png"
+            ObjectFit="@ObjectFit.Cover"
+            Style="aspect-ratio:1;"
+            Class="rounded-lg"
+            Fluid
+
+        />
+    </MudCarouselItem>
+    <MudCarouselItem Transition="Transition.Fade">
+        <MudImage Src="images/characters-full/1309.png"
+            ObjectFit="@ObjectFit.Cover"
+            Style="aspect-ratio:1;"
+            Class="rounded-lg"
+            Fluid
+        />
+    </MudCarouselItem>
+</MudCarousel>
+
+</div>
+
+<style>
+    .banner-image{
+        background-repeat:no-repeat;
+        background-size: 200% 200%;
+        background-position: 50% 35%;
+    }
+    .banner-1{
+        background-image: url("images/characters-full/1315.png");
+    }
+
+    .banner-2 {
+        background-image: url("images/characters-full/1309.png");
+    }
+</style>
+
+@code{}
