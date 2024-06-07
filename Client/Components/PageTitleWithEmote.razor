@@ -1,0 +1,18 @@
+﻿<div class="d-flex align-center justify-start flex-wrap gap-4" style="width:80%">
+    <div style="height:128px">
+        <MudImage Src="@ImgPath"
+                  ObjectFit="@ObjectFit.Cover"
+                  Style="max-height: 100%;width: auto;aspect-ratio:1;"
+                  Fluid
+                  Class="rounded-lg" />
+    </div>
+    <MudText Typo="@Typo.h4" Color="MudBlazor.Color.Primary">@PageTitle</MudText>
+</div>
+<MudDivider Class="mb-16" Style="width:80%" />
+
+@code {
+    [Parameter]
+    public string PageTitle { get; set; }
+    [Parameter]
+    public string ImgPath { get; set; }
+}

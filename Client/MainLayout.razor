@@ -8,6 +8,9 @@
 
 @inherits LayoutComponentBase
 
+
+
+
 <MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="@theme" />
 <MudDialogProvider FullWidth="false"
                    MaxWidth="MaxWidth.Large"
@@ -22,16 +25,9 @@
 
 <MudLayout>
     <MudAppBar Style="backdrop-filter: blur(4px)">
-        @*
 
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="MudBlazor.Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        *@
         <MudLink Href="/" Color="MudBlazor.Color.Primary" Underline="Underline.None">Stellar Jade Manager</MudLink>
         <MudSpacer/>
-        
-        @* <MudTextField Style="width:100px" Class="mx-2" FullWidth="false" @bind-Value='currentGems' T="int" Variant="Variant.Outlined"/> *@
-        
-
         <AuthorizeView>
             <NotAuthorized>
                 <MudLink Href="/auth" Underline="Underline.None">Регистрация/Войти</MudLink>
@@ -56,42 +52,16 @@
                         <MudIcon Icon="@Icons.Material.Filled.Person" Size="MudBlazor.Size.Large"  Class="ml-2"></MudIcon>
                     </MudButton>
                 </MudButtonGroup>
-                @*
-                <MudImage Width="32" Height="32" Src="images/stellarJade.webp"></MudImage>
-                <MudTooltip>
-                    <ChildContent>
-                       <p class="mr-6">@_profiles?.First()?.CurrentJades</p>
-                        <p class="mr-6">@_profiles?.First()?.ProfileName</p>
-                    </ChildContent>
-                    <TooltipContent>
-                        <div class="d-flex flex-row">
-                            <MudImage Width="20" Height="20" Src="images/warp.webp"></MudImage>
-                            <MudText>@(currentGems/160)</MudText>
-                        </div>
-                    </TooltipContent>
-                </MudTooltip>
-            <MudAvatar>
-                <MudImage Class="align-self-end" Src="images/429_Mkht.jpg"></MudImage>
-            </MudAvatar>
-                *@
+             
             </Authorized>
 
         </AuthorizeView>
 
     </MudAppBar>
-    @*
-
-    <MudDrawer @bind-Open="@_drawerOpen">
-        <MudNavMenu>
-            <MudNavLink Href="/" Match="NavLinkMatch.All">MAIN</MudNavLink>
-            <MudNavLink Href="/auth" Match="NavLinkMatch.Prefix">AUTH</MudNavLink>
-            <MudNavLink Href="/about"  Match="NavLinkMatch.Prefix">About</MudNavLink>
-        </MudNavMenu>
-    </MudDrawer>
-    *@
     <MudMainContent>
             <CascadingValue Value="_profiles">
             <MudContainer Fixed Class="my-4 px-0 py-4 d-flex justify-center flex-column align-center ">
+              
                 @Body
             </MudContainer>
         </CascadingValue>
@@ -109,17 +79,7 @@
     MudTheme theme = new MudTheme(){
 
         Palette = new PaletteLight()
-        {
-            @* Primary = Colors.Grey.Darken4,
-            Secondary = Colors.Amber.Darken2,
-            TextPrimary = Colors.Grey.Lighten4,
-            TextSecondary = Colors.Amber.Darken2,
-            Background = Colors.Grey.Darken3,
-            AppbarBackground = Colors.Grey.Darken4,
-            DrawerBackground = Colors.Grey.Darken4,
-            DrawerText = Colors.Grey.Lighten4 *@
-
-    },
+        {},
         PaletteDark = new PaletteDark()
         {
             Primary = Colors.Amber.Darken2,
