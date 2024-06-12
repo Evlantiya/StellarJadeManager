@@ -55,6 +55,7 @@ public class WarpController: ControllerBase
     [HttpPost("parse")]
     public async Task<IActionResult> ParseGachaLog([FromBody] string warpUrl)
     {
+
         Profile? profile = null;
         if (User?.Identity?.IsAuthenticated ?? false){
             var userId = Convert.ToInt32(User.FindFirstValue("Id"));
@@ -70,14 +71,15 @@ public class WarpController: ControllerBase
 
         try{
             var result = await _warpService.GetWarpHistoryAsync(warpUrl, profile);
+            var result_json = JsonConvert.SerializeObject(result);
+            return Ok(result_json);
         }
         catch(Exception ex){
             logger.LogError(ex.Message);
-            return BadRequest();
+            return BadRequest(ex.Message);
         }
 
-        return Ok();
-        // return result ? Ok() : Conflict();
+
 
     }
 

@@ -55,7 +55,8 @@
     private void OpenImportDialog()
     {
         var options = new DialogOptions { CloseOnEscapeKey = true };
-        DialogService.Show<DialogUsageExample_Dialog>("Simple Dialog", options);
+        var parameters = new DialogParameters<ImportDialog> { { x => x.UserBannerInfos, GetCurrentBannerInfos()} };
+        DialogService.Show<ImportDialog>("Импорт", parameters, options);
     }
 
 }

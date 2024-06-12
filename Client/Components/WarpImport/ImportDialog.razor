@@ -1,13 +1,16 @@
-﻿
+﻿@inject HttpClient Http;
+@inject ISnackbar Snackbar
+
+
 <MudDialog>
     <DialogContent>
-        <MudTimeline TimelinePosition="TimelinePosition.Left">
+        <MudTimeline TimelineAlign="TimelineAlign.Default" TimelinePosition="TimelinePosition.Left">
             <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
                 <ItemDot>
                     <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.LooksOne" />
                 </ItemDot>
                 <ItemContent>
-                    <MudText Align="MudBlazor.Align.End">Запустите Honkai: Star Rail на ПК и откройте свои внутриигровые записи прыжков.</MudText>
+                    <MudText Align="MudBlazor.Align.Start">Запустите Honkai: Star Rail на ПК и откройте свои внутриигровые записи прыжков.</MudText>
                 </ItemContent>
             </MudTimelineItem>
             <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
@@ -15,16 +18,25 @@
                     <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.LooksTwo" />
                 </ItemDot>
                 <ItemContent>
-                    <MudText Align="MudBlazor.Align.End">Откройте Windows PowerShell. Вы можете найти PowerShell, найдя "Windows PowerShell" в меню поиска Windows.</MudText>
+                    <MudText Align="MudBlazor.Align.Start">Откройте Windows PowerShell. Вы можете найти PowerShell, найдя "Windows PowerShell" в меню поиска Windows.</MudText>
                 </ItemContent>
             </MudTimelineItem>
             <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
                 <ItemDot>
-                    <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.LooksTwo" />
+                    <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.Looks3" />
                 </ItemDot>
                 <ItemContent>
-                    <MudText Align="MudBlazor.Align.End">Скопируйте и вставьте эту команду</MudText>
-                    <MudTextField T="string" Label="Multiline" Variant="Variant.Text" Text="@powershellCommand" Lines="5" />
+                    <MudText Align="MudBlazor.Align.Start">Скопируйте и вставьте эту команду</MudText>
+                    <MudTextField T="string" ReadOnly="true" Label="PowerShell" Variant="Variant.Text" Text="@powershellCommand" Lines="5" />
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
+                <ItemDot>
+                    <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.Looks4" />
+                </ItemDot>
+                <ItemContent>
+                    <MudText Align="MudBlazor.Align.Start">Вставьте полученную ссылку</MudText>
+                    <MudTextField @bind-Value="ImportLink" Label="Ссылка для импорта" Variant="Variant.Filled"></MudTextField>
                 </ItemContent>
             </MudTimelineItem>
 
@@ -32,7 +44,7 @@
     </DialogContent>
     <DialogActions>
         <MudButton OnClick="Cancel">Cancel</MudButton>
-        <MudButton Color="MudBlazor.Color.Primary" OnClick="Import">Импортировать</MudButton>
+        <MudButton Disabled="@(String.IsNullOrEmpty(ImportLink))" Color="MudBlazor.Color.Primary" OnClick="Import">Импортировать</MudButton>
     </DialogActions>
 </MudDialog>
 
@@ -41,11 +53,32 @@
     private MudDialogInstance MudDialog { get; set; }
 
     [Parameter]
-    public Shared.Profile Profile { get; set; }
+    public List<UserBannerInfo> UserBannerInfos { get; set; }
 
-    private readonly string powershellCommand = "[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12; Invoke-Expression (New-Object Net.WebClient).DownloadString(""https://gist.githubusercontent.com/Star-Rail-Station/2512df54c4f35d399cc9abbde665e8f0/raw/get_warp_link_os.ps1?cachebust=srs")";
+    private string ImportLink;
 
-    void Import() => MudDialog.Close(DialogResult.Ok(true));
+    private readonly string powershellCommand = "[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12; Invoke-Expression (New-Object Net.WebClient).DownloadString(\"https://gist.githubusercontent.com/Star-Rail-Station/2512df54c4f35d399cc9abbde665e8f0/raw/get_warp_link_os.ps1?cachebust=srs\")";
+
+    private async Task Import()
+    {
+        var response = await Http.PostAsJsonAsync<string>("/api/warp/parse", ImportLink);
+        var response_json = await response.Content.ReadAsStringAsync();
+        if (response.IsSuccessStatusCode)
+        {
+            var bannerInfos = JsonConvert.DeserializeObject<List<UserBannerInfo>>(response_json);
+            if (bannerInfos.Count > 0)
+            {
+                UserBannerInfos = bannerInfos;
+            }
+            MudDialog.Close(DialogResult.Ok(true));
+        }
+        else
+        {
+            Snackbar.Clear();
+            Snackbar.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
+            Snackbar.Add($"Ошибка: {response_json}", Severity.Error);
+        }
+    }
     void Cancel() => MudDialog.Cancel();
 }
 
