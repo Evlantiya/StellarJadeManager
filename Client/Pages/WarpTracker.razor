@@ -1,9 +1,10 @@
 ﻿@using StellarJadeManager.Client.Components.WarpImport
 @page "/warp"
+@inject IDialogService DialogService
 
 
 <PageTitleWithEmote PageTitle="История круток" ImgPath="images/emotes/Jingliu 3.png"></PageTitleWithEmote>
-
+<MudButton Color="MudBlazor.Color.Primary" Variant="Variant.Filled" OnClick="OpenImportDialog">Импортировать</MudButton>
 <MudGrid Spacing="2" Justify="Justify.Center" Style="width:80%; max-width:1280px">
     <MudItem xs="12" sm="12" md="8" lg="8">
         <BannerInfoCard
@@ -37,7 +38,7 @@
     List<Shared.Profile> profiles { get; set; }
 
     private List<UserBannerInfo> defaultInfos = UserBannerInfo.CreateDefaultBannerInfos();
-    
+
     public List<UserBannerInfo> CurrentBannerInfos => GetCurrentBannerInfos() ;
 
 
@@ -50,5 +51,11 @@
             return profiles[0].UserBannerInfos.ToList();
         }
     }
-    
+
+    private void OpenImportDialog()
+    {
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        DialogService.Show<DialogUsageExample_Dialog>("Simple Dialog", options);
+    }
+
 }

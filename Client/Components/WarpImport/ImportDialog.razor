@@ -1,0 +1,51 @@
+﻿
+<MudDialog>
+    <DialogContent>
+        <MudTimeline TimelinePosition="TimelinePosition.Left">
+            <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
+                <ItemDot>
+                    <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.LooksOne" />
+                </ItemDot>
+                <ItemContent>
+                    <MudText Align="MudBlazor.Align.End">Запустите Honkai: Star Rail на ПК и откройте свои внутриигровые записи прыжков.</MudText>
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
+                <ItemDot>
+                    <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.LooksTwo" />
+                </ItemDot>
+                <ItemContent>
+                    <MudText Align="MudBlazor.Align.End">Откройте Windows PowerShell. Вы можете найти PowerShell, найдя "Windows PowerShell" в меню поиска Windows.</MudText>
+                </ItemContent>
+            </MudTimelineItem>
+            <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
+                <ItemDot>
+                    <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.LooksTwo" />
+                </ItemDot>
+                <ItemContent>
+                    <MudText Align="MudBlazor.Align.End">Скопируйте и вставьте эту команду</MudText>
+                    <MudTextField T="string" Label="Multiline" Variant="Variant.Text" Text="@powershellCommand" Lines="5" />
+                </ItemContent>
+            </MudTimelineItem>
+
+        </MudTimeline>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="MudBlazor.Color.Primary" OnClick="Import">Импортировать</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] 
+    private MudDialogInstance MudDialog { get; set; }
+
+    [Parameter]
+    public Shared.Profile Profile { get; set; }
+
+    private readonly string powershellCommand = "[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12; Invoke-Expression (New-Object Net.WebClient).DownloadString(""https://gist.githubusercontent.com/Star-Rail-Station/2512df54c4f35d399cc9abbde665e8f0/raw/get_warp_link_os.ps1?cachebust=srs")";
+
+    void Import() => MudDialog.Close(DialogResult.Ok(true));
+    void Cancel() => MudDialog.Cancel();
+}
+

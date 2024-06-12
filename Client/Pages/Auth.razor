@@ -7,9 +7,9 @@
 
 
 
-<MudText Typo="Typo.h2" Align="MudBlazor.Align.Center" GutterBottom>Добро пожаловать</MudText>
-<MudText Typo="Typo.h5" Align="MudBlazor.Align.Center" GutterBottom>Войдите в аккаунт или зарегистрируйте новый, чтобы сохранить ваши данные</MudText>
+<PageTitleWithEmote PageTitle="Вход" ImgPath="images/emotes/Pom-Pom 16.png"></PageTitleWithEmote>
 <MudImage Width="250" Src="/Images/emotes/Asta.png" Alt="Asta" Class="py-4"></MudImage>
+<MudText Typo="Typo.h5" Align="MudBlazor.Align.Center" Class="my-5" GutterBottom>Войдите в аккаунт или зарегистрируйте новый, чтобы сохранить ваши данные</MudText>
 <MudButtonGroup Color="MudBlazor.Color.Primary" Variant="Variant.Filled" Size="MudBlazor.Size.Large">
     <MudButton OnClick="ShowLoginDialog">Войти</MudButton>
     <MudButton OnClick="ShowRegisterDialog">Регистрация</MudButton>
@@ -21,7 +21,7 @@
     }
 </style>
 
-
+@*
 <AuthorizeView>
     <Authorized>
         @if (context.User.HasClaim(c => c.Type == ClaimTypes.Email))
@@ -37,6 +37,8 @@
         <h1>Hello, Guest!</h1>
     </NotAuthorized>
 </AuthorizeView>
+*@
+
 
 
 @code {
