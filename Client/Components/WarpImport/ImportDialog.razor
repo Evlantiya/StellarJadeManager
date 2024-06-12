@@ -65,12 +65,8 @@
         var response_json = await response.Content.ReadAsStringAsync();
         if (response.IsSuccessStatusCode)
         {
-            var bannerInfos = JsonConvert.DeserializeObject<List<UserBannerInfo>>(response_json);
-            if (bannerInfos.Count > 0)
-            {
-                UserBannerInfos = bannerInfos;
-            }
-            MudDialog.Close(DialogResult.Ok(true));
+            
+            MudDialog.Close(DialogResult.Ok(response_json));
         }
         else
         {

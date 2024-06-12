@@ -52,11 +52,30 @@
         }
     }
 
-    private void OpenImportDialog()
+    private void SetCurrentBannerInfos(List<UserBannerInfo> userBannerInfos)
+    {
+        if ((profiles?.Count ?? 0) == 0 || (profiles?[0]?.UserBannerInfos?.Count ?? 0) == 0)
+        {
+            defaultInfos = userBannerInfos;
+        }
+        else
+        {
+            profiles[0].UserBannerInfos = userBannerInfos;
+        }
+    }
+
+    private async Task OpenImportDialog()
     {
         var options = new DialogOptions { CloseOnEscapeKey = true };
-        var parameters = new DialogParameters<ImportDialog> { { x => x.UserBannerInfos, GetCurrentBannerInfos()} };
-        DialogService.Show<ImportDialog>("Импорт", parameters, options);
+        var parameters = new DialogParameters<ImportDialog> { { x => x.UserBannerInfos, CurrentBannerInfos } };
+        var dialog = await DialogService.ShowAsync<ImportDialog>("Импорт", parameters, options);
+        var result = await dialog.Result;
+        if (!result.Canceled)
+        {
+            var bannerInfos = JsonConvert.DeserializeObject<List<UserBannerInfo>>(result.Data.ToString());
+            SetCurrentBannerInfos(bannerInfos);
+            StateHasChanged();
+        }
     }
 
 }

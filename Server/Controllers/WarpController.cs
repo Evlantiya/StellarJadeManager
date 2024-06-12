@@ -71,8 +71,8 @@ public class WarpController: ControllerBase
 
         try{
             var result = await _warpService.GetWarpHistoryAsync(warpUrl, profile);
-            var result_json = JsonConvert.SerializeObject(result);
-            return Ok(result_json);
+            //var result_json = JsonConvert.SerializeObject(result);
+            return Ok(result);
         }
         catch(Exception ex){
             logger.LogError(ex.Message);
