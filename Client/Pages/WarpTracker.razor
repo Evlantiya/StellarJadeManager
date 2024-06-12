@@ -4,7 +4,6 @@
 
 
 <PageTitleWithEmote PageTitle="История круток" ImgPath="images/emotes/Jingliu 3.png"></PageTitleWithEmote>
-<MudButton Color="MudBlazor.Color.Primary" Variant="Variant.Filled" OnClick="OpenImportDialog">Импортировать</MudButton>
 <MudGrid Spacing="2" Justify="Justify.Center" Style="width:80%; max-width:1280px">
     <MudItem xs="12" sm="12" md="8" lg="8">
         <BannerInfoCard
@@ -31,6 +30,7 @@
         </BannerInfoCard>
     </MudItem>
 </MudGrid>
+<MudButton Class="my-5" Color="MudBlazor.Color.Primary" Variant="Variant.Filled" OnClick="OpenImportDialog">Импортировать</MudButton>
 
 @code {
 
@@ -66,7 +66,7 @@
 
     private async Task OpenImportDialog()
     {
-        var options = new DialogOptions { CloseOnEscapeKey = true };
+        var options = new DialogOptions { CloseOnEscapeKey = true, ClassBackground = "dialog-background" };
         var parameters = new DialogParameters<ImportDialog> { { x => x.UserBannerInfos, CurrentBannerInfos } };
         var dialog = await DialogService.ShowAsync<ImportDialog>("Импорт", parameters, options);
         var result = await dialog.Result;

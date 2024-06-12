@@ -4,38 +4,38 @@
 
 <MudDialog>
     <DialogContent>
-        <MudTimeline TimelineAlign="TimelineAlign.Default" TimelinePosition="TimelinePosition.Left">
-            <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
+        <MudTimeline TimelineAlign="TimelineAlign.End" TimelinePosition="TimelinePosition.Left">
+            <MudTimelineItem Class="align-center" Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
                 <ItemDot>
                     <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.LooksOne" />
                 </ItemDot>
                 <ItemContent>
-                    <MudText Align="MudBlazor.Align.Start">Запустите Honkai: Star Rail на ПК и откройте свои внутриигровые записи прыжков.</MudText>
+                    <MudText>Запустите Honkai: Star Rail на ПК и откройте свои внутриигровые записи прыжков.</MudText>
                 </ItemContent>
             </MudTimelineItem>
-            <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
+            <MudTimelineItem Class="align-center" Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
                 <ItemDot>
                     <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.LooksTwo" />
                 </ItemDot>
                 <ItemContent>
-                    <MudText Align="MudBlazor.Align.Start">Откройте Windows PowerShell. Вы можете найти PowerShell, найдя "Windows PowerShell" в меню поиска Windows.</MudText>
+                    <MudText>Откройте Windows PowerShell. Вы можете найти PowerShell, введя "Windows PowerShell" в меню поиска Windows.</MudText>
                 </ItemContent>
             </MudTimelineItem>
-            <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
+            <MudTimelineItem Class="align-center" Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
                 <ItemDot>
                     <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.Looks3" />
                 </ItemDot>
                 <ItemContent>
-                    <MudText Align="MudBlazor.Align.Start">Скопируйте и вставьте эту команду</MudText>
+                    <MudText>Скопируйте и вставьте эту команду</MudText>
                     <MudTextField T="string" ReadOnly="true" Label="PowerShell" Variant="Variant.Text" Text="@powershellCommand" Lines="5" />
                 </ItemContent>
             </MudTimelineItem>
-            <MudTimelineItem Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
+            <MudTimelineItem Class="align-center" Color="MudBlazor.Color.Primary" Size="MudBlazor.Size.Large" Variant="Variant.Filled">
                 <ItemDot>
                     <MudIcon Size="MudBlazor.Size.Large" Icon="@Icons.Material.Filled.Looks4" />
                 </ItemDot>
                 <ItemContent>
-                    <MudText Align="MudBlazor.Align.Start">Вставьте полученную ссылку</MudText>
+                    <MudText>Вставьте полученную ссылку</MudText>
                     <MudTextField @bind-Value="ImportLink" Label="Ссылка для импорта" Variant="Variant.Filled"></MudTextField>
                 </ItemContent>
             </MudTimelineItem>
