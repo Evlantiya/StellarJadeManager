@@ -28,61 +28,78 @@
     <MudAppBar Class="pa-1" Style="backdrop-filter: blur(4px)">
 
         <MudLink Href="/" Underline="Underline.None">
-            <MudContainer Class="d-flex gap-1 align-center">
+            <MudContainer Class="d-flex gap-1 align-center pa-0">
                 <MudImage Style="height:3.5rem;" Src="images/StellarJadeBig.webp"></MudImage>
                 <MudText Typo="Typo.h5" Class="page-title-header">Stellar Jade <br/> Manager</MudText>
             </MudContainer>
         </MudLink>
         <MudSpacer/>
-        <MudButtonGroup Color="MudBlazor.Color.Primary" Variant="Variant.Text">
-            <MudButton>
-                <MudLink Href="/calculator" Underline="Underline.None">
-                    <MudContainer Class="d-flex gap-1 align-center">
-                        <MudHidden Breakpoint="Breakpoint.SmAndDown">
-                            <MudText>Калькулятор</MudText>
-                        </MudHidden>
-                        <MudIcon Icon="@Icons.Material.Filled.Calculate" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
-                    </MudContainer>
-                </MudLink>
-            </MudButton>
-            <MudButton>
-                <MudLink Href="/warp" Underline="Underline.None">
-                    <MudContainer Class="d-flex gap-1 align-center">
-                        <MudHidden Breakpoint="Breakpoint.SmAndDown">
-                            <MudText>Прыжки</MudText>
-                        </MudHidden>
-                        <MudIcon Icon="@Icons.Material.Filled.HistoryEdu" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
-                    </MudContainer>
-                </MudLink>
-            </MudButton>
-        <AuthorizeView>
-            <NotAuthorized>
-                    <MudButton>
-                        <MudLink Href="/auth" Underline="Underline.None">
-                            <MudContainer Class="d-flex gap-1 align-center">
-                                <MudHidden Breakpoint="Breakpoint.SmAndDown">
-                                    <MudText>Прыжки</MudText>
-                                </MudHidden>
-                                <MudIcon Icon="@Icons.Material.Filled.Login" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
-                            </MudContainer>
-                        </MudLink>
-                    </MudButton>
-            </NotAuthorized>
-            <Authorized>
-                    <MudButton>
-                        <MudLink Href="/profile" Underline="Underline.None">
-                            <MudContainer Class="d-flex gap-1 align-center">
-                                <MudHidden Breakpoint="Breakpoint.SmAndDown">
-                                    <MudText>Профиль</MudText>
-                                </MudHidden>
-                                <MudIcon Icon="@Icons.Material.Filled.Person" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
-                            </MudContainer>
-                        </MudLink>
-                    </MudButton>
-            </Authorized>
-        </AuthorizeView>
-        </MudButtonGroup>
+        <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
+            <MudButtonGroup Color="MudBlazor.Color.Primary" Variant="Variant.Text">
+                <MudButton>
+                    <MudLink Href="/calculator" Underline="Underline.None">
+                        <MudContainer Class="d-flex gap-1 align-center pa-0 pa-0">
+                            
+                                <MudText>Калькулятор</MudText>
+                            
+                            <MudIcon Icon="@Icons.Material.Filled.Calculate" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                        </MudContainer>
+                    </MudLink>
+                </MudButton>
+                <MudButton>
+                    <MudLink Href="/warp" Underline="Underline.None">
+                        <MudContainer Class="d-flex gap-1 align-center pa-0">
+                            
+                                <MudText>Прыжки</MudText>
+                            
+                            <MudIcon Icon="@Icons.Material.Filled.HistoryEdu" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                        </MudContainer>
+                    </MudLink>
+                </MudButton>
+            <AuthorizeView>
+                <NotAuthorized>
+                        <MudButton>
+                            <MudLink Href="/auth" Underline="Underline.None">
+                                <MudContainer Class="d-flex gap-1 align-center pa-0">
+                                    
+                                        <MudText>Войти</MudText>
+                                    
+                                    <MudIcon Icon="@Icons.Material.Filled.Login" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                                </MudContainer>
+                            </MudLink>
+                        </MudButton>
+                </NotAuthorized>
+                <Authorized>
+                        <MudButton>
+                            <MudLink Href="/profile" Underline="Underline.None">
+                                <MudContainer Class="d-flex gap-1 align-center pa-0">
+                                    
+                                        <MudText>Профиль</MudText>
+                                    
+                                    <MudIcon Icon="@Icons.Material.Filled.Person" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                                </MudContainer>
+                            </MudLink>
+                        </MudButton>
+                </Authorized>
+            </AuthorizeView>
+            </MudButtonGroup>
+        </MudHidden>
+        <MudHidden Breakpoint="Breakpoint.MdAndUp">
+            <MudCard Class="pa-5">
+                <MudText>TEST</MudText>
+            </MudCard>
 
+            <MudDrawer @bind-Open="@open" Anchor="@anchor" Elevation="1" Variant="@DrawerVariant.Temporary">
+                <MudDrawerHeader>
+                    <MudText Typo="Typo.h6">Инструменты</MudText>
+                </MudDrawerHeader>
+                <MudNavMenu>
+                    <MudNavLink Match="NavLinkMatch.All">Store</MudNavLink>
+                    <MudNavLink Match="NavLinkMatch.All">Library</MudNavLink>
+                    <MudNavLink Match="NavLinkMatch.All">Community</MudNavLink>
+                </MudNavMenu>
+            </MudDrawer>
+        </MudHidden>
     </MudAppBar>
     <MudMainContent>
             <CascadingValue Value="_profiles">
@@ -94,11 +111,12 @@
     </MudMainContent>
 </MudLayout>
 
-    @code {
+@code {
 
     [CascadingParameter]
     private Task<AuthenticationState> AuthenticationStateTask { get; set; }
 
+    private bool open = false;
     private List<Shared.Profile> _profiles;
 
     public int currentGems {get;set;} = 3200;
