@@ -2,6 +2,7 @@
 @using System.Security.Claims
 @using StellarJadeManager.Client.Authentication;
 @using StellarJadeManager.Shared;
+@using System.Net.Http.Headers;
 
 @inject AuthenticationStateProvider authStateProvider
 @inject HttpClient http
@@ -24,9 +25,14 @@
 
 
 <MudLayout>
-    <MudAppBar Style="backdrop-filter: blur(4px)">
+    <MudAppBar Class="pa-1" Style="backdrop-filter: blur(4px)">
 
-        <MudLink Href="/" Color="MudBlazor.Color.Primary" Underline="Underline.None">Stellar Jade Manager</MudLink>
+        <MudLink Href="/" Underline="Underline.None">
+            <MudContainer Class="d-flex gap-1 align-center">
+                <MudImage Style="height:3.5rem;" Src="images/StellarJadeBig.webp"></MudImage>
+                <MudText Typo="Typo.h5" Class="page-title-header">Stellar Jade <br/> Manager</MudText>
+            </MudContainer>
+        </MudLink>
         <MudSpacer/>
         <AuthorizeView>
             <NotAuthorized>
@@ -133,7 +139,7 @@
         if (user?.Identity.IsAuthenticated ?? false)
         {
             var jwt = await ((CustomAuthenticationStateProvider)authStateProvider).GetToken();
-            http.DefaultRequestHeaders.Add("Authorization", $"Bearer {jwt}");
+            http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
 
             var response = await http.GetStringAsync("api/profile/list");
 

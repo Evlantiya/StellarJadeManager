@@ -17,7 +17,17 @@
             <MudTextField @bind-Value="userModel.Email"  Label="Email" For="@(() => userModel.Email)" FullWidth Class="my-2" />
             
             <MudTextField @bind-Value="userModel.Password" Label="Password" For="@(() => userModel.Password)" Class="my-2" FullWidth InputType="InputType.Password" />
-            <MudButton ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Class="my-2" Variant="Variant.Filled">Войти</MudButton>
+            <MudButton Disabled="_processing" ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Class="my-2" Variant="Variant.Filled">
+                @if (_processing)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="MudBlazor.Size.Small" Indeterminate="true"/>
+                    <MudText Class="ms-2">Вход...</MudText>
+                }
+                else
+                {
+                    <MudText>Войти</MudText>
+                }
+            </MudButton>
             <MudText Color="MudBlazor.Color.Error">@errorMsg</MudText>
         </MudContainer>
     </EditForm>
@@ -29,10 +39,14 @@
     public EventCallback OnSinginIn { get; set; }
 
     public string errorMsg = "";
+
+    private bool _processing = false;
+
     private UserModel userModel = new UserModel();
 
     private async Task HandleLogin()
     {
+        _processing = true;
         var json = JsonConvert.SerializeObject(userModel);
         var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await http.PostAsync("/api/user/login", jsonContent);
@@ -43,6 +57,7 @@
             var session = JsonConvert.DeserializeObject<UserSession>(json_response);
             var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
             await customAuthStateProvider.UpdateAuthenticationState(session);
+            _processing = false;
             StateHasChanged();
             Navigation.NavigateTo("/");
 
@@ -50,6 +65,7 @@
         else
         {
             errorMsg = json_response;
+            _processing = false;
         }
     }
 

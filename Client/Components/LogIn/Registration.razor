@@ -19,7 +19,17 @@
             <MudTextField Class="my-2" @bind-Value="registrationModel.Name" Label="Name" For="@(() => registrationModel.Name)" FullWidth Variant="Variant.Filled" />
             <MudTextField Class="my-2" @bind-Value="registrationModel.Email" Label="Email" For="@(() => registrationModel.Email)" FullWidth Variant="Variant.Filled" />
             <MudTextField Class="my-2" @bind-Value="registrationModel.Password" Label="Password" For="@(() => registrationModel.Password)" InputType="InputType.Password" FullWidth Variant="Variant.Filled" />
-            <MudButton Class="my-4" ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Variant="Variant.Filled">Register</MudButton>
+            <MudButton Disabled="_processing" Class="my-4" ButtonType="ButtonType.Submit" Color="MudBlazor.Color.Primary" Variant="Variant.Filled">
+                @if (_processing)
+                {
+                    <MudProgressCircular Class="ms-n1" Size="MudBlazor.Size.Small" Indeterminate="true" />
+                    <MudText Class="ms-2">Регистрация...</MudText>
+                }
+                else
+                {
+                    <MudText>Зарегистрироваться</MudText>
+                }
+            </MudButton>
         </MudContainer>
     </EditForm>
 </MudContainer>
@@ -41,24 +51,28 @@
 
 @code {
     private UserRegistrationDTO registrationModel = new UserRegistrationDTO();
-
+    private bool _processing = false;
     private async Task HandleRegistration()
     {
+        _processing = true;
         var json = JsonConvert.SerializeObject(registrationModel);
         var jsonContent = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await http.PostAsync("/api/user/register", jsonContent);
         var json_response = await response.Content.ReadAsStringAsync();
         if (response.IsSuccessStatusCode)
         {
+
             var session = JsonConvert.DeserializeObject<UserSession>(json_response);
             var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
             await customAuthStateProvider.UpdateAuthenticationState(session);
             StateHasChanged();
+            _processing = false;
             Navigation.NavigateTo("/");
         }
         else
         {
             Console.WriteLine(json_response);
+            _processing = false;
         }
     }
 

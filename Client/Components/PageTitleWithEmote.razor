@@ -6,9 +6,39 @@
                   Fluid
                   Class="rounded-lg" />
     </div>
-    <MudText Typo="@Typo.h4" Color="MudBlazor.Color.Primary">@PageTitle</MudText>
+    <MudText Class="page-title-header" Typo="@Typo.h3">@PageTitle</MudText>
 </div>
 <MudDivider Class="mb-16" Style="width:80%" />
+
+
+<style>
+    .page-title-header
+    {
+        text-align:center;
+        font-weight: 700;
+        color: transparent;
+        background-image: linear-gradient(
+            /*90deg, var(--mud-palette-primary), var(--legendary-rarity-color), var(--epic-rarity-color)*/
+            90deg,
+            hsl(38deg 100% 50%) 0%,
+            hsl(37deg 100% 54%) 7%,
+            hsl(37deg 99% 56%) 12%,
+            hsl(37deg 99% 58%) 17%,
+            hsl(37deg 98% 60%) 22%,
+            hsl(37deg 98% 62%) 27%,
+            hsl(37deg 97% 63%) 33%,
+            hsl(38deg 97% 65%) 39%,
+            hsl(38deg 96% 66%) 46%,
+            hsl(38deg 96% 68%) 55%,
+            hsl(39deg 95% 69%) 66%,
+            hsl(39deg 95% 71%) 80%, 
+            hsl(40deg 94% 72%) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+</style>
+
 
 @code {
     [Parameter]

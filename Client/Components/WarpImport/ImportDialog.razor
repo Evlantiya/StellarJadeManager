@@ -44,13 +44,25 @@
     </DialogContent>
     <DialogActions>
         <MudButton OnClick="Cancel">Cancel</MudButton>
-        <MudButton Disabled="@(String.IsNullOrEmpty(ImportLink))" Color="MudBlazor.Color.Primary" OnClick="Import">Импортировать</MudButton>
+        <MudButton Disabled="@(String.IsNullOrEmpty(ImportLink) || _processing)" Color="MudBlazor.Color.Primary" OnClick="Import">
+            @if (_processing)
+            {
+                <MudProgressCircular Class="ms-n1" Size="MudBlazor.Size.Small" Indeterminate="true" />
+                <MudText Class="ms-2">Импорт...</MudText>
+            }
+            else
+            {
+                <MudText>Импортировать</MudText>
+            }
+        </MudButton>
     </DialogActions>
 </MudDialog>
 
 @code {
     [CascadingParameter] 
     private MudDialogInstance MudDialog { get; set; }
+
+    private bool _processing = false;
 
     [Parameter]
     public List<UserBannerInfo> UserBannerInfos { get; set; }
@@ -61,18 +73,21 @@
 
     private async Task Import()
     {
+        _processing = true;
         var response = await Http.PostAsJsonAsync<string>("/api/warp/parse", ImportLink);
         var response_json = await response.Content.ReadAsStringAsync();
         if (response.IsSuccessStatusCode)
         {
-            
+
             MudDialog.Close(DialogResult.Ok(response_json));
+            _processing = false;
         }
         else
         {
             Snackbar.Clear();
             Snackbar.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
             Snackbar.Add($"Ошибка: {response_json}", Severity.Error);
+            _processing = false;
         }
     }
     void Cancel() => MudDialog.Cancel();
