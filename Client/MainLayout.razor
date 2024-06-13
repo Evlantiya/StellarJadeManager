@@ -34,48 +34,54 @@
             </MudContainer>
         </MudLink>
         <MudSpacer/>
+        <MudButtonGroup Color="MudBlazor.Color.Primary" Variant="Variant.Text">
+            <MudButton>
+                <MudLink Href="/calculator" Underline="Underline.None">
+                    <MudContainer Class="d-flex gap-1 align-center">
+                        <MudHidden Breakpoint="Breakpoint.SmAndDown">
+                            <MudText>Калькулятор</MudText>
+                        </MudHidden>
+                        <MudIcon Icon="@Icons.Material.Filled.Calculate" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                    </MudContainer>
+                </MudLink>
+            </MudButton>
+            <MudButton>
+                <MudLink Href="/warp" Underline="Underline.None">
+                    <MudContainer Class="d-flex gap-1 align-center">
+                        <MudHidden Breakpoint="Breakpoint.SmAndDown">
+                            <MudText>Прыжки</MudText>
+                        </MudHidden>
+                        <MudIcon Icon="@Icons.Material.Filled.HistoryEdu" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                    </MudContainer>
+                </MudLink>
+            </MudButton>
         <AuthorizeView>
             <NotAuthorized>
-                <MudButtonGroup Color="MudBlazor.Color.Primary" Variant="Variant.Text">
                     <MudButton>
-                        <MudLink Href="/calculator" Underline="Underline.None">Калькулятор</MudLink>
-                        <MudSpacer />
-                        <MudIcon Icon="@Icons.Material.Filled.Calculate" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                        <MudLink Href="/auth" Underline="Underline.None">
+                            <MudContainer Class="d-flex gap-1 align-center">
+                                <MudHidden Breakpoint="Breakpoint.SmAndDown">
+                                    <MudText>Прыжки</MudText>
+                                </MudHidden>
+                                <MudIcon Icon="@Icons.Material.Filled.Login" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                            </MudContainer>
+                        </MudLink>
                     </MudButton>
-                    <MudButton>
-                        <MudLink Href="/warp" Underline="Underline.None">История круток</MudLink>
-                        <MudSpacer />
-                        <MudIcon Icon="@Icons.Material.Filled.HistoryEdu" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
-                    </MudButton>
-                    <MudButton>
-                        <MudLink Href="/auth" Underline="Underline.None">Войти</MudLink>
-                        <MudSpacer />
-                        <MudIcon Icon="@Icons.Material.Filled.Login" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
-                    </MudButton>
-                </MudButtonGroup>
             </NotAuthorized>
             <Authorized>
-                <MudButtonGroup Color="MudBlazor.Color.Primary" Variant="Variant.Text">
                     <MudButton>
-                        <MudLink Href="/calculator" Underline="Underline.None">Калькулятор</MudLink>
-                        <MudSpacer />
-                        <MudIcon Icon="@Icons.Material.Filled.Calculate" Size="MudBlazor.Size.Large"  Class="ml-2"></MudIcon>
+                        <MudLink Href="/profile" Underline="Underline.None">
+                            <MudContainer Class="d-flex gap-1 align-center">
+                                <MudHidden Breakpoint="Breakpoint.SmAndDown">
+                                    <MudText>Профиль</MudText>
+                                </MudHidden>
+                                <MudIcon Icon="@Icons.Material.Filled.Person" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                            </MudContainer>
+                        </MudLink>
                     </MudButton>
-                    <MudButton>
-                        <MudLink Href="/warp" Underline="Underline.None">История круток</MudLink>
-                        <MudSpacer />
-                        <MudIcon Icon="@Icons.Material.Filled.HistoryEdu" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
-                    </MudButton>
-                    <MudButton>
-                        <MudLink Href="/profile" Underline="Underline.None">Профиль</MudLink>
-                        <MudSpacer />
-                        <MudIcon Icon="@Icons.Material.Filled.Person" Size="MudBlazor.Size.Large"  Class="ml-2"></MudIcon>
-                    </MudButton>
-                </MudButtonGroup>
-             
             </Authorized>
-
         </AuthorizeView>
+        </MudButtonGroup>
 
     </MudAppBar>
     <MudMainContent>
