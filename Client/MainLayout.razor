@@ -6,7 +6,7 @@
 
 @inject AuthenticationStateProvider authStateProvider
 @inject HttpClient http
-
+@inject IDialogService DialogService
 @inherits LayoutComponentBase
 
 
@@ -70,15 +70,13 @@
                         </MudButton>
                 </NotAuthorized>
                 <Authorized>
-                        <MudButton>
-                            <MudLink Href="/profile" Underline="Underline.None">
-                                <MudContainer Class="d-flex gap-1 align-center pa-0">
-                                    
-                                        <MudText>Профиль</MudText>
-                                    
-                                    <MudIcon Icon="@Icons.Material.Filled.Person" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
-                                </MudContainer>
-                            </MudLink>
+                        <MudButton OnClick="LogOut">
+                            <MudContainer Class="d-flex gap-1 align-center pa-0">
+
+                                <MudText>Выйти</MudText>
+
+                                <MudIcon Icon="@Icons.Material.Filled.Logout" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                            </MudContainer>
                         </MudButton>
                 </Authorized>
             </AuthorizeView>
@@ -112,6 +110,30 @@
                         <MudIcon Icon="@Icons.Material.Filled.HistoryEdu" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
                     </MudContainer>
                 </MudLink>
+                <AuthorizeView>
+                    <NotAuthorized>
+                        <MudButton>
+                            <MudLink Href="/auth" Underline="Underline.None">
+                                <MudContainer Class="d-flex gap-1 align-center pa-0">
+
+                                    <MudText>Войти</MudText>
+
+                                    <MudIcon Icon="@Icons.Material.Filled.Login" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                                </MudContainer>
+                            </MudLink>
+                        </MudButton>
+                    </NotAuthorized>
+                    <Authorized>
+                        <MudButton OnClick="LogOut">
+                            <MudContainer Class="d-flex gap-1 align-center pa-0">
+
+                                <MudText>Выйти</MudText>
+
+                                <MudIcon Icon="@Icons.Material.Filled.Logout" Size="MudBlazor.Size.Large" Class="ml-2"></MudIcon>
+                            </MudContainer>
+                        </MudButton>
+                    </Authorized>
+                </AuthorizeView>
             </MudNavMenu>
         </MudDrawer>
     </MudHidden>
@@ -149,7 +171,7 @@
             @* Background = Colors.Grey.Darken3, *@
             Background = "rgb(30,30,30)",
             @* AppbarBackground = Colors.Grey.Darken4, *@
-            AppbarBackground = "rgba(10,10,10,.8)",
+    AppbarBackground = "rgba(10,10,10,.8)",
             DrawerBackground = Colors.Grey.Darken4,
             DrawerText = Colors.Grey.Lighten4,
             Surface = "rgba(20,20,20,1)",
@@ -185,6 +207,22 @@
             StateHasChanged();
 
         }
+    }
+
+    private async Task LogOut(){
+        var options = new DialogOptions { CloseOnEscapeKey = true };
+        var dialog = await DialogService.ShowAsync<LogOutDialog>("Выход", options);
+
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            var customAuthStateProvider = (CustomAuthenticationStateProvider)authStateProvider;
+            await customAuthStateProvider.UpdateAuthenticationState(null);
+            _profiles = null;
+            StateHasChanged();
+        }
+
     }
 
 }

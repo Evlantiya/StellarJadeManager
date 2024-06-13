@@ -17,15 +17,16 @@
             }
         </MudSelect>
     <MudCheckBox T="bool" Checked="@month_pass" CheckedChanged="UpdateMonthPass" Label="Пропуск снабженца" Color="MudBlazor.Color.Primary" />
-    <MudDivider class=mt-10></MudDivider>
+    <MudCheckBox T="bool" Checked="@Garant" CheckedChanged="UpdateGarant" Label="Гарант" Color="MudBlazor.Color.Primary" />
+    <MudDivider Class=mt-5 />
 
-    <div class="d-flex flex-row my-10">
+    <div class="d-flex flex-column justify-center align-center my-5">
         <div class="ml-16">
             <MudText
             Typo="Typo.h5"
             Align="@MudBlazor.Align.Start"
             Class="mx-auto">
-                Итого звездного нефрита:
+                Итого звездного нефрита
             </MudText>
             <div class="d-flex flex-row">
                 <MudImage Width="32" Height="32" Src="images/stellarJade.webp"></MudImage>
@@ -37,8 +38,7 @@
                 <MudText Typo="Typo.h5" Class="mr-4" Color="MudBlazor.Color.Primary">@(resultStellarJades%160)</MudText>
             </div>
         </div>
-        <MudSpacer/>
-        <div class="mr-16">
+        <div class="d-flex gap-1 align-center mt-5" >
             @if(chances != null && chances.Count()==90){
                 <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto">
                         Шанс:
@@ -52,13 +52,13 @@
                 @if (resultStellarJades/160 >= 90)
                 {
                     <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto" Color="MudBlazor.Color.Primary">
-                        100.0%
+                        @((Garant ? 100 : 58))%
                     </MudText>
                 }
             @if (resultStellarJades / 160 > 0 && resultStellarJades / 160 < 90)
             {
                 <MudText Typo="Typo.h5" Align="@MudBlazor.Align.Start" Class="mx-auto" Color="MudBlazor.Color.Primary">
-                    @(Math.Round(chances[(resultStellarJades/160)]*100, 4))%
+                        @(Math.Round(ConstChances.Cumulative_chances[(resultStellarJades / 160)] * (Garant ? 1 : 0.58), 2))%
                 </MudText>
             }
             }
@@ -84,6 +84,24 @@
 
     public bool month_pass => CurrentProfile?.SupplyPass ?? false;
 
+    private bool garant = false;
+    public bool Garant
+    {
+        get{
+            return CurrentProfile?.UserBannerInfos.FirstOrDefault(x=>x.BannerTypeId==11)?.GuaranteedLegendary ?? garant;
+        }
+        set{
+            if (CurrentProfile?.UserBannerInfos.FirstOrDefault(x => x.BannerTypeId == 11)?.GuaranteedLegendary != null)
+            {
+                CurrentProfile.UserBannerInfos.First(x => x.BannerTypeId == 11).GuaranteedLegendary = value;
+            }
+            else
+            {
+                garant = value;
+            }
+        }
+    }
+
     public int MoC_stars => CurrentProfile?.MoCStars ?? 0;
 
     public int PF_stars => CurrentProfile?.PfStars ?? 0;
@@ -98,7 +116,7 @@
             return month_pass ? 150 : 60;
         }}
     public int stellarJadesAmountForEvents {get; set;} = 0;
-    public int resultStellarJades => currentGems + stellarJadesAmountForEvents + MoC_stars * 20 + (selectedDate - DateTime.Today).Days * dailyIncom;
+    public int resultStellarJades => currentGems + stellarJadesAmountForEvents + MoC_stars * 20 + PF_stars*20 + (selectedDate - DateTime.Today).Days * dailyIncom;
 
 
     public async Task UpdateCurrentGems(int value){
@@ -109,6 +127,12 @@
         CurrentProfile.SelectedDate = value;
         await UpdateProfile(_selectedDate:value);
     }
+
+    public async Task UpdateGarant(bool value)
+    {
+        Garant = value;
+    }
+
     public async Task UpdateMonthPass(bool value){
         CurrentProfile.SupplyPass = value;
         await UpdateProfile(_month_pass:value);
