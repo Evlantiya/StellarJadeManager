@@ -1,0 +1,17 @@
+{
+    "patchInfo": {
+        "version":"1.0",
+        "title":"The Rail Unto the Stars",
+        "releaseDate":"26.04.2023",
+        "weeksCount":6,
+        "events":[
+            {
+                "eventTitle":"Boulder Town Super League",
+                "startDate":"19.05.2023",
+                "endDate":"06.06.2023",
+                "stellarJadesAmount":600
+            }
+        ],
+        "banners":[2003,2004]
+    }
+}

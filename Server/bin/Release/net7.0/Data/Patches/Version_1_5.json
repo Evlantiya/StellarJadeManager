@@ -1,0 +1,29 @@
+{
+    "patchInfo": {
+        "version":"1.5",
+        "title":"The Crepuscule Zone",
+        "releaseDate":"15.11.2023",
+        "weeksCount":6,
+        "events":[
+            {
+                "eventTitle":"A Foxian Tale of the Haunted",
+                "startDate":"15.11.2023",
+                "endDate":"25.12.2023",
+                "stellarJadesAmount":1200
+            },
+            {
+                "eventTitle":"Stellar Shadowseeker",
+                "startDate":"01.12.2023",
+                "endDate":"11.12.2023",
+                "stellarJadesAmount":500
+            },
+            {
+                "eventTitle":"Boulder Town Martial Exhibition",
+                "startDate":"06.12.2023",
+                "endDate":"25.12.2023",
+                "stellarJadesAmount":590
+            }
+        ],
+        "banners":[2014,2015,2016]
+    }
+}

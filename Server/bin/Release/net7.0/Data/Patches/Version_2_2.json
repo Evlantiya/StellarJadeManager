@@ -1,0 +1,24 @@
+{
+    "patchInfo": {
+        "version":"2.2",
+        "title":"Then Wake to Weep",
+        "releaseDate":"08.05.2024",
+        "weeksCount":6,
+        "events":[
+            {
+                "eventTitle":"Cosmodyssey",
+                "startDate":"08.05.2024",
+                "endDate":"20.05.2024",
+                "stellarJadesAmount":1000
+            },
+            {
+                "eventTitle":"Vignettes in a Cup",
+                "startDate":"08.05.2024",
+                "endDate":"21.05.2024",
+                "stellarJadesAmount":1000
+            }
+
+        ],
+        "banners":[2029,2030]
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "patchInfo": {
+        "version":"1.6",
+        "title":"Crown of the Mundane and Divine",
+        "releaseDate":"27.12.2023",
+        "weeksCount":6,
+        "events":[
+            {
+                "eventTitle":"Critter Pick",
+                "startDate":"27.12.2023",
+                "endDate":"05.02.2024",
+                "stellarJadesAmount":500
+            },
+            {
+                "eventTitle":"Stellar Shadowseeker",
+                "startDate":"17.01.2024",
+                "endDate":"05.02.2024",
+                "stellarJadesAmount":500
+            }
+        ],
+        "banners":[2017,2018,2019,2020]
+    }
+}
